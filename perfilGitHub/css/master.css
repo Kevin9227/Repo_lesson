@@ -3,3 +3,61 @@
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
 }
+body{
+    display: flex;
+    justify-content: center;
+}
+section{
+    display: flex;
+    justify-content:center;
+    background-color: red;
+    width: 1050px;
+}
+.perfil{
+    margin-top: 20px;
+    text-align: center;
+    margin: 20px;
+    background-color: blue;
+    width: 750px;
+}
+img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+.txt_nome{
+    margin-bottom: 20px;
+    font-size: 14pt;
+    font-weight: bold;
+}
+aside{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.br_busca{
+    background-color: red;
+    height: 90px;
+    margin-top:20px;
+    display: inline-block;
+    text-align: center;
+}
+.br_busca input{
+    width: 350px;
+    height: 30px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+.br_busca button{
+    width: 250px;
+    height: 40px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border: none;
+    cursor: pointer;
+}
+.br_busca button:hover{
+   background: rgb(219, 219, 219);
+}
+

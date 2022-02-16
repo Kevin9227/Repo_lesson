@@ -9,6 +9,8 @@ async function pegar(){
     .then(json => {img.setAttribute("src",json.avatar_url)
                     nm.innerHTML=json.name,
                     document.querySelector(".descricao").children[0].innerText=json.bio
+
+                    //A API TEM LIMITE DE ACESSO DE DADOS
     } )
     .catch(Error , console.log("Erro"))
    

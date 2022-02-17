@@ -9,8 +9,9 @@ body{
 }
 section{
     display: flex;
-    justify-content:center;
+    justify-content:space-around;
     background-color: red;
+    flex-wrap: wrap-reverse;
     width: 1050px;
 }
 .perfil{
@@ -18,7 +19,7 @@ section{
     text-align: center;
     margin: 20px;
     background-color: blue;
-    width: 750px;
+    width: 250px;
 }
 img{
     width: 150px;

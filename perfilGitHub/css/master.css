@@ -198,14 +198,14 @@ aside{
 
     }
     .descricao{
-        width: 150px;
+        width: 250px;
         height: 250px;
         display: flex;
         align-items: center;
         margin-top: 200px;
     }
     li b{
-        font-size: 40pt;
+        font-size: 20pt;
         color: rgb(247, 217, 51) ;
     }
 

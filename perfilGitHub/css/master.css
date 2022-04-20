@@ -183,21 +183,22 @@ aside{
         display: flex;
         align-items: center;
         background-color: rgb(247, 217, 51) ;
-        width: 150px;
+        width: 120px;
         height: 100vh;
     }
     img{
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
         border-radius: 50%; 
         margin-bottom: 20px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
     }.txt_nome{
-        margin-left: -120px;
+        margin-left: -100px;
+        margin-top: -200px;
 
     }
     .descricao{
-        width: 250px;
+        width: 150px;
         height: 250px;
         display: flex;
         align-items: center;

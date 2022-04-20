@@ -1,33 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/master.css">
+
     <title>Perfil | GitHub</title>
 </head>
+
 <body>
     <section>
+
         <div class="perfil">
-            <img src="" alt="">
-            <div class="txt_nome">
-                <p>Nome</p>
-            </div>
-            
+            <ul class="txt_nome">
+                <li><img src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" alt=""></li>
+            </ul>
         </div>
         <aside>
-             <div class="br_busca">
-            <input type="text" name="busca" id="buscar" onchange="pegar()"><br>
-            <button onclick="pegar()">Procurar</button>
-        </div>
-        <div class="descricao">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, commodi perspiciatis voluptatum delectus assumenda aspernatur, minus est nobis laboriosam odit ea saepe libero eaque dicta blanditiis error iste, nemo possimus?</p>
-        </div>
+            <div class="br_busca">
+                <div class="busca">
+                    <div class="icone"></div>
+                    <div class="entrar">
+                        <input type="text" name="" id="mbusca" placeholder="Buscar" value="" onchange="pegar()">
+                    </div>
+                    <span class="limpar" onclick="document.getElementById('mbusca').value=''"></span>
+                </div>
+
+
+            </div>
+
         </aside>
-       
+        <div class="descricao">
+            <ul class="nome_descricao">
+                <li><b id="nome">NOME</b></li>
+                <li>
+                    <p id="descri">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, commodi
+                        perspiciatis voluptatum delectus assumenda aspernatur, minus est nobis laboriosam odit ea saepe
+                        libero eaque dicta blanditiis error iste, nemo possimus?</p>
+                </li>
+            </ul>
+        </div>
+      <!--   <footer>teste</footer> -->
     </section>
 
     <script src="js/main.js"></script>
 </body>
+
 </html>

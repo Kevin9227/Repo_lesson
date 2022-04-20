@@ -1,55 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Courier New', Courier, monospace;
+    font-family:  'Poppins', sans-serif;
 }
-body{
-    display: flex;
-    justify-content: center;
-}
+
 section{
-    display: flex;
-    justify-content:space-around;
-    background-color: red;
-    flex-wrap: wrap-reverse;
-    width: 1050px;
+    background-color: #171515;
+    width: 100%;
+    height: 100vh;
+    display: block;
 }
 .perfil{
-    margin-top: 20px;
-    text-align: center;
-    margin: 20px;
-    background-color: blue;
-    width: 250px;
-}
-img{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 20px;
+    float: right;
+    display: flex;
+    align-items: center;
+    background-color: rgb(247, 217, 51);
+    width: 650px;
+    height: 100vh;
 }
 .txt_nome{
+    margin-left: -130px;
     margin-bottom: 20px;
-    font-size: 14pt;
+    font-size: 30pt;
     font-weight: bold;
-}
-aside{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.br_busca{
-    background-color: red;
-    height: 90px;
-    margin-top:20px;
-    display: inline-block;
+    color: #fff;
+    list-style: none;
     text-align: center;
 }
-.br_busca input{
-    width: 350px;
-    height: 30px;
-    border-radius: 20px;
-    margin-bottom: 20px;
+.descricao{
+    width: 750px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    margin-top: 140px;
 }
+.nome_descricao{
+    margin: 30px;
+    list-style: none;
+}
+li b{
+    font-size: 80pt;
+    color: rgb(247, 217, 51) ;
+}li p{
+       color: rgb(255, 255, 255) ;
+}
+img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; 
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+}
+
+aside{
+    display: flex;
+    justify-content:start;
+
+}
+.br_busca{
+   
+    height: 100%;
+    margin:20px;
+    display: flex;
+    text-align: center;
+}
+
 .br_busca button{
     width: 250px;
     height: 40px;
@@ -62,3 +78,134 @@ aside{
    background: rgb(219, 219, 219);
 }
 
+/* Barra de Procura */
+.barra_busca{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.busca{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 40px;
+    transition: 0.5s;
+    box-shadow: 0 0 0 5px rgb(247, 217, 51);
+    overflow: hidden;
+}
+.busca.active{
+    width: 360px;
+}
+.busca .icone{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40px;
+    width: 40px;
+    background: #fff;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+.busca .icone::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 3px solid rgb(52, 4, 182);
+    border-radius: 50%;
+    transform: translate(-4px,-4px) ;
+}
+.busca .icone::after{
+    content: '';
+    position: absolute;
+    width: 3px;
+    height:12px;
+    background: rgb(52, 4, 182);
+    transform: translate(6px,6px) rotate(315deg);
+
+}
+.busca .entrar{
+    position: relative;
+    width: 300px;
+    height: 40px;
+    left: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.busca .entrar input{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 70%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 5px 0;
+}
+.limpar{
+    position: absolute;
+    top: 40%;
+    transform: translate(-50%);
+    width: 15px;
+    height: 15px;
+    right: 15px;
+
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.limpar::before{
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 15px;
+    background: #999;
+    transform: rotate(45deg);
+}
+.limpar::after{
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 15px;
+    background: #999;
+    transform: rotate(-45deg);
+}
+/* Fim barra de Procura */
+@media (max-width:750px) {
+    .perfil{
+        display: flex;
+        align-items: center;
+        background-color: rgb(247, 217, 51) ;
+        width: 150px;
+        height: 100vh;
+    }
+    img{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%; 
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    }.txt_nome{
+        margin-left: -120px;
+
+    }
+    .descricao{
+        width: 250px;
+        height: 250px;
+        display: flex;
+        align-items: center;
+        margin-top: 140px;
+    }
+    li b{
+        font-size: 40pt;
+        color: rgb(247, 217, 51) ;
+    }
+
+  }

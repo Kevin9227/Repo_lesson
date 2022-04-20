@@ -1,5 +1,5 @@
 //const jason = require("jason")
-var img = document.querySelector("img"),nm=document.querySelector("p"), br=document.getElementById("buscar");
+var img = document.querySelector("img"),nm=document.getElementById("nome"), br=document.getElementById("mbusca");
 
  
 async function pegar(){
@@ -8,12 +8,16 @@ async function pegar(){
     .then(response => response.json())
     .then(json => {img.setAttribute("src",json.avatar_url)
                     nm.innerHTML=json.name,
-                    document.querySelector(".descricao").children[0].innerText=json.bio
+                    document.getElementById("descri").innerText=json.bio
 
                     //A API TEM LIMITE DE ACESSO DE DADOS
     } )
     .catch(Error , console.log("Erro"))
-   
 
 }
 
+const icone = document.querySelector('.icone');
+        const barra = document.querySelector('.busca');
+        icone.onclick = function(){
+            barra.classList.toggle('active')
+        }

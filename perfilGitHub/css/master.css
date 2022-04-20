@@ -178,7 +178,7 @@ aside{
     transform: rotate(-45deg);
 }
 /* Fim barra de Procura */
-@media (max-width:750px) {
+@media only screen and (max-width:850px) {
     .perfil{
         display: flex;
         align-items: center;

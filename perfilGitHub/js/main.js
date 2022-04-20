@@ -1,5 +1,6 @@
 //const jason = require("jason")
-var img = document.querySelector("img"),nm=document.getElementById("nome"), br=document.getElementById("mbusca");
+var img = document.querySelector("img"),nm=document.getElementById("nome"), br=document.getElementById("mbusca"),
+local=document.getElementById("local");
 
  
 async function pegar(){
@@ -13,6 +14,7 @@ async function pegar(){
         }else{
             img.setAttribute("src",json.avatar_url)
                     nm.innerHTML=json.name,
+                    local.innerHTML=json.location,
                     document.getElementById("descri").innerText=json.bio
 
         }

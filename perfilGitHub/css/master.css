@@ -39,11 +39,18 @@ section{
     margin: 30px;
     list-style: none;
 }
+li{
+    margin: 20px 0;
+}
 li b{
     font-size: 50pt;
     color: rgb(247, 217, 51) ;
 }li p{
        color: rgb(255, 255, 255) ;
+}
+li i {
+    font-size: 15pt;
+    color: rgb(247, 217, 51)
 }
 img{
     width: 250px;

@@ -50,7 +50,7 @@ async function lista() {
     let listadesa = document.getElementById("lista-desa")
     for (i = 0; i <= pessoa.length; i++) {
         listadesa.innerHTML += `<div class="card c2" >
-                       <a href="pessoa.html" onclick="pessoa(${this})"> <img src="img/img${i}.jpg" alt="" style="width: 100%"></a>
+                       <a href="pessoa.html" onclick="pessoa(${this})"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUCd2Y4mw7mgEyXCH3gpQmF_0q9RrN51kD7Q&usqp=CAU" alt="" style="width: 100%"></a>
                         <div class="card-content">
                             <h3 id="nome">${pessoa[i].nome}</h3>
                             <p id="local">${pessoa[i].provincia} & ${pessoa[i].bairro}</p>
@@ -68,7 +68,7 @@ window.onload = () => {
 function pessoa(id) {
     let listadesa = document.getElementById("unica")
     listadesa.innerHTML = `<div class="card c2" >
-                        <img src="img/img${id}.jpg" alt="" style="width: 100%">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUCd2Y4mw7mgEyXCH3gpQmF_0q9RrN51kD7Q&usqp=CAU" alt="" style="width: 100%">
                         <div class="card-content">
                             <h3 id="nome">${pessoa[id].nome}</h3>
                             <p id="local">${pessoa[id].provincia} & ${pessoa[id].bairro}</p>

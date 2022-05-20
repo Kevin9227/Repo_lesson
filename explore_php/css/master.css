@@ -1,0 +1,44 @@
+*{
+    margin:0;
+    padding:0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+header{
+    background:red;
+    height:90px;
+    background-size: cover;
+    background-image:url('https://www.crushpixel.com/big-static19/preview4/big-sale-discount-banner-template-3224496.jpg') ; background-size: cover;
+}
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items:center;
+    height: 90px;
+    width:90%;
+}
+.teste{
+    background-color: blue;
+}/* 
+ul{
+    list-style:none;
+}
+ul li{
+    display:inline;
+    margin:20px;
+}
+ul li a{
+    text-decoration:none;
+    color:#000000;
+} */
+form {
+    width:100%;
+
+}
+.forme{
+    display:grid;
+    justify-content:space-around;
+    background:#cdcbcb;
+
+    padding:20px;
+   
+}

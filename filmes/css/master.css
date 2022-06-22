@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&family=Roboto:wght@100;300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+#area {
+    display: grid;
+    grid-template-areas: "header nav  "  ;
+   /*  grid-template-rows:; */
+    grid-template-columns: 18% 82% 82% ;
+}
+.area-activo {
+    display: none;
+    grid-template-areas: "header nav "  ;
+   /*  grid-template-rows:; */
+    grid-template-columns: 0 100% 100% ;
+    transition: 0.6s ease;
+}
+header {
+    height: auto;
+    background: rgb(17, 26, 31);
+    width: 250px;
+    color: #fff;
+    display: grid;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    grid-area: header;
+}
+.txt-titulo{
+  
+    margin: 20px 0 10px 10px;
+
+}
+.bar1,.bar2,.bar3{
+    width:30px;
+    margin: 6px;
+    height: 5px;
+    background-color: rgb(172, 170, 170);
+}
+.menu-hamburger:hover{
+    cursor: pointer;
+}
+
+.logo {
+    margin-top: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding: 10px
+}
+ul li:hover {
+    cursor: pointer;
+    background-color: #202020;
+    transition: 0.5s;
+}
+
+.menu-1 {
+    margin: 0 0 40px
+}
+
+.menu-1 p,
+.menu2 p {
+    margin: 0 0 30px
+}
+
+.item-top {
+    grid-area: nav;
+    background: rgb(52, 49, 49);
+   
+    width: 100%;
+}
+nav{
+    height: 50px;
+    padding: 20px;
+   
+}
+.icones-top{
+   width: 90%;
+    
+     display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: -45px 50px  ;
+}
+
+.icones-top li{
+    display: inline;
+    font-size: 10pt;
+    text-align: center;
+    
+    margin: 0px 10px;
+}
+.icones-top i{
+    font-size: 15pt;
+    text-align: center;
+}
+aside{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.content{
+    
+    margin-bottom: 20px;
+   
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-type: x mandatory;
+    overflow: hidden;
+    
+
+}
+.content2{
+  
+    margin-bottom: 20px;
+   
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-type: x mandatory;
+    overflow: hidden;
+    
+
+}
+.content i{
+    font-size: 55px;
+    position: relative;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    background:rgb(32, 35,42) ;
+  }
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+  }
+.recomendados{
+    width: 100%;
+    
+   
+   
+}
+.card-base{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.list-card{
+    width:100%;
+
+    overflow: auto;
+    display: flex;
+   
+    justify-content: space-between;
+    
+}
+.content2{
+     background-color: rgb(36, 50, 58);
+    height: 250px;
+}
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 300px;
+    margin: 20px;
+}
+.card:hover{
+    cursor: pointer;
+
+}
+.text{
+    margin-top: 20px;
+    text-align: center;
+}
+.card h3{
+    font-size: 10pt;
+}
+.card img{
+    height: 10rem;
+    width:10rem;
+}
+.sobre{
+    width: 650px;
+    height: 450px;
+    display: flex;
+    
+    color: #f1f1f1;
+
+}
+.sobre img{
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+
+/** MODAL */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    justify-content: center;
+    
+}
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.close:hover,
+.close:focus {
+    color: rgb(222, 31, 31);
+    text-decoration: none;
+    cursor: pointer;
+}

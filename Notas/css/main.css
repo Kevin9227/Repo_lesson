@@ -61,7 +61,8 @@ body{
 }
 .note .bottom-content{
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex-direction: ;
     border-top: 10px;
     border-top: 1px solid #ccc;
 }

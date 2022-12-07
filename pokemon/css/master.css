@@ -2,6 +2,21 @@
     margin: 0;
     padding: 0;
 }
+.card_content{
+    width: 70rem;
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
 .card{
-    
+  
+    background-color: red;
+    width: 20rem;
+    height: 20rem;
+    margin: 20px;
+}
+.card img{
+    width: 150px; display: flex;
 }

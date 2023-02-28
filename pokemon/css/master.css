@@ -20,3 +20,10 @@
 .card img{
     width: 150px; display: flex;
 }
+.pag{
+    margin: 21px;
+}
+.pag button{
+    width: 30px;
+    height: 20px;
+}

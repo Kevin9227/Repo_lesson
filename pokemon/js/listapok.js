@@ -18,7 +18,7 @@ async function pegar() {
             teste.push(Elementos)
             pag_total =teste.length
             i++ 
-            document.querySelector(".card_content").innerHTML +=`
+            document.querySelector(".card_position").innerHTML +=`
             <div class="card"  onclick="">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${i}.svg" alt=""  id="img">
             <div class="content">
@@ -28,39 +28,17 @@ async function pegar() {
         .catch(Error, console.log("Falou a requisição "))
 }
 async function fetchData() {
- 
     try {
       const response = await fetch('https://pokeapi.co/api/v2/pokemon/');
       const data = await response.json();
       // processar os dados
+
       teste.push(data)
     } catch (error) {
       // tratar o erro
     }
 
-    const inicio =(pag_atual - 1) *  pag_resumo;
-    const finalindex = inicio +pag_resumo;
-    const pag_data = teste[0].results.slice(inicio,finalindex)
-    const pag_uda =Math.ceil(teste[0].results.length/ pag_resumo)
-        
-        pag_data.map(poke=>{
-            i++
-            document.querySelector(".card_content").innerHTML +=`
-            <div class="card"  onclick="">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${i}.svg" alt=""  id="img">
-            <div class="content">
-                <h3>${poke.name}</h3>
-            </div>
-        </div> ` 
-        })
-
-        for(i=1; i<=pag_uda; i++){
-            document.querySelector(".pag").innerHTML +=`
-           <button onclick="irpag(${i})">${i}</button>
-           
-           `
-           }
-       
+    
   }
   
  
@@ -73,13 +51,15 @@ function paginas(){
         console.log(pag_data)
         pag_data.map(poke=>{
             i++
-            document.querySelector(".card_content").innerHTML +=`
+            document.querySelector(".card_position").innerHTML +=`
+           
             <div class="card"  onclick="">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${i}.svg" alt=""  id="img">
             <div class="content">
                 <h3>${poke.name}</h3>
             </div>
-        </div> ` 
+        </div> 
+        ` 
         })
 
 }
@@ -100,11 +80,28 @@ function pag_list(){
 function irpag(pag){
     pag_atual =pag
     console.log(pag_atual)
-    fetchData();
+    paginas()
 }
 
-paginas()
-pag_list()
-fetchData();
+//paginas()
+//pag_list()
+//fetchData();
 
-//pegar()
+pegar()
+
+// Definindo a data do seu aniversário
+/* const aniversario = new Date('2023-10-27');
+
+// Obtendo a data atual
+const hoje = new Date();
+
+// Calculando a diferença entre as datas em milissegundos
+const diferenca = aniversario - hoje;
+
+// Convertendo a diferença em dias e horas
+const diasFaltando = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+const horasFaltando = Math.floor((diasFaltando ) * 24);
+const minutos = Math.floor((horasFaltando ) / 60)
+
+// Imprimindo o resultado
+console.log(`Faltam ${diasFaltando} dias e ${horasFaltando} horas e ${minutos} para o seu aniversário!`); */

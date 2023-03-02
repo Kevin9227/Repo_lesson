@@ -90,7 +90,7 @@ function irpag(pag){
 pegar()
 
 // Definindo a data do seu aniversário
-/* const aniversario = new Date('2023-10-27');
+ const aniversario = new Date('2023-10-27');
 
 // Obtendo a data atual
 const hoje = new Date();
@@ -104,4 +104,4 @@ const horasFaltando = Math.floor((diasFaltando ) * 24);
 const minutos = Math.floor((horasFaltando ) / 60)
 
 // Imprimindo o resultado
-console.log(`Faltam ${diasFaltando} dias e ${horasFaltando} horas e ${minutos} para o seu aniversário!`); */
+console.log(`Faltam ${diasFaltando} dias e ${horasFaltando} horas e ${minutos} para o seu aniversário!`); 

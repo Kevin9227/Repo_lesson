@@ -31,26 +31,42 @@ nav ul li a{
 .card_content{
     display: grid;
     justify-content: center;
-    
     align-items: center;
+    
+
 }
 .card_position{
-    width:80%;
-    background-color: blue;
+    width: 1050px;
     display: flex;
-    justify-content: space-between;
+    justify-content:space-around;
     flex-wrap: wrap;
     align-items: center;
 }
 .card{
   
-    background-color: red;
-    width: 20rem;
-    height: 20rem;
+    width: 250px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
     margin: 20px;
+    border: #9999 solid 1px ;
+    border-radius: 30px;
+    box-shadow: #9999 10px 10px 10px;
+    cursor: pointer;
 }
+.card:hover{
+    background-color: #00000054;
+}
+
 .card img{
-    width: 150px; display: flex;
+    width: 150px; 
+    height: 150px;
+    
+}
+.content{
+    padding: 20px;
+    text-transform: uppercase;
 }
 .pag{
     margin: 21px;
@@ -58,4 +74,11 @@ nav ul li a{
 .pag button{
     width: 30px;
     height: 20px;
+}
+footer{
+    height: 150px;
+    background-color: #e6a836;
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }

@@ -29,17 +29,35 @@ async function pegar() {
 }
 async function fetchData() {
     try {
-      const response = await fetch('https://pokeapi.co/api/v2/pokemon/');
+      const response = await fetch('https://pokeapi.co/api/v2/gender/1');
       const data = await response.json();
       // processar os dados
+      
+       document.querySelector(".card_position").innerHTML ="";
+        for(i=1; i<10; i++){
+           console.log( data.pokemon_species_details[i]) 
+           document.querySelector(".card_position").innerHTML += `
+      <div class="card" >
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${100+i}.svg" alt=""  id="img">
+      <div class="content">
+          <h3>${data.pokemon_species_details[i].pokemon_species.name}</h3>
+      </div
+      })
+      >
+  </div> `
+        }
 
-      teste.push(data)
+                     //console.log(data)
+      //teste.push(data)
     } catch (error) {
       // tratar o erro
+      alert("erro..")
     }
+}
+
 
     
-  }
+  
   
  
 function paginas(){

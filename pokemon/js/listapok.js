@@ -51,7 +51,7 @@ async function fetchData() {
       //teste.push(data)
     } catch (error) {
       // tratar o erro
-      alert("erro..")
+      alert("erro.. Novas alterações ")
     }
 }
 

@@ -1,0 +1,246 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.te
+body{
+    background-color:  #f1f8fc;
+    transition: 0.3s;
+}
+header{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+nav {
+  
+    width: 850px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul{
+    list-style: none;
+}
+nav ul li{
+    display: inline;
+    padding: 30px;
+}
+nav ul li a{
+    text-decoration: none;
+    font-size: 14pt;
+    color: #bababa;
+}
+nav ul li a:hover{
+    color: #9b9b9b;
+    transform: scale(1.05);
+}
+.logo h3{
+    font-family: 'Dancing Script', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 35pt;
+    color: #64bcf4;
+    text-shadow: 10px 0px 10px;
+}
+
+/* MENU Hamburger */
+.container {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+
+
+/* FIM MENU*/
+
+
+/* BARRA LATERAL DO MEUNU */
+.sidepanel  {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #64bcf4;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidepanel a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
+  
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color:#444;
+  }
+/* FIM DA BARRA DO MENU */
+section {
+    display: grid;
+    justify-content: center;
+    
+}
+.contente{
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:90rem;
+}
+.texto{
+    width: 550px;
+}
+.texto button{
+    padding: 0.9rem 1.9rem;
+    margin: 30px 0;
+    border-radius: 16px;
+    text-transform: capitalize;
+    font-size: 12pt;
+    border: none;
+    transition: 0.3s;
+    cursor: pointer;
+    background-color:  #64bcf4;
+    color: #fff;
+}
+.ima img{
+    border-radius: 50%;
+    transition: 0.3s;
+    opacity: 90%;
+}
+.texto button:hover{
+    background-color: #5bacdf;
+}
+.texto h3{
+    font-size: 40pt;
+    margin: 20px 0 ;
+}
+.texto p{
+    line-height: 35px;
+    font-size: 14pt;
+    color: #bababa;
+}
+.bolha1{
+    background-color: #5bacdf25;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    transition: 0.3s;
+}
+.bolha2{
+    background-color: hsla(203, 58%, 47%, 0.145);
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    margin:6.5% 55%;
+    transition: 0.3s;
+}
+/* MODAL */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    transition: 0.5s;
+  }
+  .teste{
+    width: 750px;
+    height: 250px;
+    background-color: #5bacdf;
+  }
+/* FIM MODAL */
+@media screen and (max-width: 850px) {
+    section{
+        display: flex;
+        justify-content: center;
+    }nav {
+
+        width: 350px;
+        height: 70px;
+      
+    }
+    .container {
+        display: inline-block;
+      }
+      
+     ul{
+        display: none;
+    }
+    .contente {
+      
+      flex-wrap: wrap;
+    }
+    .texto{
+        width: auto;
+        padding: 20px;
+        
+    }
+    .texto h3{
+        font-size: 30pt;
+        
+    }
+    .bolha2{
+        width: 250px;
+        height: 250px;
+    }
+    .ima img{
+        width: 250px;
+        height: 250px;
+    }
+    }

@@ -75,7 +75,7 @@ nav ul li a:hover{
 
 
 /* BARRA LATERAL DO MEUNU */
-.sidepanel  {
+.painelLateral  {
     width: 0;
     position: fixed;
     z-index: 1;
@@ -88,7 +88,7 @@ nav ul li a:hover{
     padding-top: 60px;
   }
   
-  .sidepanel a {
+  .painelLateral a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -97,11 +97,11 @@ nav ul li a:hover{
     transition: 0.3s;
   }
   
-  .sidepanel a:hover {
+  .painelLateral a:hover {
     color: #f1f1f1;
   }
   
-  .sidepanel .closebtn {
+  .painelLateral .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
@@ -199,11 +199,45 @@ section {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     transition: 0.5s;
   }
-  .teste{
-    width: 750px;
-    height: 250px;
-    background-color: #5bacdf;
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
   }
+  .close:hover,
+  .close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .teste{
+   
+    max-width: 800px;
+    padding: 20px;
+    margin: 60px;
+   
+  }
+  
+ 
+  .xcontainer img {vertical-align: middle;}
+
+.xcontainer .ycontent {
+  position: relative;
+margin: 20px;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+.ycontent p{
+    margin: 20px 0;
+    line-height: 30px;
+}
 /* FIM MODAL */
 @media screen and (max-width: 850px) {
     section{

@@ -1,45 +1,70 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
-.te
-body{
-    background-color:  #f1f8fc;
+
+.te body {
+    background-color: #f1f8fc;
+    -webkit-transition: 0.3s;
     transition: 0.3s;
 }
-header{
+
+header {
     display: grid;
+
+    -webkit-box-pack: center;
+
+    -ms-flex-pack: center;
+
     justify-content: center;
+
+    -webkit-box-align: center;
+
+    -ms-flex-align: center;
+
     align-items: center;
 }
+
 nav {
-  
+
     width: 850px;
     height: 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
-nav ul{
+
+nav ul {
     list-style: none;
 }
-nav ul li{
+
+nav ul li {
     display: inline;
     padding: 30px;
 }
-nav ul li a{
+
+nav ul li a {
     text-decoration: none;
     font-size: 14pt;
     color: #bababa;
 }
-nav ul li a:hover{
+
+nav ul li a:hover {
     color: #9b9b9b;
+    -webkit-transform: scale(1.05);
     transform: scale(1.05);
 }
-.logo h3{
+
+.logo h3 {
     font-family: 'Dancing Script', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 35pt;
     color: #64bcf4;
@@ -50,32 +75,39 @@ nav ul li a:hover{
 .container {
     display: none;
     cursor: pointer;
-  }
-  
-  .bar1, .bar2, .bar3 {
+}
+
+.bar1,
+.bar2,
+.bar3 {
     width: 35px;
     height: 5px;
     background-color: #333;
     margin: 6px 0;
+    -webkit-transition: 0.4s;
     transition: 0.4s;
-  }
-  
-  .change .bar1 {
+}
+
+.change .bar1 {
+    -webkit-transform: translate(0, 11px) rotate(-45deg);
     transform: translate(0, 11px) rotate(-45deg);
-  }
-  
-  .change .bar2 {opacity: 0;}
-  
-  .change .bar3 {
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: translate(0, -11px) rotate(45deg);
     transform: translate(0, -11px) rotate(45deg);
-  }
+}
 
 
 /* FIM MENU*/
 
 
 /* BARRA LATERAL DO MEUNU */
-.painelLateral  {
+.painelLateral {
     width: 0;
     position: fixed;
     z-index: 1;
@@ -84,197 +116,276 @@ nav ul li a:hover{
     right: 0;
     background-color: #64bcf4;
     overflow-x: hidden;
+    -webkit-transition: 0.5s;
     transition: 0.5s;
     padding-top: 60px;
-  }
-  
-  .painelLateral a {
+}
+
+.painelLateral a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
     display: block;
+    -webkit-transition: 0.3s;
     transition: 0.3s;
-  }
-  
-  .painelLateral a:hover {
+}
+
+.painelLateral a:hover {
     color: #f1f1f1;
-  }
-  
-  .painelLateral .closebtn {
+}
+
+.painelLateral .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
-  }
-  
-  .openbtn {
+}
+
+.openbtn {
     font-size: 20px;
     cursor: pointer;
     background-color: #111;
     color: white;
     padding: 10px 15px;
     border: none;
-  }
-  
-  .openbtn:hover {
-    background-color:#444;
-  }
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
 /* FIM DA BARRA DO MENU */
 section {
     display: grid;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
-    
-}
-.contente{
 
+}
+
+.contente {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-    width:90rem;
+    width: 80rem;
 }
-.texto{
+
+.texto {
     width: 550px;
+    margin: 0px 60px 0
 }
-.texto button{
+
+.texto button {
     padding: 0.9rem 1.9rem;
     margin: 30px 0;
     border-radius: 16px;
     text-transform: capitalize;
     font-size: 12pt;
     border: none;
+    -webkit-transition: 0.3s;
     transition: 0.3s;
     cursor: pointer;
-    background-color:  #64bcf4;
+    background-color: #64bcf4;
+
+}
+
+.texto button a {
+    text-decoration: none;
     color: #fff;
 }
-.ima img{
+
+.ima img {
     border-radius: 50%;
+    -webkit-transition: 0.3s;
     transition: 0.3s;
     opacity: 90%;
 }
-.texto button:hover{
+
+.texto button:hover {
     background-color: #5bacdf;
 }
-.texto h3{
+
+.texto h3 {
     font-size: 40pt;
-    margin: 20px 0 ;
+    margin: 20px 0;
+
 }
-.texto p{
+
+.texto p {
     line-height: 35px;
     font-size: 14pt;
     color: #bababa;
+
+
 }
-.bolha1{
+
+.bolha1 {
     background-color: #5bacdf25;
     width: 250px;
     height: 250px;
     border-radius: 50%;
     position: absolute;
+    margin: 60px;
     z-index: -1;
+    -webkit-transition: 0.3s;
     transition: 0.3s;
 }
-.bolha2{
+
+.bolha2 {
     background-color: hsla(203, 58%, 47%, 0.145);
-    width: 550px;
-    height: 550px;
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
     position: absolute;
     z-index: -1;
-    margin:6.5% 55%;
+    margin: 6% 60%0;
+    -webkit-transition: 0.3s;
     transition: 0.3s;
 }
+
 /* MODAL */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow-x: hidden;
+    -webkit-transition: 0.5s;
     transition: 0.5s;
-  }
-  .close {
+    scroll-behavior: smooth;
+}
+
+.close {
     position: absolute;
     top: 15px;
     right: 35px;
     color: #f1f1f1;
     font-size: 40px;
     font-weight: bold;
+    -webkit-transition: 0.3s;
     transition: 0.3s;
-  }
-  .close:hover,
-  .close:focus {
+}
+
+.botao {
+    position: fixed;
+    top: 90%;
+    right: 35px;
+    color: #f2f2f2;
+    background: #64bcf4;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 16px;
+    cursor: pointer;
+    -webkit-transition: 0.9s;
+    transition: 0.9s;
+    padding: 0.5rem 0.9rem;
+    display: none;
+}
+
+.botao:hover {
+    background: #5bacdf;
+}
+
+.close:hover,
+.close:focus {
     color: red;
     text-decoration: none;
     cursor: pointer;
-  }
-  .teste{
-   
-    max-width: 800px;
+}
+
+.teste {
+    max-width: 600px;
     padding: 20px;
     margin: 60px;
-   
-  }
-  
- 
-  .xcontainer img {vertical-align: middle;}
+}
+
+
+.xcontainer img {
+    vertical-align: middle;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
 
 .xcontainer .ycontent {
-  position: relative;
-margin: 20px;
-  background: rgb(0, 0, 0); /* Fallback color */
-  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
-  color: #f1f1f1;
-  width: 100%;
-  padding: 20px;
+    position: relative;
+    margin: 20px;
+    background: rgb(0, 0, 0);
+    /* Fallback color */
+    background: rgba(0, 0, 0, 0.5);
+    /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    width: auuto;
+    padding: 20px;
 }
-.ycontent p{
+
+.ycontent p {
     margin: 20px 0;
     line-height: 30px;
+    text-align: j;
 }
+
 /* FIM MODAL */
 @media screen and (max-width: 850px) {
-    section{
+    section {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
-    }nav {
+    }
+
+    nav {
 
         width: 350px;
         height: 70px;
-      
+
     }
+
     .container {
         display: inline-block;
-      }
-      
-     ul{
+    }
+
+    ul {
         display: none;
     }
+
     .contente {
-      
-      flex-wrap: wrap;
+
+        -ms-flex-wrap: wrap;
+
+        flex-wrap: wrap;
+
     }
-    .texto{
-        width: auto;
+
+    .texto {
+        width: 300px;
         padding: 20px;
-        
+
     }
-    .texto h3{
+
+    .texto h3 {
         font-size: 30pt;
-        
+
     }
-    .bolha2{
+
+    .bolha2 {
         width: 250px;
         height: 250px;
     }
-    .ima img{
+
+    .ima img {
         width: 250px;
         height: 250px;
     }
-    }
+}

@@ -1,4 +1,4 @@
-var projecto = [{nome_proje:'Pesquisador de Perfil do GitHub',imagem:'../img/perfilGitHub.PNG', descri:'O projeto feito em HTML,CSS e JAVASCRIPT que visa buscar perfis existentes no GitHub.   Projeto feito com objetivo de praticar API do GitHub.',link:'https://kevin9227.github.io/Repo_lesson/perfilGitHub/'}
+var projecto = [{nome_proje:'Pesquisador de Perfil do GitHub',imagem:'img/perfilGitHub.PNG', descri:'O projeto feito em HTML,CSS e JAVASCRIPT que visa buscar perfis existentes no GitHub.   Projeto feito com objetivo de praticar API do GitHub.',link:'https://kevin9227.github.io/Repo_lesson/perfilGitHub/'}
 
 ,{nome_proje:'Bloco de anotações',imagem:'../img/Notas.PNG',descri:'O projeto feito em HTML,CSS e JAVASCRIPT, que visou o estudo da função "localStorage" com fins de praticar. ',link:'https://kevin9227.github.io/Repo_lesson/Notas/'}
 

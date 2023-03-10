@@ -30,12 +30,12 @@ var projecto = [{
     }
     , {
         nome_proje: 'Posto de Venda POS',
-        imagem: '../img/POS.JPG',
+        imagem: 'img/POS.JPG',
         descri: 'O presente projeto foi desenvolvido e deixado disponivel de forma open source, o sitema de venda foi feito para atender pequanas empresas que desejam organizar e controlar as suas vendas. O Sitema foi desenvolvido em FOXPRO9.',
         link: 'https://github.com/Kevin9227/M_FOXPRO/tree/main/Sistem_POS'
     }, {
         nome_proje: 'Gerenciador de VOOS - FLYAO',
-        imagem: '../img/flyao.JPG',
+        imagem: 'img/flyao.JPG',
         descri: 'O presente projeto foi desenvolvido para gerenciamento de VOO de uma companinha aeria de angola.',
         link: 'http://hendasoft.42web.io/Projecto_FlyAO'
     }
@@ -126,7 +126,7 @@ function about() {
     div.innerHTML += ` 
     <div class="xcontainer">
   <div class="ycontent ">
-  <img src="../img/foto.jpg" alt="Joaquim de Campos" style="width:100%;  transition: 0.5s;">
+  <img src="img/foto.jpg" alt="Joaquim de Campos" style="width:100%;  transition: 0.5s;">
     <h1>${sobre[0].Titulo}</h1>
     <p>${sobre[0].Descri}</p>
   </div>

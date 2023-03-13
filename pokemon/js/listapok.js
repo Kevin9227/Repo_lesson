@@ -2,17 +2,18 @@
 //SETAR VARIAVES GLOBAIS 
 var lista_item  =[]
 var pag_atual   =1
-var pag_total   =0
-var pag_resumo  =5
+var pag_total   =20
+var pag_resumo  =6
 var teste       =[]
  let i          = 0
+ var numb =0
 //'https://pokeapi.co/api/v2/pokemon?limit=9&offset=0';
 
 
 
 // OBTER DADOS da API Modelo 1 para analise.
 async function pegar() {
-    const newLocal = "https://pokeapi.co/api/v2/pokemon/"
+    const newLocal = "https://pokeapi.co/api/v2/pokemon/?limit="+pag_resumo+"&offset="+pag_total
     const url = newLocal
     const response = await fetch(url)
         .then(response => response.json())
@@ -20,16 +21,23 @@ async function pegar() {
         .then(json =>  json.results.map(Elementos =>{
             //console.log(Element)
             teste.push(Elementos)
-            pag_total =teste.length
-            i++ 
+          numb=Elementos.url.slice(34,36)
+            i ++
             document.querySelector(".card_position").innerHTML +=`
             <div class="card"  onclick="">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${i}.svg" alt=""  id="img">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${numb}.svg" alt=""  id="img">
             <div class="content">
                 <h3>${Elementos.name}</h3>
             </div>
-        </div> ` }))
+        </div> 
+       
+       ` }))
         .catch(Error, console.log("Falou a requisição "))
+        pag_list()
+}
+
+function abrirCard(){
+
 }
 
 //OBETER DADOS da API Modelo 2 para a segunda listagem
@@ -50,7 +58,8 @@ async function fetchData() {
       </div
       })
       >
-  </div> `
+  </div>
+   `
         }
 
                      //console.log(data)

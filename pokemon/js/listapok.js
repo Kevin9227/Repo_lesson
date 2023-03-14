@@ -21,7 +21,8 @@ async function pegar() {
         .then(json =>  json.results.map(Elementos =>{
             //console.log(Element)
             teste.push(Elementos)
-          numb=Elementos.url.slice(34,36)
+          
+          numb=Elementos.url.slice(34,Elementos.url.length-1)
             i ++
             document.querySelector(".card_position").innerHTML +=`
             <div class="card"  onclick="">
@@ -37,7 +38,11 @@ async function pegar() {
 }
 
 function abrirCard(){
-
+    
+        const modal = document.querySelector('.modal')
+        //modal.style.display = "none"
+        modal.style.height = "0";
+   
 }
 
 //OBETER DADOS da API Modelo 2 para a segunda listagem

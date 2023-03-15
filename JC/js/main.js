@@ -172,5 +172,5 @@ function escrever() {
 function closeModal() {
     const modal = document.querySelector('.modal')
     //modal.style.display = "none"
-    modal.style.height = "0";
+    modal.style.height = "100%";
 };

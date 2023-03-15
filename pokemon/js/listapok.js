@@ -18,14 +18,15 @@ async function pegar() {
     const response = await fetch(url)
         .then(response => response.json())
        // .then(json => console.log(json.results.length))
-        .then(json =>  json.results.map(Elementos =>{
+        .then(json =>  json.results.map(function(Elementos,xid){
             //console.log(Element)
+
             teste.push(Elementos)
           
           numb=Elementos.url.slice(34,Elementos.url.length-1)
-            i ++
+            ++i 
             document.querySelector(".card_position").innerHTML +=`
-            <div class="card"  onclick="">
+            <div class="card"  onclick="abrirCard(${numb},${xid})">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${numb}.svg" alt=""  id="img">
             <div class="content">
                 <h3>${Elementos.name}</h3>
@@ -37,11 +38,19 @@ async function pegar() {
         pag_list()
 }
 
-function abrirCard(){
+function abrirCard(idPoken, xid){
     
         const modal = document.querySelector('.modal')
+        const cmodal =document.querySelector(".card_modal")
         //modal.style.display = "none"
-        modal.style.height = "0";
+        modal.style.width = "100%";
+        cmodal.innerHTML =`
+        <div class="card" >
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${idPoken}.svg" alt=""  id="img">
+        <div class="content">
+            <h3>${teste[xid].name}</h3>
+        </div>
+    </div> `
    
 }
 

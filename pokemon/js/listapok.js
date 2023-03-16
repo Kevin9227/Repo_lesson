@@ -2,7 +2,7 @@
 //SETAR VARIAVES GLOBAIS 
 var lista_item  =[]
 var pag_atual   =1
-var pag_total   =20
+var pag_total   =30
 var pag_resumo  =6
 var teste       =[]
  let i          = 0
@@ -20,11 +20,12 @@ async function pegar() {
        // .then(json => console.log(json.results.length))
         .then(json =>  json.results.map(function(Elementos,xid){
             //console.log(Element)
-
-            teste.push(Elementos)
-          
+            i++
+           
+            teste.push({i:{Nome:Elementos.name, Url:Elementos.url}})
+            console.log(teste)
           numb=Elementos.url.slice(34,Elementos.url.length-1)
-            ++i 
+           
             document.querySelector(".card_position").innerHTML +=`
             <div class="card"  onclick="abrirCard(${numb},${xid})">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${numb}.svg" alt=""  id="img">
@@ -138,3 +139,13 @@ function irpag(pag){
 //fetchData();
 
 pegar()
+
+
+
+const USER_MAP = { 1: {name: "Josuildo"}, 2: {name: "Sally"},}
+
+const userMap = new Map([[1,{name:"Kyle"}], [2,{name:"Sally"}]]    )   
+
+
+console.log(USER_MAP)
+//userMap.set({userId: 1 }, {name: "João"})  

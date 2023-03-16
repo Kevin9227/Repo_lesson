@@ -85,6 +85,7 @@ nav ul li a{
     width: 0;
     display: grid;
     justify-content: center;
+    overflow: auto;
     background-color: rgb(0,0,0,);
     background-color: rgba(0, 0,0, 0.5);
 }

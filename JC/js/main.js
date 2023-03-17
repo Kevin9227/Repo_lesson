@@ -64,7 +64,6 @@ function closeNav() {
 function mostraBtn() {
     const modal = document.querySelector('.modal')
     var xbarra = modal.scrollTop
-    console.log(xbarra)
     if (xbarra > 1000) {
         btn.style.display = "block"
     } else {
@@ -76,7 +75,6 @@ function mostraBtn() {
 function gotop() {
     const modal = document.querySelector('.modal')
     var xbarra = modal.scrollTop
-    console.log(xbarra)
     modal.scrollBy(0, -xbarra)
 };
 // FIM //
@@ -98,7 +96,7 @@ function xprojecto() {
     modal.style.display = "grid"
     modal.style.justifyContent = "center"
     div.innerHTML = ""
-    for (i = 0; i <= projecto.length; i++) {
+    for (i = 0; i < projecto.length; ++i) {
 
         div.innerHTML += ` 
     <div class="xcontainer">
@@ -172,5 +170,5 @@ function escrever() {
 function closeModal() {
     const modal = document.querySelector('.modal')
     //modal.style.display = "none"
-    modal.style.height = "100%";
+    modal.style.height = "0";
 };

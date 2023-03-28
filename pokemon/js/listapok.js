@@ -27,7 +27,7 @@ async function pegar() {
           numb=Elementos.url.slice(34,Elementos.url.length-1)
            
             document.querySelector(".card_position").innerHTML +=`
-            <div class="card"  onclick="abrirCard(${numb},${xid})">
+            <div class="card"  onclick="abrirCard(${numb},${xid},'${Elementos.name}')">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${numb}.svg" alt=""  id="img">
             <div class="content">
                 <h3>${Elementos.name}</h3>
@@ -39,19 +39,26 @@ async function pegar() {
         pag_list()
 }
 
-function abrirCard(idPoken, xid){
+function abrirCard(idPoken, xid,nome){
     
         const modal = document.querySelector('.modal')
         const cmodal =document.querySelector(".card_modal")
         //modal.style.display = "none"
         modal.style.width = "100%";
         cmodal.innerHTML =`
-        <div class="card" >
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${idPoken}.svg" alt=""  id="img">
-        <div class="content">
-            <h3>${teste[xid].name}</h3>
+        <div class="card2">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${idPoken}.svg" alt=""  id="img" style="width:100%"> 
+  <h1>${nome}</h1>
+  <p class="title">CEO & Founder, Example</p>
+  <p>Harvard University</p>
+  <a href="#"><i class="fa fa-dribbble"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="#"><i class="fa fa-linkedin"></i></a>
+  <a href="#"><i class="fa fa-facebook"></i></a>
+  
         </div>
-    </div> `
+
+         `
    
 }
 

@@ -2,7 +2,7 @@
 //SETAR VARIAVES GLOBAIS 
 var lista_item  =[]
 var pag_atual   =1
-var pag_total   =30
+var pag_total   =20
 var pag_resumo  =6
 var teste       =[]
  let i          = 0
@@ -13,7 +13,7 @@ var teste       =[]
 
 // OBTER DADOS da API Modelo 1 para analise.
 async function pegar() {
-    const newLocal = "https://pokeapi.co/api/v2/pokemon/?limit="+pag_resumo+"&offset="+pag_total
+    const newLocal = "https://pokeapi.co/api/v2/pokemon/"
     const url = newLocal
     const response = await fetch(url)
         .then(response => response.json())
@@ -23,7 +23,7 @@ async function pegar() {
             i++
            
             teste.push({i:{Nome:Elementos.name, Url:Elementos.url}})
-            console.log(teste)
+            //console.log(teste)
           numb=Elementos.url.slice(34,Elementos.url.length-1)
            
             document.querySelector(".card_position").innerHTML +=`
@@ -39,8 +39,19 @@ async function pegar() {
         pag_list()
 }
 
-function abrirCard(idPoken, xid,nome){
+ async function abrirCard(idPoken, xid,nome){
     
+    
+     
+    const newLocal = " https://pokeapi.co/api/v2/ability/"+xid
+    const url = newLocal
+    const response = await fetch(url)
+        .then(response => response.json())
+        .then(json =>   console.log(json))/*  forEach((element) => {
+            habilidade= element.name
+            descri =element
+        })) */
+        
         const modal = document.querySelector('.modal')
         const cmodal =document.querySelector(".card_modal")
         //modal.style.display = "none"
@@ -49,7 +60,7 @@ function abrirCard(idPoken, xid,nome){
         <div class="card2">
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${idPoken}.svg" alt=""  id="img" style="width:100%"> 
   <h1>${nome}</h1>
-  <p class="title">CEO & Founder, Example</p>
+  <p class="title">${habilidade}</p>
   <p>Harvard University</p>
   <a href="#"><i class="fa fa-dribbble"></i></a>
   <a href="#"><i class="fa fa-twitter"></i></a>

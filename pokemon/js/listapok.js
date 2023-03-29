@@ -43,7 +43,7 @@ async function pegar() {
     
     
      
-    const newLocal = " https://pokeapi.co/api/v2/ability/"+xid
+    const newLocal = " https://pokeapi.co/api/v2/ability/"+(xid+1)
     const url = newLocal
     const response = await fetch(url)
         .then(response => response.json())

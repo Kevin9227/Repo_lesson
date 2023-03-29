@@ -47,7 +47,7 @@ async function pegar() {
     const url = newLocal
     const response = await fetch(url)
         .then(response => response.json())
-        .then(json =>   console.log(json))/*  forEach((element) => {
+        .then(json =>   teste=json)/*  forEach((element) => {
             habilidade= element.name
             descri =element
         })) */
@@ -59,9 +59,9 @@ async function pegar() {
         cmodal.innerHTML =`
         <div class="card2">
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${idPoken}.svg" alt=""  id="img" style="width:100%"> 
-  <h1>${nome}</h1>
-  <p class="title">${habilidade}</p>
-  <p>Harvard University</p>
+  <h1>Habilidade: ${teste.name}</h1>
+  <p class="title">${teste.effect_entries[0].effect}</p>
+  <p>${nome}</p>
   <a href="#"><i class="fa fa-dribbble"></i></a>
   <a href="#"><i class="fa fa-twitter"></i></a>
   <a href="#"><i class="fa fa-linkedin"></i></a>

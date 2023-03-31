@@ -21,6 +21,9 @@ fs.readFile('dados.json', 'utf8', (err, data) => {
   app.get("/produtos/:id",(req,res)=>{
     res.json(produtos[req.params.id])
 })
+app.get("/familia/:id",(req,res)=>{
+  res.json(produtos[req.params.id])
+})
   // Exibe o conteúdo do arquivo JSON
  // console.log(jsonData);
 });

@@ -308,6 +308,37 @@ section {
     padding: 20px;
     margin: 60px;
 }
+.outro {
+    border-radius: 5px;
+    padding: 20px;
+    display: grid;
+   
+    width: 450px;
+  }
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+ .ycontent button {
+    background-color: #045aaa;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+ .ycontent button:hover {
+    background-color: #696969;
+  }
+ 
 
 
 .xcontainer img {
@@ -333,7 +364,14 @@ section {
     line-height: 30px;
     text-align: j;
 }
-
+.ycontent ul{
+    list-style: none;
+    display: inline;
+}
+.ycontent ul li{
+    display: inline;
+    padding: 5px;
+}
 /* FIM MODAL */
 @media screen and (max-width: 850px) {
     section {

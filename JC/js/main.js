@@ -1,6 +1,7 @@
 // DADOS DO PROJECTO
 var div = document.createElement('div')
 var btn = document.createElement('button')
+var btnenviar = document.getElementById('enviar')
 var teste = document.querySelector('.painelLateral')
 var projecto = [{
         nome_proje: 'Pesquisador de Perfil do GitHub',
@@ -133,6 +134,7 @@ function about() {
       `
 }
 
+
 function contacto() {
     const modal = document.querySelector('.modal')
     modal.appendChild(div)
@@ -144,14 +146,29 @@ function contacto() {
     div.innerHTML += ` 
     <div class="xcontainer">
   <div class="ycontent ">
+    
+    <h1>Deixe a sua mensagem</h1>
+    <p>Siga-me </p>
     <ul>
-        <li>Nome: Kim</li>
+        <li><a href="https://www.facebook.com/kevinkafala/"><i class="fa fa-facebook-square" style="font-size:32px;color:blue"></i></a></li>
+        <li><a href="https://www.instagram.com/joaquim_kafala/?hl=pt"><i class="fa fa-instagram" style="font-size:32px;color:#db3012"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/joaquim-kafala-2321a116b/"><i class="fa fa-linkedin-square" style="font-size:32px;color:blue"></i></a></li>
+        <li><a href="https://wa.me/+244924112838"><i class="fa fa-whatsapp" style="font-size:32px;color:green"></i></a></li>
+        <li><a href="https://github.com/Kevin9227"><i class="fa fa-github-square" style="font-size:32px;color:#696969"></i></a></li>
+
 </ul>
-    <h1>teste</h1>
-    <p>novo</p>
+    <div class="outro" >
+    <label for="seunome">Seu Nome</label>
+    <input type="text" id="seunome" name="seunome" placeholder="Seu Nome..">
+
+    <label for="menssagem">Menssagem</label>
+    <textarea id="menssagem" name="menssagem" placeholder="Escreve aqui a sua mensagem..." style="height:200px"></textarea>
+    <button onclick="enviamsg() " id="enviar"><a href="https://outlook.office.com/mail/compose&to=john.doe@example.com&subject=Hello">Enviar e-mail</a>
+    </button>
+   
+    </div>
   </div>
 </div>
-
       `
 }
 var i = 0,
@@ -165,6 +182,12 @@ function escrever() {
         setTimeout(escrever, velocidade)
     }
 
+}
+function enviamsg(){
+   let nome =document.getElementById("seunome")
+   let msg = document.getElementById("menssagem")
+    
+    
 }
 
 function closeModal() {

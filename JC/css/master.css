@@ -334,7 +334,10 @@ input[type=text], select, textarea {
     border-radius: 4px;
     cursor: pointer;
   }
-  
+  .ycontent button  a{
+    text-decoration: none;
+    color: white;
+  }
  .ycontent button:hover {
     background-color: #696969;
   }

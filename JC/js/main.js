@@ -3,6 +3,8 @@ var div = document.createElement('div')
 var btn = document.createElement('button')
 var btnenviar = document.getElementById('enviar')
 var teste = document.querySelector('.painelLateral')
+let xnome =''
+let msg =''
 var projecto = [{
         nome_proje: 'Pesquisador de Perfil do GitHub',
         imagem: 'img/perfilGitHub.PNG',
@@ -36,7 +38,7 @@ var projecto = [{
         link: 'https://github.com/Kevin9227/M_FOXPRO/tree/main/Sistem_POS'
     }, {
         nome_proje: 'Gerenciador de VOOS - FLYAO',
-        imagem: 'img/flyao.JPG',
+        imagem: 'img/flyao.jpg',
         descri: 'O presente projeto foi desenvolvido para gerenciamento de VOO de uma companinha aeria de angola.',
         link: 'http://hendasoft.42web.io/Projecto_FlyAO'
     }
@@ -163,8 +165,7 @@ function contacto() {
 
     <label for="menssagem">Menssagem</label>
     <textarea id="menssagem" name="menssagem" placeholder="Escreve aqui a sua mensagem..." style="height:200px"></textarea>
-    <button onclick="enviamsg() " id="enviar"><a href="https://outlook.office.com/mail/compose&to=john.doe@example.com&subject=Hello">Enviar e-mail</a>
-    </button>
+    <button onclick="enviamsg() " id="enviar"><a href="mailto:joaquimdecampos@outlook.com?subject=Visualizei o teu Portefólio">Enviar e-mail</a></button>
    
     </div>
   </div>
@@ -183,10 +184,11 @@ function escrever() {
     }
 
 }
+
 function enviamsg(){
-   let nome =document.getElementById("seunome")
-   let msg = document.getElementById("menssagem")
-    
+    nome =document.getElementById("seunome")
+    msg = document.getElementById("menssagem")
+   
     
 }
 

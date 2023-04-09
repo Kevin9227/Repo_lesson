@@ -131,6 +131,26 @@ nav ul li a{
     background-color: rgb(0,0,0,);
     background-color: rgba(0, 0,0, 0.5);
 } 
+.card_modal{
+    padding: 20px;
+    margin: 20px;
+}
+
+.modal span{
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.modal span:hover,
+.modal span:focus {
+    color: rgb(233, 52, 52);
+    text-decoration: none;
+    cursor: pointer;
+}
 
 footer{
     height: 150px;

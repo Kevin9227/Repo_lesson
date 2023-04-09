@@ -72,7 +72,10 @@ async function pegar() {
          `
    
 }
-
+ function fecharModal(){
+    const modal = document.querySelector('.modal')
+    modal.style.width="0%";
+ }
 //OBETER DADOS da API Modelo 2 para a segunda listagem
 async function fetchData() {
     try {

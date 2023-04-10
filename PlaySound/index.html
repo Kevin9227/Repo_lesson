@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Document</title>
-   
+
 </head>
+
 <body>
     <header></header>
     <div class="grelha">
-       <input type="file" id="myFile" >
-      <div class="reprodutor">
-        <div class="media">
+        <input type="file" id="myFile">
+        <div class="reprodutor">
+            <div class="media">
+                <img src="https://i1.sndcdn.com/artworks-AlkCxNKtoNyprK4d-KMCozg-t500x500.jpg" alt="">
+            </div>
+            <audio id="my-audio" src=""></audio>
+            <div class="contador">
+                <p>2:24</p>
+                <div class="range">
+
+                </div>
+                <p>3:24</p>
+            </div>
+            <div class="btns">
+
+                <button onclick="pauseAudio()" class="btn "><i class="material-icons"
+                        style="font-size:24px">skip_previous</i> </button>
+                <button onclick="playAudio()" class="play btn "><i class="material-icons"
+                        style="font-size:36px">play_arrow</i> </button>
+                <button onclick="pauseAudio()" class="btn "> <i class="material-icons"
+                        style="font-size:24px">skip_next</i> </button>
+            </div>
+
+
         </div>
-        <audio id="my-audio" src="" ></audio>
-        
-       <button onclick="playAudio()"class="btn btn-default btn-sm"><span class="glyphicon glyphicon-play-circle"></span> Reproduzir</button>
-       <button onclick="pauseAudio()" class="btn btn-default btn-sm" > <span class="glyphicon glyphicon-pause"></span> Pausar</button>
-      </div>
-       
-       
-       
+
+
+
     </div>
     <script src="js/media.js"></script>
 </body>
+
 </html>

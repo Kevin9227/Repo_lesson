@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.grelha{
+    background-color: red;
+    height: 100vh;
+}
+.reprodutor{
+    background-color: black;
+    width: 450px;
+    height: 150px;
+}

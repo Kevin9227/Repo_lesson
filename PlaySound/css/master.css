@@ -1,77 +1,199 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
 }
-.grelha{
+
+.grelha {
     background-color: rgb(50, 36, 45);
-    background-image: linear-gradient(to bottom, rgb(133, 39, 43),rgb(50, 36, 45) );
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(133, 39, 43)), to(rgb(50, 36, 45)));
+    background-image: linear-gradient(to bottom, rgb(133, 39, 43), rgb(50, 36, 45));
     height: 100vh;
     display: grid;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
-.reprodutor{
+
+.reprodutor {
     display: grid;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -ms-flex-line-pack: center;
     align-content: center;
 }
-.media{
+
+.media {
     background-color: rgb(227, 95, 28);
-    background-image: radial-gradient( rgb(229, 105, 13),rgb(224, 71, 61) );
+    background-image: radial-gradient(rgb(229, 105, 13), rgb(224, 71, 61));
     width: 650px;
     height: 350px;
-    border-radius: 16px ;
+    border-radius: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
 }
-.media img{
+
+.detalhes {
+
+    color: #fff;
+    display: grid;
+    text-align: center;
+
+    -webkit-box-pack: center;
+
+    -ms-flex-pack: center;
+
+    justify-content: center
+}
+
+.detalhes h3 {
+    color: rgb(131, 42, 83);
+    padding: 5px
+}
+
+.media img {
     border-radius: 50%;
     width: 150px;
     height: 150px;
+    margin: 40px;
 }
-.contador{
-   margin: 10px;
-    height: 50px;
+
+.playlist {
+    height: 100%;
+    width: 250px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+
+}
+
+.lista {
+    background: rgba(131, 42, 83, 0.5);
+    width: 0%;
+    height: 100%;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.lista1 {
+    background: rgba(131, 42, 83, 0.5);
+    width: 100%;
+    height: 100%;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.contador {
+    margin: 10px;
+    height: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     color: #fff;
 }
-.range{
+
+.range {
     margin: 20px;
     width: 100%;
-   border-radius:50px ;
+    border-radius: 50px;
     background-color: #fff;
-    height:5px;
-    
+    height: 5px;
+
 }
+
 .range::before {
     content: " ";
-    background-color: rgb(179,90,90);
+    background-color: rgb(179, 90, 90);
     width: 10%;
     height: 5px;
     position: absolute;
     border-radius: 50px;
 }
 
-.btns{
+.btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
-.btn{
-    height:50px;
+
+.btn {
+    height: 50px;
     width: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     border: none;
     margin: 10px;
-   color: #fff;
+    color: #fff;
     border-radius: 50%;
     background-color: rgb(131, 42, 83);
 }
+
 .play {
-    height:80px;
+    height: 80px;
     width: 80px;
     background-color: rgb(242, 48, 79);
+}
+
+.container {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0px;
+    margin: 20px;
+    position: absolute
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
 }

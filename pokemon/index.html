@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/master.css">
     <title>Pokemon - Wold </title>
 </head>
+
 <body>
     <header>
         <nav>
@@ -26,20 +29,25 @@
         </div>
     </section>
     <div class="card_content">
+        <div class="procurar">
+            <input type="text" name="buscar" id="" placeholder="Procurar Pokemon...">
+            <button type="submit"><i class="material-icons">search</i></button>
+        </div>
+
         <div class="card_position">
-        <!-- <div class="bolha">
+            <!-- <div class="bolha">
         </div>
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg" alt="">
         <div class="txt">
             <h3>Nome</h3>
             <p>Descri</p>
         </div> -->
-    </div>
-    <div class="pag">
+        </div>
+        <div class="pag">
 
+        </div>
     </div>
-    </div>
-    <div class="modal"><span>&times;</span>
+    <div class="modal"><span onclick="fecharModal()">&times;</span>
         <div class="card_modal">
 
         </div>
@@ -49,9 +57,10 @@
             <p> &copy; Joaquim de Campos</p>
             <p>&Darr;</p>
         </div>
-       
+
     </footer>
     <script src="js/listapok.js"></script>
     <!-- <script src="js/all.js"></script> -->
 </body>
+
 </html>

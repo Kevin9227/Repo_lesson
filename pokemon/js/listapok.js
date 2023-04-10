@@ -21,12 +21,12 @@ async function pegar() {
         .then(json =>  json.results.map(function(Elementos,xid){
             //console.log(Element)
             i++
-           
             teste.push({i:{Nome:Elementos.name, Url:Elementos.url}})
             //console.log(teste)
           numb=Elementos.url.slice(34,Elementos.url.length-1)
            
             document.querySelector(".card_position").innerHTML +=`
+            
             <div class="card"  onclick="abrirCard(${numb},${xid},'${Elementos.name}')">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${numb}.svg" alt=""  id="img">
             <div class="content">
@@ -72,7 +72,10 @@ async function pegar() {
          `
    
 }
-
+ function fecharModal(){
+    const modal = document.querySelector('.modal')
+    modal.style.width="0%";
+ }
 //OBETER DADOS da API Modelo 2 para a segunda listagem
 async function fetchData() {
     try {

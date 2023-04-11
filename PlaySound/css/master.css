@@ -27,6 +27,7 @@
 .media {
     background-color: rgb(227, 95, 28);
     background-image: radial-gradient(rgb(229, 105, 13), rgb(224, 71, 61));
+
     width: 650px;
     height: 350px;
     border-radius: 16px;
@@ -35,7 +36,7 @@
     display: flex;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
+    justify-content: flex-end;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -46,24 +47,34 @@
 }
 
 .detalhes {
-
     color: #fff;
-    display: grid;
     text-align: center;
-
     -webkit-box-pack: center;
-
     -ms-flex-pack: center;
-
-    justify-content: center
+    justify-content: center;
 }
 
 .detalhes h3 {
     color: rgb(131, 42, 83);
-    padding: 5px
+    padding: 5px;
+    font-size: 11pt;
+    font-weight: bold;
 }
 
-.media img {
+.media > img {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    right: 38.9%;
+    top: 123px;
+    opacity: 0;
+    mix-blend-mode: multiply;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+
+}
+
+.detalhes img {
     border-radius: 50%;
     width: 150px;
     height: 150px;
@@ -83,19 +94,52 @@
 }
 
 .lista {
+
+    display: none;
     background: rgba(131, 42, 83, 0.5);
-    width: 0%;
-    height: 100%;
     -webkit-transition: 0.5s;
     transition: 0.5s;
+
+
 }
 
 .lista1 {
+    opacity: 100%;
+    display: grid;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+
+    -webkit-box-align: center;
+
+    -ms-flex-align: center;
+
+    align-items: center;
+    overflow-y: scroll;
     background: rgba(131, 42, 83, 0.5);
-    width: 100%;
-    height: 100%;
+    width: 30%;
+    height: 50%;
+    position: absolute;
     -webkit-transition: 0.5s;
     transition: 0.5s;
+
+
+}
+
+.lista1 p {
+    font-size: 9pt;
+    color: #fff;
+    text-align: justify;
+    margin: 10px;
+    padding: 2px;
+    border-bottom: #29299921 solid 1px;
+}
+.lista1 p:hover {
+    color: #292929;
+    cursor: pointer;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+   
 }
 
 .contador {
@@ -106,7 +150,10 @@
     display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     color: #fff;
 }
 
@@ -168,25 +215,26 @@
 .container {
     display: inline-block;
     cursor: pointer;
-    padding: 0px;
+    padding: 10px;
     margin: 20px;
-    position: absolute
+    position: absolute;
+    z-index: 1
 }
 
 .bar1,
 .bar2,
 .bar3 {
-    width: 30px;
+    width: 20px;
     height: 3px;
     background-color: #fff;
-    margin: 6px 0;
+    margin: 7px 0;
     -webkit-transition: 0.4s;
     transition: 0.4s;
 }
 
 .change .bar1 {
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-    transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-6px, 6px);
 }
 
 .change .bar2 {

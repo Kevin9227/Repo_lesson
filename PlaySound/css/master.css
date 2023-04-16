@@ -27,22 +27,12 @@
 .media {
     background-color: rgb(227, 95, 28);
     background-image: radial-gradient(rgb(229, 105, 13), rgb(224, 71, 61));
-
     width: 650px;
     height: 350px;
     border-radius: 16px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
     justify-content: flex-end;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
 }
 
@@ -62,18 +52,24 @@
 }
 
 .media > img {
-    position: absolute;
+    position: relative;
     width: 350px;
     height: 350px;
-    right: 38.9%;
-    top: 123px;
     opacity: 0;
-    mix-blend-mode: multiply;
+    mix-blend-mode: color-burn;
     -webkit-transition: 0.5s;
     transition: 0.5s;
-
+    aspect-ratio: 2/2; 
+    object-fit:contain;
 }
 
+.somgif{
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
 .detalhes img {
     border-radius: 50%;
     width: 150px;
@@ -109,11 +105,8 @@
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
-
     -webkit-box-align: center;
-
     -ms-flex-align: center;
-
     align-items: center;
     overflow-y: scroll;
     background: rgba(131, 42, 83, 0.5);

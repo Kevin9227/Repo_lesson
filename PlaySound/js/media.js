@@ -37,9 +37,9 @@ function handleFiles(nf) {
     //document.body.appendChild(audio);
     listdereproducao();*/
 }
-
+var no = 0
 function playAudio(faixa) {
-    var no = 0
+    
      if (no == 0) {
 
         const fileList = ficheiros.files;
@@ -77,10 +77,16 @@ function myFunction(x) {
 function listdereproducao() {
     if (ficheiros.files.length > 0) {
         for (i = 0; i <= ficheiros.files.length; i++) {
-            lista.innerHTML += `
-                <p onclick="playAudio(${i})">${ficheiros.files[i].name}</p>
+            lista.innerHTML += 
+            ` <p onclick="playAudio(${i})">${ficheiros.files[i].name}</p>
                 `
-
         }
     }
+}
+
+function avancar(next){
+
+}
+function recuar(back){
+
 }

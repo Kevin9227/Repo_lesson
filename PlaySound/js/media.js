@@ -38,9 +38,10 @@ function handleFiles(nf) {
     listdereproducao();*/
 }
 var no = 0
+
 function playAudio(faixa) {
-    
-     if (no == 0) {
+
+    if (no == 0) {
 
         const fileList = ficheiros.files;
         titulo.innerHTML = fileList[0].name
@@ -48,7 +49,7 @@ function playAudio(faixa) {
         audio.src = URL.createObjectURL(fileList[0]);
         reprodutor.src = audio.src
     } else {
-        
+
         const fileList = ficheiros.files;
         titulo.innerHTML = fileList[no].name
         console.log(fileList)
@@ -57,8 +58,8 @@ function playAudio(faixa) {
     }
     // const audio = document.getElementById("my-audio");
     audio.play();
-iconPlay[faixa].innerHTML = "pause";
-gif.style.opacity = "100%"
+    iconPlay[faixa].innerHTML = "pause";
+    gif.style.opacity = "100%"
 }
 
 function pauseAudio() {
@@ -77,16 +78,19 @@ function myFunction(x) {
 function listdereproducao() {
     if (ficheiros.files.length > 0) {
         for (i = 0; i <= ficheiros.files.length; i++) {
-            lista.innerHTML += 
-            ` <p onclick="playAudio(${i})">${ficheiros.files[i].name}</p>
+            lista.innerHTML +=
+                ` <p onclick="playAudio(${i})">${ficheiros.files[i].name}</p>
                 `
         }
     }
 }
 
-function avancar(next){
-
+function avancar(next) {
+    const audio = document.getElementById("my-audio");
+    audio.play();
 }
-function recuar(back){
 
+function recuar(back) {
+    const audio = document.getElementById("my-audio");
+    audio.play();
 }

@@ -30,9 +30,18 @@
     width: 650px;
     height: 350px;
     border-radius: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
 }
 
@@ -60,15 +69,25 @@
     -webkit-transition: 0.5s;
     transition: 0.5s;
     aspect-ratio: 2/2; 
+    -o-object-fit:contain; 
     object-fit:contain;
 }
 
 .somgif{
-    display: grid;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
-    width: 100%;
-    position: relative;
-    z-index: 1;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   align-items: center;;
+  
+  
+    
+    
+    
 }
 .detalhes img {
     border-radius: 50%;

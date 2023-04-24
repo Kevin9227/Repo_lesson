@@ -5,6 +5,9 @@ const reprodutor = document.getElementById("my-audio")
 const audio = document.getElementById("my-audio");
 let iconPlay = document.querySelectorAll("i")
 let titulo = document.getElementById("titulo")
+let inicio = document.getElementById("inicio")
+let final = document.getElementById("final")
+
 let lista = document.querySelector(".lista")
 let gif = document.querySelector("img")
 
@@ -16,7 +19,9 @@ function handleFiles(nf) {
     if (nf = 0) {
 
         const fileList = this.files;
+        console.log(fileList)
         titulo.innerHTML = fileList[0].name
+        inicio.innerHTML = '5'
         console.log(fileList)
         audio.src = URL.createObjectURL(fileList[0]);
         reprodutor.src = audio.src
@@ -45,6 +50,7 @@ function playAudio(faixa) {
 
         const fileList = ficheiros.files;
         titulo.innerHTML = fileList[0].name
+
         console.log(fileList)
         audio.src = URL.createObjectURL(fileList[0]);
         reprodutor.src = audio.src

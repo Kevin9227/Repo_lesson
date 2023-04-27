@@ -160,6 +160,16 @@ body{
     font-size: 18px;
     display: block;
   }
+  form p{
+    float: right;
+    font-size: 30pt;
+    margin-top: -20px;
+  }
+  form p:hover{
+    cursor: pointer;
+    color: rgb(236, 71, 71);
+    
+  }
   .content form textarea {
     height: 150px;
     resize: none;

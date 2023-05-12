@@ -197,3 +197,8 @@ function closeModal() {
     //modal.style.display = "none"
     modal.style.height = "0";
 };
+
+function ver(){
+    const xver ='';
+    
+}

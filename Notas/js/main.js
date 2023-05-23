@@ -99,3 +99,7 @@ addBtn.onclick = (e) => {
 };
 
 showNotes();
+
+class lista(){
+  
+}

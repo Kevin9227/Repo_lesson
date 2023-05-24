@@ -26,8 +26,8 @@ const showNotes = () => {
                                 <div class="settings">
                                     <i onclick=showMenu(this) class="fa-solid fa-ellipsis iconel"></i>
                                     <ul class="menu">
-                                        <li onclick="editNote(${index},'${note.title}','${note.description}')"><i class="fa-light fa-pen"></i>Edit</li>
-                                        <li onclick="deleteNote(${index})"><i class="fa-duotone fa-trash"></i>Delete</li>
+                                        <li onclick="editNote(${index},'${note.title}','${note.description}')"><i class="fa-light fa-pen"></i>Editar</li>
+                                        <li onclick="deleteNote(${index})"><i class="fa-duotone fa-trash"></i>Apagar</li>
                                     </ul>
                                 </div>
                             </div>
@@ -100,6 +100,3 @@ addBtn.onclick = (e) => {
 
 showNotes();
 
-class lista(){
-  
-}

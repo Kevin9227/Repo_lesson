@@ -46,7 +46,16 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    background: red
+    background: url('../rodagrif.gif') no-repeat  ;
+    background-size: cover;
+    background-position: center;
+     opacity: 100%;
+    mix-blend-mode: color-burn;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    aspect-ratio: 2/2; 
+    -o-object-fit:contain; 
+    
 }
 
 .detalhes h3 {
@@ -80,10 +89,6 @@
    -ms-flex-align: center;
    align-items: center;;
   
-  
-    
-    
-    
 }
 .detalhes img {
     border-radius: 50%;

@@ -1,5 +1,56 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: calibri
+}
 
+
+.description_bottom {
+    background: #EAE9E9;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+}
+
+.texto_Portifolio {
+    width: 70%;
+    padding: 1rem;
+    margin: 5rem
+}
+
+.texto_bottom {
+    text-align: justify;
+    font-weight: inherit;
+}
+
+.texto_bottom h3 {
+    text-align: center;
+    margin: 1rem;
+    color: blue;
+    font-size: 20pt
+}
+
+.bottom_card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 2rem;
+    text-align: center
+}
+
+.card_bottom span {
+    font-weight: 600;
 }

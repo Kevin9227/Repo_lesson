@@ -22,7 +22,7 @@
 .texto_Portifolio {
     width: 70%;
     padding: 1rem;
-    margin: 5rem
+    margin: 2rem
 }
 
 .texto_bottom {
@@ -53,4 +53,22 @@
 
 .card_bottom span {
     font-weight: 600;
+}
+
+.local{
+    display: flex;
+    justify-content: space-evenly ;
+    align-items: center;
+    
+}
+.imagem_local{
+	background: red;
+  
+}
+.imagem_local img {
+	transform: rotate(90deg);
+    width: 300px
+}
+.texto_local{
+    width: 750px
 }

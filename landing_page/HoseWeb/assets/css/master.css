@@ -4,6 +4,167 @@
     font-family: calibri
 }
 
+/* MENU E BANNER*/
+header {
+    height: 80px;
+    background: rgb(72, 113, 145);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+}
+
+nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-between;
+
+    width: 950px
+}
+
+.logo {
+    width: 10rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #fff;
+}
+
+.lista {
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.lista ul {
+    list-style: none;
+
+
+}
+
+.lista ul li {
+    list-style: none;
+    display: inline;
+    margin: 20px;
+}
+
+.lista ul li a {
+    text-decoration: none;
+    color: #ffff
+}
+
+/* FIM */
+section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    background: url("https://img.freepik.com/fotos-gratis/bela-foto-de-um-barco-a-vela-viajando-pelo-mar-cercado-por-montanhas_181624-20836.jpg?w=740&t=st=1694635536~exp=1694636136~hmac=e890c96a39ba5821eb34ca04c4f6f9fef176c9a5946f7f9c89b61d9f7dbf96bd") no-repeat;
+    background-position: center;
+    background-size: cover
+}
+
+.top_banner {
+    height: 550px;
+
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+
+
+}
+
+.banner {
+    width: 480px
+}
+
+.banner h2 {
+    font-size: 35pt;
+    color: rgb(70, 80, 92);
+    margin: 30px 0;
+    font-weight: 800;
+}
+
+.banner button {
+    width: 250px;
+    height: 70px;
+    background: none;
+    border: 5px solid rgb(70, 80, 90);
+    font-size: 20pt;
+    color: rgb(70, 80, 92)
+}
+
+.banner button:hover {
+    cursor: pointer;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    background: #f2f2f2;
+    border: none;
+    font-size: 20pt;
+    color: rgb(70, 80, 92)
+}
+
+.section_bottom_banner {
+    background: rgb(208, 234, 235);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 130px;
+}
+
+.content_section {
+    width: 70%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+}
+
+.content_section button {
+    width: 200px;
+    height: 45px;
+    background: #fff;
+    border: none;
+    -webkit-box-shadow: 1px 3px 5px 0px;
+    box-shadow: 1px 3px 5px 0px
+}
 
 .description_bottom {
     background: #EAE9E9;
@@ -55,20 +216,30 @@
     font-weight: 600;
 }
 
-.local{
+.local {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-evenly ;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-    
+
 }
-.imagem_local{
-	background: red;
-  
+
+.imagem_local {
+    background: red;
+
 }
+
 .imagem_local img {
-	transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
     width: 300px
 }
-.texto_local{
+
+.texto_local {
     width: 750px
 }

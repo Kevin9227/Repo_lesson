@@ -166,6 +166,60 @@ section {
     box-shadow: 1px 3px 5px 0px
 }
 
+.texto_section h2 {
+    color: rgb(75, 159, 169);
+   
+    
+}
+.description{
+    height: 350px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    
+}
+.content_description{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    width: 70%;
+
+}
+.card_description{
+    width: 300px;
+    text-align: center;
+    
+}
+.icon_title {
+	margin: 20px;
+}
+.icon_title p{
+    padding-top:10px;
+    color: rgb(11, 58, 102);
+    font-weight: 600;
+}
+.card_description span {
+	font-size: 50px;
+    padding: 10px;
+    background: rgb(208, 234, 235) ;
+    color:rgb(11, 58, 102)  ;
+}
+.card_description span:hover{
+   background:  rgb(11, 58, 102);
+       color: rgb(75, 159, 169);
+}
+.card_description p{
+    text-align: center
+}
 .description_bottom {
     background: #EAE9E9;
     display: -webkit-box;

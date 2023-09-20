@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: calibri
+    font-family: arial
 }
 
 /* MENU E BANNER*/
@@ -210,7 +210,7 @@ section {
 .icon_title p {
     padding-top: 10px;
     color: rgb(11, 58, 102);
-    font-weight: 600;
+    font-weight: 800;
 }
 
 .card_description span {
@@ -275,8 +275,26 @@ section {
     text-align: center
 }
 
+.card_bottom .imagem {
+    padding: 20px
+}
+
 .card_bottom span {
-    font-weight: 600;
+    font-weight: 700;
+    color: rgb(11, 58, 102);
+    font-size: 14pt
+}
+
+.card_bottom p {
+    color: rgb(11, 58, 102);
+    font-size: 14pt;
+
+}
+
+.card_bottom::before {
+    content: " ";
+    background: rgba(234, 235, 12, 01);
+    position: absolute;
 }
 
 .local {

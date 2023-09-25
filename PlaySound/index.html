@@ -12,9 +12,11 @@
 <body>
     <header>   
    <button><a href="ww.google.com">Ficha Técnica</a></button>
+   <progress value="" max="100" onclick="carregar()" id="pro"></progress>
     </header>
     <div class="grelha">
         <input type="file" id="myFile" multiple accept=".mp3">
+        <img src="s" alt="..." loading="lazy">
         
         <div class="reprodutor">
            
@@ -28,7 +30,7 @@
                     <p> </p>
                 </div>
                 <div class="detalhes">
-                    <img src="https://i1.sndcdn.com/artworks-AlkCxNKtoNyprK4d-KMCozg-t500x500.jpg" alt="">
+                    <img src="https://i1.sndcdn.com/artworks-AlkCxNKtoNyprK4d-KMCozg-t500x500.jpg" alt="" >
                     <div class="texto">
                         <h3 id="titulo">Anselmo Ralph</h3>
                         <p>Curtição</p>
@@ -69,7 +71,16 @@
 
 
 
-    <script src="js/media.js"></script>
+    <script src="js/media.js">
+        function carregar(){
+            var obj = document.getElementsById("pro");
+            
+           for(i =0; i < 100; i++ ){
+                obj.value=i;
+            }
+            
+        }
+    </script>
 </body>
 
 </html>

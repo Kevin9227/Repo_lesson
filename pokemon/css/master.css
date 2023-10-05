@@ -43,13 +43,15 @@ nav ul li a {
 }
 
 .card_content {
-    display: grid;
+    display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
+    justify-content: space-around;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
+    background: #0121;
+    align-items: flex-start;
+    
 
 
 }
@@ -66,10 +68,28 @@ nav ul li a {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    overflow-y: auto;
+    height: 750px
 }
-
+.saide_left{
+    background: #fff;
+    height: 450px;
+    padding: 20px;
+    margin: 20px;
+    
+}
+.saide_left ul{
+    list-style: none; 
+}
+.saide_left ul li{
+   padding: 10px;  
+    border-bottom: solid 1px #000
+}
+.saide_left ul li a{
+   text-decoration: none;
+    color: #01259
+}
 .procurar {
-
     display: -webkit-box;
 
     display: -ms-flexbox;
@@ -77,7 +97,7 @@ nav ul li a {
     display: flex;
     -webkit-box-pack: end;
     -ms-flex-pack: end;
-    justify-content: flex-end;
+    justify-content: center;
     padding: 20px
 }
 
@@ -88,6 +108,7 @@ nav ul li a {
     margin-right: 16px;
     border: none;
     background: #f9f9f9f9;
+    width: 70%
 
 }
 

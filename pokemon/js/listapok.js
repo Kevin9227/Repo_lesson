@@ -63,6 +63,7 @@ async function abrirCard(idPoken, xid, nome) {
     //modal.style.display = "none"
     modal.style.width = "100%";
     cmodal.innerHTML = `
+        
         <div class="card2">
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${idPoken}.svg" alt=""  id="img" style="width:100%"> 
   <h1>Habilidade: ${teste.name}</h1>
@@ -94,6 +95,7 @@ async function fetchData() {
         for (i = 1; i < 10; i++) {
             console.log(data.pokemon_species_details[i])
             document.querySelector(".card_position").innerHTML += `
+
       <div class="card" >
       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${100+i}.svg" alt=""  id="img">
       <div class="content">

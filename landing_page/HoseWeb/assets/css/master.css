@@ -243,6 +243,12 @@ section {
 
 }
 
+.card_b3 {
+    background: red;
+    position: absolute;
+
+}
+
 .texto_Portifolio {
     width: 70%;
     padding: 1rem;

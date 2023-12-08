@@ -51,6 +51,8 @@ section{
 }
 .titulo {
     margin: 35px;
+    flex-basis: 1;
+    
 }
 .titulo h2{
     font-size: 50pt;
@@ -69,6 +71,7 @@ article{
 .setorcard{
     display: flex;
     justify-items: center;
+    flex-wrap: wrap;
 }
 .card{
     position: relative;
@@ -80,6 +83,8 @@ article{
     margin-top: -80px;
     text-align: center;
     box-shadow: 0px 1px 1px rgb(0,0,0,0.5);
+    flex-grow: 1;
+    flex-basis: 200;
 }
 
 .card h3{

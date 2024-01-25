@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background: url('../img/pizza_bg.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 50em;
+}
+header nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: red;
+    height: 10rem;
+}
+nav ul{
+    list-style: none;
+}
+nav ul li{
+    display: inline;
+    margin: 20px;
+}
+nav ul li a{
+    color: #fff;
+    font-size: 14pt;
+    text-decoration: none;
+}

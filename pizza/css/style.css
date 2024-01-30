@@ -12,8 +12,7 @@ header nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: red;
-    height: 10rem;
+    height: 5rem;
 }
 nav ul{
     list-style: none;
@@ -27,3 +26,52 @@ nav ul li a{
     font-size: 14pt;
     text-decoration: none;
 }
+.banner{
+   
+    height: 30rem;
+    display: flex;
+    align-items: center;
+    
+}
+.texto_banner{
+    margin:100px;
+    padding: 50px;
+    
+}
+.texto_banner h2{
+    font-size: 40pt;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: #fff
+}
+.texto_banner button{
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 50px;
+    background: rgb(183,42,35);
+    color: #fff
+}
+.barra_book{
+    background: rgb(183,42,35);
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form_book{
+    background: #fff;
+    height: 100px;
+    width: 70rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px
+}
+
+.form_book input{
+    width: 250px;
+    height: 50px;
+    border:none
+}
+

@@ -6,7 +6,7 @@ header{
     background: url('../img/pizza_bg.jpg');
     background-position: center;
     background-size: cover;
-    height: 50em;
+     
 }
 header nav{
     display: flex;
@@ -34,8 +34,9 @@ nav ul li a{
     
 }
 .texto_banner{
-    margin:100px;
+    margin: 10rem 0 0 10rem;
     padding: 50px;
+    
     
 }
 .texto_banner h2{
@@ -50,7 +51,8 @@ nav ul li a{
     border: none;
     border-radius: 50px;
     background: rgb(183,42,35);
-    color: #fff
+    color: #fff;
+    cursor: pointer;
 }
 .barra_book{
     background: rgb(183,42,35);
@@ -58,6 +60,7 @@ nav ul li a{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10rem
 }
 .form_book{
     background: #fff;
@@ -72,6 +75,19 @@ nav ul li a{
 .form_book input{
     width: 250px;
     height: 50px;
-    border:none
+    border:none;
+    border-bottom:none
 }
-
+.form_book input{
+    border: none
+}
+.form_book button{
+    width: 250px;
+    height: 50px;
+    border:none;
+    background: rgb(183,42,35);
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.barra2

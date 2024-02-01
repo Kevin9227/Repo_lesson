@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
 </head>
 <body>
     <header>
@@ -16,7 +15,7 @@
                     <li><a href="">Home</a></li>
                     <li><a href="">About Us</a></li>
                     <li><a href="">Menu</a></li>
-                    <li><a href="">Contac</a></li>
+                    <li><a href="">Contact</a></li>
                 </ul>
             </div>
             <div class="titulo_pagina">
@@ -42,9 +41,26 @@
     </div>
     <div class="barra_book">
         <div class="form_book">
-        <input type="date" name="data" id="data" placeholder="">
-        <input type="date" name="tempo" id="tempo">
-        <input type="text" name="guests" id="gests">
+        <div class="inputes"> 
+            <label for="data"><i class="material-symbols-outlined">
+calendar_today
+</i> DATE</label>
+            
+            <input type="text" name="data" id="data" placeholder="Man, 20 Jun 2024">
+        </div>
+            <div class="inputes"> 
+            <label for="tempo"><i class="material-symbols-outlined">
+schedule
+</i>TIME</label>
+            <input type="text" name="tempo" id="tempo" placeholder="Sat, 06 Jun 2024">
+            </div>
+            <div class="inputes"> 
+            <label for="guests"><i class="material-symbols-outlined">
+person
+</i> GUESTS</label>
+            <input type="text" name="guests" id="gests" placeholder="1 Adult">
+            </div>
+        
         <button>Book Now </button>  
         </div>
     </div>
@@ -52,7 +68,7 @@
     <section>
         <div class="barra2">
             <div class="img_barra">
-                <img src="" alt="">
+                <img src="img/img_pizza.png" alt="" width="750">
             </div>
             <div class="cards_barra"> 
                 <div class="titulo_card">
@@ -93,5 +109,6 @@
     </section>
     
     <script src="js/main.js"></script>
+
 </body>
 </html>

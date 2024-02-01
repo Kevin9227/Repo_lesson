@@ -1,0 +1,2 @@
+const nome ='Meu Nome';
+ 

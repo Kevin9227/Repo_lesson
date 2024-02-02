@@ -3,8 +3,11 @@
 
 function mudar(id){
     var meuId =`"${id}"`;    
-    var mudarTipo =document.getElementById(meuId);
-
-    console.log(meuId)
+    var mudarTipo=(){
+        `document.getElementById(${meuId})`
+    }  
+            
+    console.log(mudarTipo())
+    
     //mudarTipo.type='date'
 }

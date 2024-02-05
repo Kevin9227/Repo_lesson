@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family:  "Calibri";
+    font-family: "Calibri";
 }
 header{
     background: url('../img/pizza_bg.jpg');
@@ -190,3 +190,33 @@ section{
 .cards_bottom h3{
     color: rgb(183,42,35)
 }
+.scrool_text{
+    display: grid;
+    justify-content: end;
+    border: solid 2px rgb(183,42,35);
+            overflow: hidden;
+
+}
+.texto_scrool{
+    font-size: 30pt;
+    color: rgb(183,42,35);
+    overflow: hidden;
+}
+
+@keyframes move {
+ 0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(100%);
+      }/* Altere o valor conforme necessário */
+}
+
+.texto_scrool {
+   white-space: nowrap;
+      overflow: hidden;
+      animation: move 5s linear infinite;
+    
+    /* Alinhe o texto para a esquerda, ajuste conforme necessário */
+}
+

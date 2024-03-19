@@ -4,7 +4,7 @@ Um projeto simples de CRUD (Create, Read, Update, Delete) para gerenciar uma lis
 
 ## Instalação
 
-1. Clone o repositório: `git clone https://github.com/seu-usuario/projeto-crud.git`
+1. Clone o repositório: `git clone https://github.com/Kevin9227/Repo_lesson/tree/master/Crud_NodeJS`
 2. Instale as dependências: `npm install`
 3. Configure o banco de dados: `npm run db:setup`
 4. Inicie o servidor: `npm start`

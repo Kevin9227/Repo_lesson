@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Card Generator</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        #cardsContainer{
+            display: flex;
+            justify-content: space-around;
+            width:80%;
+            flex-wrap: wrap;
+            align-items: center;
+            
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            display: inline-block;
+        }
+        .card img {
+            width: 250px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cardsContainer"></div>
+
+    <script>
+        // Função para buscar os dados da API
+        async function fetchApiData() {
+            try {
+                const response = await fetch('http://localhost:5000/stockblend/ferramentas');
+                const data = await response.json();
+                console.log(data)
+                return data;
+            } catch (error) {
+                console.error('Erro ao buscar dados da API:', error);
+            }
+        }
+
+        // Função para criar e exibir os cards na página
+        async function createCards() {
+            const apiData = await fetchApiData();
+
+            const cardsContainer = document.getElementById('cardsContainer');
+
+            apiData.forEach(item => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+
+                const title = document.createElement('h3');
+                title.textContent = item.design;
+
+                const image = document.createElement('img');
+                image.src = item.imagem+item.ref+'.jpg?raw=true';
+                image.alt = item.ref;
+
+                const id = document.createElement('p');
+                id.textContent = `ID: ${item.ref}`;
+                
+                const pv = document.createElement('h2');
+                pv.textContent = item.pv1+ 'AKZ';
+
+                card.appendChild(title);
+                card.appendChild(image);
+                card.appendChild(id);                
+                card.appendChild(pv);
+
+
+                cardsContainer.appendChild(card);
+            });
+        }
+
+        // Chama a função para criar os cards quando a página carrega
+        window.onload = createCards;
+    </script>
+</body>
+</html>

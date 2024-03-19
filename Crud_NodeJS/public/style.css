@@ -1,0 +1,283 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tabela{
+    display: grid;
+    justify-content:  center;
+  
+    margin: 20px;
+     
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  th, td {
+    text-align: left;
+    padding: 16px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.247) ;
+  }
+  .tb_tb{
+    text-align: center;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+
+  /* Set a style for all buttons */
+ button ~ {
+    background-color: #046daa;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    font-size: 14pt;
+    
+  }
+  
+  button:hover {
+    opacity:1;
+  }
+
+  .top_barr{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+ 
+  }
+  .top_barr >button{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    font-size: 15pt;
+    background-color: #046daa;
+    border:none ;
+    border-radius: 25px;
+    color: #ffff;
+  }
+  .top_barr  button:hover {
+    opacity:5;
+    cursor: pointer;
+  }
+  .search_barr{
+    display: flex;
+  }
+  .search_barr input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+     
+    border: none;
+  }
+
+  .search_barr button{
+  padding: 10px;
+  background: #ddd;
+  border: none;
+  cursor: pointer;
+  }
+
+  .btn_editar , .btn_delete{
+        background-color: #046daa;
+    color: white;
+    padding: 14px 10px;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    opacity: 0.9;
+    text-align: center;
+  }
+  /* Float cancel and delete buttons and add an equal width */
+  .cancelbtn, .deletebtn {
+    float: left;
+    width: 50%;
+    
+  }
+  
+  /* Add a color to the cancel button */
+  .cancelbtn {
+    background-color: #ccc;
+    color: black;
+  }
+  
+  /* Add a color to the delete button */
+  .btn_delete {
+    background-color: #f44336;
+  }
+  
+  /* Add padding and center-align text to the container */
+  .container {
+    padding: 16px;
+    text-align: center;
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 100%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* Style the horizontal ruler */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+   
+  /* The Modal Close Button (x) */
+  .close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #f44336;
+    cursor: pointer;
+  }
+  
+  /* Clear floats */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+
+/* Full-width input fields */
+.container_editar{
+  display: grid;
+  
+}
+.container_editar input[type=text], input[type=number] {
+    
+    padding: 15px;
+    margin: 5px 0 22px 0;
+     
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  /* Add a background color when the inputs get focus */
+ .container_editar input[type=text]:focus, input[type=number]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+
+  /* The Modal (background) */
+.modal_editar {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content-editar {
+    display: grid;
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; 
+    padding: 20px;
+    /* Could be more or less, depending on screen size */
+  }
+  /* Set a style for all buttons */
+  .modal-content-editar button {
+    background-color: #046daa;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .modar_editar button:hover {
+    opacity:1;
+  }
+  
+  /* Extra styles for the cancel button */
+  .modal-content-editar .cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+  }
+  
+  /* Float cancel and signup buttons and add an equal width */
+  .modal-content-editar .cancelbtn, .signupbtn {
+    float: left;
+    
+  }
+  
+  /* Add padding to container elements */
+  .modal-content-editar .container {
+    padding: 16px;
+  }
+
+
+  .alert {
+    position: absolute;
+    display: none;
+    padding: 20px;
+   background-color: #16ff0ead;
+    color: white;
+  }
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
+
+  /* Change styles for cancel button and delete button on extra small screens */
+  @media screen and (max-width: 300px) {
+    .cancelbtn, .deletebtn {
+       width: 100%;
+    }
+  }

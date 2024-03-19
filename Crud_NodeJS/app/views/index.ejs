@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Home - CRUD</title>
+</head>
+<body> 
+    <div class="top_barr">
+      <button onclick="criar()">Add produto + </button>
+      <div class="search_barr">
+         <input type="text" placeholder="Search.." name="search" id="myinput" onkeyup="filtrar()">
+         <button type="submit"><i class="material-icons"  >search</i></button>
+
+      </div>
+     
+    </div> 
+    
+<div class="tabela">
+    <table id="mytb">
+  <tr>
+    <th>Referência</th>
+    <th>Descrição</th>
+    <th>Preço</th>
+    <th>Acções</th>
+  </tr>
+  <%  for(i =0; i< produtos.length; i++) {%>
+  <tr>
+    <td><%= produtos[i].ref %></td>
+    <td><%=  produtos[i].design %></td>
+    <td><%=  Intl.NumberFormat('pt-AO', { style: 'currency', currency: 'AKZ' }).format(produtos[i].preco);
+         %></td>
+    <td class="tb_tb"> <button id="btn_editar" class="btn_editar" onclick="editar('<%= produtos[i].id %>','<%= produtos[i].ref %>','<%= produtos[i].design %>', '<%= produtos[i].preco %>')"><i class="material-icons">border_color</i> </button>
+    <button id="btn_delete"  class="btn_delete" onclick="apagar('<%= produtos[i].id %>')"><i class="material-icons" >delete_forever</i> </button> 
+    </td>
+   
+  </tr>
+  <% } %>
+  
+
+</table>
+</div>
+
+
+  
+
+
+  
+
+
+<script src="./main.js"></script>
+</body>
+</html>

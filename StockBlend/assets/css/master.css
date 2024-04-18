@@ -1,5 +1,6 @@
  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
  @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Rubik:wght@300&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -113,6 +114,10 @@ article{
     color: #5ed1ff;
 }
 
+.card:hover{
+    box-shadow: 1px 5px 10px 0.5px  #9999;
+    transition: 1.5s
+}
 
 
 /* Style the tab */
@@ -121,11 +126,16 @@ aside{
     justify-content: center;
 }
 .casodeuso{
-    height: 30rem ;
+     height: auto;
     width: 70%;
     display: block;
     justify-content: center;
+     
     
+}
+.tabcontent{
+   
+    height: auto
 }
 .tab {
   overflow: hidden;
@@ -163,8 +173,54 @@ aside{
   border-top: none;
 }
 .texto_tab{
-    background-color: red;
-    height: 20rem;
+    background-color: #282c34;
+    color: aliceblue
+   
 }
+footer{
+    margin-top:20px;
+    background: #9999;
+}
+.autor{
+    
+    padding: 20px;
+    
+    position: relative;
+    text-align: center;
+}
+
+/* Estilos para realce de sintaxe estilo VSCode */
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            padding: 0.5em;
+            background-color: #282c34;
+            color: #abb2bf;
+            border-radius: 5px;
+            display: block;
+            overflow-x: auto;
+        }
+
+        .keyword {
+            color: #569cd6;
+        }
+
+        .string {
+            color: #ce9178;
+        }
+
+        .number {
+            color: #b5cea8;
+        }
+
+        .comment {
+            color: #6a9955;
+            font-style: italic;
+        }
+
+        .punctuation {
+            color: #d4d4d4;
+        }
 
 

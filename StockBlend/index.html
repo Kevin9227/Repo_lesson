@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/master.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+
     <script src="assets/js/main.js"></script>
     <title>StockBlend</title>
 </head>
@@ -28,7 +31,7 @@
             <div class="titulo">
                 <h2>A API de produtos diversos que você procurava.</h2>
                 <div class="texto_descricao">
-                    <p>A nossa API de produtos diversos oferece uma ampla variedade de informações sobre remédios, ferramentas, alimentos e bebidas. Com esta API, os desenvolvedores têm acesso a dados detalhados, como descrições, preços, ingredientes, instruções de uso e muito mais.
+                    <p>A nossa API de produtos diversos oferece uma ampla variedade de informações sobre remédios, ferramentas, alimentos , bebidas, materiais informáticos e acessorios. Com esta API, os desenvolvedores têm acesso a dados detalhados, como descrições, preços, ingredientes, instruções de uso e muito mais.
                         <br><br>
                         Essa API é perfeita para aplicativos de compras online, sistemas de gerenciamento de estoque ou qualquer plataforma que necessite de informações atualizadas e confiáveis sobre produtos diversos. Simplifique o processo de busca e exibição de produtos para os usuários com a nossa API de produtos diversos!"
                     </p>
@@ -64,8 +67,12 @@
                     <span class="material-symbols-outlined">
                         lunch_dining
                     </span>
+                    <span class="material-symbols-outlined">
+                        liquor
+                    </span>
                 </div>
-                <h3>Alimentos</h3>
+                 
+                <h3>Bebidas e Alimentos</h3>
                 <p>500+</p>
                 <ul>
                     <li>dados nutricionais</li>
@@ -98,10 +105,10 @@
             <div class="card card4">
                 <div class="icone">
                     <span class="material-symbols-outlined">
-                        liquor
-                    </span>
+computer
+</span>
                 </div>
-                <h3>Bebidas</h3>
+                <h3>Informática</h3>
                 <p>250+</p>
                 <ul>
                     <li>dados nutricionais</li>
@@ -123,24 +130,147 @@
             </div>
 
             <div class="tab">
-                <button class="tablinks" onclick="openCity(event, 'London')" onfocus="activo(event,'London')">London</button>
-                <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                <button class="tablinks" onclick="openCity(event, 'London')" onfocus="activo(event,'London')">Javascript</button>
+                <button class="tablinks" onclick="openCity(event, 'Paris')">Dart/Flutter</button>
+                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Python</button>
+                 <button class="tablinks" onclick="openCity(event, 'Go')">Go</button>
             </div>
             <div class="texto_tab">
                 <div id="London" class="tabcontent ac">
                     <h3>London</h3>
-                    <p>London is the capital city of England.</p>
+                  <pre><code class="language-javascript">
+// Importando o módulo 'axios' para fazer requisições HTTP
+const axios = require('axios');
+
+// URL base da API
+const API_URL = 'https://api.stockbland.com';
+
+// Função para obter todos os produtos
+async function getAllProducts() {
+    try {
+        const response = await axios.get(`${API_URL}/products`);
+        return response.data;
+    } catch (error) {
+        console.error('Erro ao obter produtos:', error);
+    }
+}
+
+// Exemplo de utilização da função
+getAllProducts().then(products => {
+    console.log('Produtos:', products);
+});
+
+</code></pre>
+
+
+       <h3>Código CSS:</h3>        
+               <pre><code class="language-Go">
+package main
+
+import (
+	"fmt"
+	"io/ioutil"
+	"net/http"
+)
+
+const apiURL = "https://api.stockbland.com"
+
+func getAllProducts() ([]byte, error) {
+	response, err := http.Get(apiURL + "/products")
+	if err != nil {
+		return nil, err
+	}
+	defer response.Body.Close()
+
+	return ioutil.ReadAll(response.Body)
+}
+
+func main() {
+	products, err := getAllProducts()
+	if err != nil {
+		fmt.Println("Erro ao obter produtos:", err)
+		return
+	}
+	fmt.Println("Produtos:", string(products))
+}
+
+</code></pre>
                 </div>
 
+               <div id="Go" class="tabcontent">
+                   <h3>Código Go:</h3>
+<pre><code class="lang-Go">
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+const apiUrl = 'https://api.stockbland.com';
+
+Future<List<dynamic>> getAllProducts() async {
+  try {
+    final response = await http.get(Uri.parse('$apiUrl/products'));
+    return json.decode(response.body);
+  } catch (e) {
+    print('Erro ao obter produtos: $e');
+    return [];
+  }
+}
+
+void main() async {
+  final products = await getAllProducts();
+  print('Produtos: $products');
+}
+
+
+</code></pre>
+                </div>
                 <div id="Paris" class="tabcontent">
-                    <h3>Paris</h3>
-                    <p>Paris is the capital of France.</p>
+                   <h3>Código PYTHON:</h3>
+<pre><code class="lang-Dart">
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+const apiUrl = 'https://api.stockbland.com';
+
+Future<List<dynamic>> getAllProducts() async {
+  try {
+    final response = await http.get(Uri.parse('$apiUrl/products'));
+    return json.decode(response.body);
+  } catch (e) {
+    print('Erro ao obter produtos: $e');
+    return [];
+  }
+}
+
+void main() async {
+  final products = await getAllProducts();
+  print('Produtos: $products');
+}
+
+
+</code></pre>
                 </div>
 
                 <div id="Tokyo" class="tabcontent">
-                    <h3>Tokyo</h3>
-                    <p>Tokyo is the capital of Japan.</p>
+<h3>Código PYTHON:</h3>
+<pre><code class="lang-python">
+import requests
+
+# URL base da API
+API_URL = 'https://api.stockbland.com'
+
+# Função para obter todos os produtos
+def get_all_products():
+    try:
+        response = requests.get(f'{API_URL}/products')
+        return response.json()
+    except Exception as e:
+        print('Erro ao obter produtos:', e)
+
+# Exemplo de utilização da função
+products = get_all_products()
+print('Produtos:', products)
+
+</code></pre>
                 </div>
             </div>
         </div>
@@ -148,8 +278,8 @@
 
     <footer>
         <div class="autor">
-            <h3></h3>
-            <p></p>
+           <h3>copyright&#64; 2024</h3>
+            <p>Joaquim de Campos</p>
         </div>
     </footer>
 </body>

@@ -5,14 +5,19 @@
     margin: 0;
     padding: 0;
     font-family: Poppins;
-    
+     scroll-behavior: smooth;
    
 }
+ 
 
 header{
     margin: 0;
     padding: 20px;
     background: #f5f7fa;
+    z-index: 10;
+    width: 100%;
+    transition-delay: 5s
+
 }
 nav{
     display: flex;
@@ -45,18 +50,26 @@ section{
     
 }
 .descritivo{
+    position: relative;
     margin: 50px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     justify-items: center;
+     
+     
+     
 }
 .titulo {
     margin: 35px;
     flex-basis: 1;
+     
     
 }
 .titulo h2{
-    font-size: 50pt;
+    font-size: 30pt;
+    margin: 100px 0;
+    padding: 20px;
+    text-align: center
 }
 .texto_descricao{
     padding-top: 30px;
@@ -67,6 +80,7 @@ article{
     display: grid;
     justify-content: center;
     background:#fff;
+    
 
 }
 .setorcard{
@@ -76,7 +90,7 @@ article{
 }
 .card{
     position: relative;
-    width: 200px;
+    width: 220px;
     height: 450px;
     background: #ffff;
     padding: 30px;
@@ -124,13 +138,45 @@ article{
 aside{
     display: flex;
     justify-content: center;
+    transition: 1.4s;
+    scroll-behavior: smooth;
 }
 .casodeuso{
-     height: auto;
-    width: 70%;
+    height: auto;
+    width: 80%;
     display: block;
     justify-content: center;
+    sscroll-behavior: smooth;
      
+     
+    
+}
+.img_about{
+    
+    text-align: center;
+    margin: 20px;
+    padding: 20px
+}
+.sobrenos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    
+}
+.sobrenos h2{
+    font-size: 30pt;
+    margin: 100px 0;
+    padding: 20px;
+    text-align: center
+}
+.descrisobre{
+    
+      width: 850px;
+    padding: 20px;
+    text-align: justify;
+    margin: 50px 0;
+    padding: 20px;
     
 }
 .tabcontent{

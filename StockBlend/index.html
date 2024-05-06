@@ -12,7 +12,7 @@
     <title>StockBlend</title>
 </head>
 
-<body>
+<body id="mybody" >
     <header id="red">
         <nav>
             <div class="logo">
@@ -20,14 +20,15 @@
                 <h3>API StokBlend</h3>
             </div>
             <ul>
-                <li><a href="">VISÃO GERAL</a></li>
+                <li><a href="#vgeral">VISÃO GERAL</a></li>
+                 <li><a href="#cuso">CASOS DE USO</a></li>
                 <li><a href="">DOCUMENTAÇÃO</a></li>
-                <li><a href="">SOBRE</a></li>
+                <li><a href="#sobre">SOBRE</a></li>
             </ul>
         </nav>
     </header>
     <section>
-        <div class="descritivo">
+        <div class="descritivo" id="vgeral">
             <div class="titulo">
                 <h2>A API de produtos diversos que você procurava.</h2>
                 <div class="texto_descricao">
@@ -75,12 +76,12 @@
                 <h3>Bebidas e Alimentos</h3>
                 <p>500+</p>
                 <ul>
-                    <li>dados nutricionais</li>
-                    <li>dados de preços</li>
-                    <li>dicas de culinária</li>
-                    <li>substituições</li>
-                    <li>conversões</li>
-                    <li>mapeamento para produtos</li>
+                    <li>Fasts Foods</li>
+                    <li>Bebidas</li>
+                    <li>Pratos</li>
+                    <li>Legumes</li>
+                    <li>Frutas</li>
+                    <li>Receitas</li>
 
                 </ul>
             </div>
@@ -93,12 +94,13 @@
                 <h3>Ferramentas</h3>
                 <p>16K+</p>
                 <ul>
-                    <li>dados nutricionais</li>
-                    <li>dados de preços</li>
-                    <li>dicas de culinária</li>
-                    <li>substituições</li>
-                    <li>conversões</li>
-                    <li>mapeamento para produtos</li>
+                    <li>Materias de construção</li>
+                    <li>Maquinas de Construção</li>
+                    <li>Maquinas p/ Jardim</li>
+                    <li>Maquinas Pesadas</li>
+                    <li>Ferramentas Canalizador</li>
+                    <li>Iluminação Exterior</li>
+                    <li>E muitos outros produtos</li>
 
                 </ul>
             </div>
@@ -109,34 +111,38 @@ computer
 </span>
                 </div>
                 <h3>Informática</h3>
-                <p>250+</p>
+                <p>250k+</p>
                 <ul>
-                    <li>dados nutricionais</li>
-                    <li>dados de preços</li>
-                    <li>dicas de culinária</li>
-                    <li>substituições</li>
-                    <li>conversões</li>
-                    <li>mapeamento para produtos</li>
+                    <li>Hardwares</li>
+                    <li>Softwares</li>
+                    <li>Impressoras</li>
+                    <li>Cabos de redes</li>
+                    <li>Computadores</li>
+                    <li>Acessorios</li>
 
                 </ul>
             </div>
 
         </div>
     </article>
+    
     <aside>
-        <div class="casodeuso">
-            <div class="titulo">
+        <div class="casodeuso" id="cuso">
+            <div class="titulo" >
                 <h2>Casos de uso</h2>
             </div>
 
             <div class="tab">
-                <button class="tablinks" onclick="openCity(event, 'London')" onfocus="activo(event,'London')">Javascript</button>
-                <button class="tablinks" onclick="openCity(event, 'Paris')">Dart/Flutter</button>
-                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Python</button>
+                <button class="tablinks" onclick="openCity(event, 'Javascript')" onload="activo(event,'Javascript')">Javascript</button>
+                <button class="tablinks" onclick="openCity(event, 'dart')">Dart/Flutter</button>
+                <button class="tablinks" onclick="openCity(event, 'python')">Python</button>
                  <button class="tablinks" onclick="openCity(event, 'Go')">Go</button>
+                 <button class="tablinks" onclick="openCity(event, 'C#')">C#</button>
+                 <button class="tablinks" onclick="openCity(event, 'php')">Php</button>
+                 <button class="tablinks" onclick="openCity(event, 'java')">Java</button>
             </div>
             <div class="texto_tab">
-                <div id="London" class="tabcontent ac">
+                <div id="Javascript" class="tabcontent ac">
                     <h3>London</h3>
                   <pre><code class="language-javascript">
 // Importando o módulo 'axios' para fazer requisições HTTP
@@ -162,9 +168,39 @@ getAllProducts().then(products => {
 
 </code></pre>
 
+ 
+                </div>
+                <div id="dart" class="tabcontent">
+                   <h3>Código Dart/Flutter:</h3>
+<pre><code class="lang-Dart">
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
-       <h3>Código CSS:</h3>        
-               <pre><code class="language-Go">
+const apiUrl = 'https://api.stockbland.com';
+
+Future&lt;List&lt;dynamic&gt;&gt; getAllProducts() async {
+  try {
+    final response = await http.get(Uri.parse('$apiUrl/products'));
+    return json.decode(response.body);
+  } catch (e) {
+    print('Erro ao obter produtos: $e');
+    return [];
+  }
+}
+
+void main() async {
+  final products = await getAllProducts();
+  print('Produtos: $products');
+}
+
+
+
+</code></pre>
+                </div>
+
+               <div id="Go" class="tabcontent">
+                   <h3>Código Go:</h3>
+<pre><code class="lang-Go">
 package main
 
 import (
@@ -194,66 +230,13 @@ func main() {
 	fmt.Println("Produtos:", string(products))
 }
 
-</code></pre>
-                </div>
-
-               <div id="Go" class="tabcontent">
-                   <h3>Código Go:</h3>
-<pre><code class="lang-Go">
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-
-const apiUrl = 'https://api.stockbland.com';
-
-Future<List<dynamic>> getAllProducts() async {
-  try {
-    final response = await http.get(Uri.parse('$apiUrl/products'));
-    return json.decode(response.body);
-  } catch (e) {
-    print('Erro ao obter produtos: $e');
-    return [];
-  }
-}
-
-void main() async {
-  final products = await getAllProducts();
-  print('Produtos: $products');
-}
-
 
 </code></pre>
                 </div>
-                <div id="Paris" class="tabcontent">
+                <div id="python" class="tabcontent">
                    <h3>Código PYTHON:</h3>
-<pre><code class="lang-Dart">
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-
-const apiUrl = 'https://api.stockbland.com';
-
-Future<List<dynamic>> getAllProducts() async {
-  try {
-    final response = await http.get(Uri.parse('$apiUrl/products'));
-    return json.decode(response.body);
-  } catch (e) {
-    print('Erro ao obter produtos: $e');
-    return [];
-  }
-}
-
-void main() async {
-  final products = await getAllProducts();
-  print('Produtos: $products');
-}
-
-
-</code></pre>
-                </div>
-
-                <div id="Tokyo" class="tabcontent">
-<h3>Código PYTHON:</h3>
-<pre><code class="lang-python">
-import requests
+                   <pre><code> 
+ import requests
 
 # URL base da API
 API_URL = 'https://api.stockbland.com'
@@ -269,13 +252,118 @@ def get_all_products():
 # Exemplo de utilização da função
 products = get_all_products()
 print('Produtos:', products)
+</code></pre>
+                </div>
+
+                <div id="C#" class="tabcontent">
+<h3>Código C#:</h3>
+<pre><code class="lang-c#">
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+namespace StockblandExample
+{
+    class Program
+    {
+        static async Task Main(string[] args)
+        {
+            string apiUrl = "https://api.stockbland.com";
+            HttpClient client = new HttpClient();
+
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync($"{apiUrl}/products");
+                response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+                Console.WriteLine("Produtos: " + responseBody);
+            }
+            catch (HttpRequestException e)
+            {
+                Console.WriteLine($"Erro ao obter produtos: {e.Message}");
+            }
+        }
+    }
+}
+
+
+</code></pre>
+                </div>
+                           <div id="php" class="tabcontent">
+<h3>Código Php:</h3>
+<pre><code class="lang-php">
+&lt;?php
+
+$apiUrl = 'https://api.stockbland.com/products';
+
+try {
+    $response = file_get_contents($apiUrl);
+    $products = json_decode($response, true);
+    echo 'Produtos: ';
+    print_r($products);
+} catch (Exception $e) {
+    echo 'Erro ao obter produtos: ' . $e->getMessage();
+}
+
+?&gt;
+
+
+</code></pre>
+                </div>
+                           <div id="java" class="tabcontent">
+<h3>Código Java:</h3>
+<pre><code class="lang-python">
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+public class Main {
+    public static void main(String[] args) {
+        String apiUrl = "https://api.stockbland.com/products";
+        try {
+            URL url = new URL(apiUrl);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String line;
+            StringBuffer response = new StringBuffer();
+            while ((line = reader.readLine()) != null) {
+                response.append(line);
+            }
+            reader.close();
+            System.out.println("Produtos: " + response.toString());
+        } catch (IOException e) {
+            System.out.println("Erro ao obter produtos: " + e.getMessage());
+        }
+    }
+}
+
 
 </code></pre>
                 </div>
             </div>
         </div>
+        
+      
     </aside>
+  <div class="sobrenos" id="sobre">
+           <h2>About us</h2>
+           <div class="img_about"><img src="assets/img/about.png" alt="Sobre nós" width="550"> </div>
+            <div class="descrisobre">
+               
+                <p>Somos a Stockbland, uma empresa dedicada a fornecer soluções de gerenciamento de estoque para negócios de todos os tamanhos. Nossa missão é simplificar e otimizar o processo de controle de estoque, fornecendo ferramentas poderosas e fáceis de usar.<br><br>
 
+Fundada em [ano de fundação], nossa equipe é composta por especialistas em logística, desenvolvedores de software e profissionais de negócios, todos trabalhando juntos para oferecer a melhor experiência possível aos nossos clientes. <br><br>
+
+Acreditamos que um controle eficaz de estoque é essencial para o sucesso de qualquer empresa, e é por isso que nos esforçamos para fornecer uma plataforma confiável e inovadora que atenda às necessidades específicas de cada cliente.
+
+Seja você um pequeno varejista local ou uma grande empresa internacional, a Stockbland está aqui para ajudar a simplificar suas operações de estoque e impulsionar o crescimento do seu negócio. Junte-se a nós e descubra como podemos ajudá-lo a alcançar seus objetivos.
+</p>
+               
+            </div>
+        </div>
     <footer>
         <div class="autor">
            <h3>copyright&#64; 2024</h3>

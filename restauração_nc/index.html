@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nc Restauração</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    
+ 
+<div class="cont">
+    
+    
+   <div class="tab">
+   <div class="btn_tab">
+   <ul>
+       <li><button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen"><span class="material-symbols-outlined">
+home
+</span></button></li>
+       <li><button class="tablinks" onclick="openCity(event, 'Paris')"><span class="material-symbols-outlined">
+restaurant_menu
+</span></button></li>
+       <li><button class="tablinks" onclick="openCity(event, 'Tokyo')"><span class="material-symbols-outlined">
+skillet_cooktop
+</span></button></li>
+   </ul>
+  
+  
+  
+  </div>
+</div>
+<div id="London" class="tabcontent">
+ <section id="menu">
+       <div class="img"><img src="https://novoscanais.com/images/logo/Logotipo_NovosCanais-min.png" alt=""></div>
+        <h1>BEM VINDO AO </h1>
+        <h1>NC RETAURAÇÃO</h1>
+    </section>
+</div>
+
+<div id="Paris" class="tabcontent">
+   <section id="cart">
+        <h2>Sector das Mesas</h2>
+        <ul id="cart-items">
+            <li ><a href="#"  onclick="openCity(event, 'mesas')"><span>Bar  </span></a></li>
+            <li><a href="#"><span>Esplanada  </span></a></li>
+            <li><a href="#"><span>Fumadores</span></a></li>
+            <li><a href="#"><span>Não fumadores </span></a></li>
+            <li><a href="#"><span>Salão</span></a></li>
+        </ul>
+        <div class="cart-summary">
+            <p>Your Subtotal: $80.00</p>
+            <label for="promo-code">Promo Code:</label>
+            <input type="text" id="promo-code">
+            <button onclick="applyPromo()">Apply</button>
+            <button onclick="confirmOrder()">Confirm Order</button>
+        </div>
+    </section>
+</div>
+
+<div id="Tokyo" class="tabcontent">
+   <section id="welcome">
+       <h2>Monitor da cozinha</h2>
+        <!-- Sticky Model Container -->
+<div class="card sticky">
+           <div class="icone">
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam culpa laudantium vero ipsum aperiam velit quaerat fugiat est alias cumque, explicabo ratione quasi nulla deleniti ipsam quae, dolorem excepturi porro!</p>
+           </div>
+  <h2>Mesa 1</h2>
+  <p>Status: Livre</p>
+  <p>Capacidade: 4 pessoas</p>
+  <p>Localização: Perto da janela</p>
+  <ul>
+      <li><button><span class="material-symbols-outlined">
+check_circle
+</span></button></li>
+      <li><button><span class="material-symbols-outlined">
+cancel
+</span></button></li>
+  </ul>
+  
+    
+</div>
+
+ 
+    </section>
+</div>
+    <div id="mesas" class="tabcontent">
+   <section id="welcomex">
+        <h1>Mesas no Bar</h1>
+       <div class="mesas_bar">
+           <div class="card">
+           <div class="icone mreserva">
+               <span  style="font-size: 70pt" class="material-symbols-outlined" >
+table_bar
+</span>
+           </div>
+  <h2>Mesa 1</h2>
+  <p>Status: Livre</p>
+  <p>Capacidade: 4 pessoas</p>
+  <p>Localização: Perto da janela</p>
+  <a href="#">Ver detalhes</a>
+</div>
+       <div class="card">
+           <div class="icone mocupada">
+               <span  style="font-size: 70pt" class="material-symbols-outlined" >
+table_bar
+</span>
+           </div>
+  <h2>Mesa 1</h2>
+  <p>Status: Livre</p>
+  <p>Capacidade: 4 pessoas</p>
+  <p>Localização: Perto da janela</p>
+  <a href="#">Ver detalhes</a>
+</div>
+       <div class="card">
+           <div class="icone mlivre">
+               <span  style="font-size: 70pt" class="material-symbols-outlined" >
+table_bar
+</span>
+           </div>
+  <h2>Mesa 1</h2>
+  <p>Status: Livre</p>
+  <p>Capacidade: 4 pessoas</p>
+  <p>Localização: Perto da janela</p>
+  <a href="#">Ver detalhes</a>
+</div>
+       <div class="card">
+           <div class="icone">
+               <span  style="font-size: 70pt" class="material-symbols-outlined" >
+table_bar
+</span>
+           </div>
+  <h2>Mesa 1</h2>
+  <p>Status: Livre</p>
+  <p>Capacidade: 4 pessoas</p>
+  <p>Localização: Perto da janela</p>
+   <a href="#" id="myBtn">Ver detalhes</a>
+</div>
+      
+      
+      
+       <div class="card">
+           <div class="icone">
+               <span  style="font-size: 70pt" class="material-symbols-outlined" >
+table_bar
+</span>
+           </div>
+  <h2>Mesa 1</h2>
+  <p>Status: Livre</p>
+  <p>Capacidade: 4 pessoas</p>
+  <p>Localização: Perto da janela</p>
+  <a href="#">Ver detalhes</a>
+</div>
+       </div>
+    </section>
+</div>
+   </div>
+   
+   
+ 
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="mesas_detalhes">
+        
+    
+    <div class="card detalhes">
+           <div class="icone">
+               <span  style="font-size: 70pt" class="material-symbols-outlined" >
+table_bar
+</span>
+           </div>
+  <h2>Mesa 1</h2>
+  <p>Status: Livre</p>
+  <p>Capacidade: 4 pessoas</p>
+  <p>Localização: Perto da janela</p>
+  <ul>
+      <li><a href="#">Contas</a></li>
+      <li><a href="#">Apagar Conta</a></li>
+      <li><a href="#">Consumo</a></li>
+      <li><a href="#">Atendimento</a></li>
+  </ul>
+   
+</div>
+ 
+ <div class="contas">
+     <ul>
+         <li></li>
+         <li></li>
+     </ul>
+ </div>
+ </div>
+  </div>
+
+</div>
+   
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="moeda"></h1>
+    
+    <script  >
+    var proxy ="https://www.bancobai.ao";
+    var url = "https://www.bancobai.ao/pt/cambios-e-valores";
+        scraper = function(url){
+            let x = new XMLHttpRequest();
+            x.onreadystatechange = function(){
+                if(this.readyState==4 && this.status ==200){
+                    let res = this.responseText;
+                   parser = new DOMParser();
+                    console.log(res)
+				xmlDoc = parser.parseFromString(res,"text/html");
+				let regex = /<div class="coin-val">USD<\/div>\s*<\/div>\s*<\/td>\s*<td>([\d,\.]+)<\/td>/gm;
+				
+				document.body.innerHTML = "<h1>"+res.match(regex)+"<br>"+"</h1><br>";
+                }
+            }
+            x.open("GET",url);
+            x.send();
+        }
+        scraper(url);
+    </script>
+</body>
+</html>

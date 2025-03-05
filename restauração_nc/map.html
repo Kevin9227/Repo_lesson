@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-map {
+  width: 50%;
+  height: 300px;
+  outline: 1px solid red; //для наглядности
+}
+    </style>
+<body>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=pt_pt" type="text/javascript"></script>
+<section class="contacts">
+  <ul>
+    <li id="korolev" class="contact-map"></li>
+    <li class="contact-map"></li>
+    <li class="contact-map"></li>
+  </ul>
+</section>
+
+<script>
+    var korolev_map, myPlacemark;
+
+ymaps.ready(function() {
+  korolev_map = new ymaps.Map("loanda", {
+    center: [55.75399400, 37.62209300],
+    zoom: 16
+
+  myPlacemark = new ymaps.Placemark([55.75399400,37.62209300], {}, {
+    preset: 'twirl#redIcon'
+  });
+
+  korolev_map.geoObjects.add(myPlacemark);
+  korolev_map.controls.add(new ymaps.control.ZoomControl());
+  korolev_map.behaviors.disable('scrollZoom'); 
+});
+    </script>
+</body>
+</html>

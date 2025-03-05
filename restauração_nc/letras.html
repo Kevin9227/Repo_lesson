@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Texto Lateral</title>
+  <style>
+      .corpo{
+          height: 100px;
+          background: red;
+           
+      }
+      .corpo marquee{
+          height: 100%;
+           
+          
+      }
+    /* Estilo do container */
+    .container {
+      width: 100%;
+      height: 100px;  /* Definindo altura do container */
+      position: relative;
+      overflow: hidden; /* Esconde o texto que ultrapassa os limites */
+    }
+
+    /* Estilo do texto que se move */
+    .texto {
+      position: absolute;
+      font-size: 30px;
+      white-space: nowrap; /* Impede que o texto quebre */
+      animation: mover-lateral 5s infinite linear;
+    }
+
+    /* Animação para mover o texto de um lado para o outro */
+    @keyframes mover-lateral {
+      0% {
+        left: -100%; /* Começa fora da tela à esquerda */
+      }
+      50% {
+        left: 50%; /* Meio da tela */
+      }
+      100% {
+        left: 100%; /* Vai para fora da tela à direita */
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="corpo">
+    <marquee behavior="scroll" direction="down" scrollamount="5">
+     Lorem ipsum dolor sit amet 
+ </marquee>
+  <marquee behavior="scroll" direction="up" scrollamount="5">
+     Lorem ipsum dolor sit amet 
+ </marquee>
+</div>
+ 
+ <marquee behavior="scroll" direction="right" scrollamount="20">
+     Lorem ipsum dolor sit amet 
+ </marquee>
+  <div class="container">
+    <div class="texto">Texto movendo-se da esquerda para a direita!</div>
+  </div>
+</body>
+</html>

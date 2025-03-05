@@ -1,32 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #800080; /* Roxo */
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        .project {
+            margin-bottom: 20px;
+            border: 1px solid #800080; /* Roxo */
+            padding: 15px;
+            border-radius: 5px;
+        }
+        a {
+            color: #800080; /* Roxo */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1 id="moeda"></h1>
-    
-    <script  >
-    var proxy ="https://www.bancobai.ao";
-    var url = "https://www.bancobai.ao/pt/cambios-e-valores";
-        scraper = function(url){
-            let x = new XMLHttpRequest();
-            x.onreadystatechange = function(){
-                if(this.readyState==4 && this.status ==200){
-                    let res = this.responseText;
-                   parser = new DOMParser();
-                    console.log(res)
-				xmlDoc = parser.parseFromString(res,"text/html");
-				let regex = /<div class="coin-val">USD<\/div>\s*<\/div>\s*<\/td>\s*<td>([\d,\.]+)<\/td>/gm;
-				
-				document.body.innerHTML = "<h1>"+res.match(regex)+"<br>"+"</h1><br>";
-                }
-            }
-            x.open("GET",url);
-            x.send();
-        }
-        scraper(url);
-    </script>
+    <div class="container">
+        <h1>Bem-vindo ao Meu Portfólio</h1>
+        <h2>Sobre Mim</h2>
+        <p>Sou um desenvolvedor de software apaixonado por criar soluções inovadoras e eficientes. Tenho experiência em diversas tecnologias e adoro aprender coisas novas.</p>
+        
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Desenvolvimento Web (HTML, CSS, JavaScript)</li>
+            <li>Desenvolvimento de Aplicações (Python, Java)</li>
+            <li>Bancos de Dados (SQL, MongoDB)</li>
+            <li>Versionamento de Código (Git)</li>
+            <li>Frameworks (React, Node.js)</li>
+        </ul>
+        
+        <h2>Meus Projetos</h2>
+        <div class="project">
+            <h3>Projeto 1: Nome do Projeto</h3>
+            <p>Descrição breve do projeto, tecnologias utilizadas e o que aprendi.</p>
+            <a href="link-para-o-projeto" target="_blank">Ver Projeto</a>
+        </div>
+        <div class="project">
+            <h3>Projeto 2: Nome do Projeto</h3>
+            <p>Descrição breve do projeto, tecnologias utilizadas e o que aprendi.</p>
+            <a href="link-para-o-projeto" target="_blank">Ver Projeto</a>
+        </div>
+        <div class="project">
+            <h3>Projeto 3: Nome do Projeto</h3>
+            <p>Descrição breve do projeto, tecnologias utilizadas e o que aprendi.</p>
+            <a href="link-para-o-projeto" target="_blank">Ver Projeto</a>
+        </div>
+
+        <footer>
+            <p>Contato: <a href="mailto:seuemail@example.com">seuemail@example.com</a></p>
+            <p>&copy; 2024 Meu Portfólio</p>
+        </footer>
+    </div>
 </body>
 </html>

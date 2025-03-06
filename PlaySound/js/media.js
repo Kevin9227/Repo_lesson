@@ -9,16 +9,14 @@ let inicio = document.getElementById("inicio")
 let final = document.getElementById("final")
 let lista = document.querySelector(".lista")
 let gif = document.querySelector("img")
-
-
 let audio = document.getElementById("my-audio");
 let playPauseIcon = document.getElementById("play-pause-icon");
 let audioRange = document.getElementById("audio-range");
 let titulo = document.getElementById("titulo");
 let artista = document.getElementById("artista");
 let albumArt = document.getElementById("album-art");
-let musicFiles = [];
-let currentMusicIndex = 0;
+let playlist = [];  // Array para armazenar as músicas na playlist
+let currentIndex = 0;  // Índice da música atual
 
 // Função para carregar músicas
 function loadMusic(event) {
@@ -27,7 +25,28 @@ function loadMusic(event) {
         playMusic(0); // Começar com a primeira música
     }
 }
+ // Função para adicionar músicas à playlist
+ function adicionarMusica() {
+    const files = document.getElementById("myFile").files;
 
+    for (let file of files) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            // Criar uma nova música para a playlist
+            const music = {
+                title: file.name,
+                artist: 'Desconhecido', // Se quiser, você pode usar a biblioteca jsmediatags para buscar o artista
+                albumArt: 'https://i1.sndcdn.com/artworks-AlkCxNKtoNyprK4d-KMCozg-t500x500.jpg', // A capa do álbum (use a que preferir)
+                src: e.target.result  // Caminho para o arquivo de áudio
+            };
+            playlist.push(music);
+            atualizarPlaylist();
+        };
+
+        reader.readAsDataURL(file); // Lê o arquivo e converte em URL
+    }
+}
 // Função para tocar música
 function playMusic(index) {
     const music = musicFiles[index];
@@ -46,7 +65,7 @@ function updateMusicDetails(music) {
     const musicName = music.name.split('.')[0]; // Nome da música sem extensão
     titulo.textContent = musicName;
     artista.textContent = "Artista Desconhecido"; // Você pode adicionar um campo para artista, se necessário
-    albumArt.src = "https://i1.sndcdn.com/artworks-AlkCxNKtoNyprK4d-KMCozg-t500x500.jpg"; // Defina uma capa padrão ou extraia do arquivo se possível
+    albumArt.src = "https://cdn-icons-png.flaticon.com/512/3844/3844724.png"; // Defina uma capa padrão ou extraia do arquivo se possível
 }
 
 // Função de play/pause
@@ -62,17 +81,17 @@ function togglePlayPause() {
 
 // Função para avançar a música
 function nextAudio() {
-    if (currentMusicIndex < musicFiles.length - 1) {
-        currentMusicIndex++;
-        playMusic(currentMusicIndex);
+    if (currentIndex < musicFiles.length - 1) {
+        currentIndex++;
+        playMusic(currentIndex);
     }
 }
 
 // Função para retroceder a música
 function prevAudio() {
-    if (currentMusicIndex > 0) {
-        currentMusicIndex--;
-        playMusic(currentMusicIndex);
+    if (currentIndex > 0) {
+        currentIndex--;
+        playMusic(currentIndex);
     }
 }
 
@@ -83,7 +102,7 @@ audio.ontimeupdate = function () {
     if (!isNaN(duration)) {
         let value = (currentTime / duration) * 100;
         audioRange.value = value;
-
+        
         // Atualizar tempo
         document.getElementById("inicio").textContent = formatTime(currentTime);
         document.getElementById("final").textContent = formatTime(duration);
@@ -104,9 +123,7 @@ function seekAudio() {
 }
 
 function handleFiles(nf) {
-
     if (nf = 0) {
-
         const fileList = this.files;
         console.log(fileList)
         titulo.innerHTML = fileList[0].name
@@ -161,26 +178,4 @@ function recuar(back) {
 }
  */
 
-const getSongDetails = async (trackId) => {
-    const url = `https://api.soundcloud.com/tracks/${trackId}?client_id=SEU_CLIENT_ID`;
-
-    const response = await fetch(url);
-    const data = await response.json();
-
-    const titulo = data.title;
-    const artista = data.user.username;
-    const albumImg = data.artwork_url;
-
-    // Exibe os dados
-    console.log(`Título: ${titulo}`);
-    console.log(`Artista: ${artista}`);
-    console.log(`Capa do Álbum: ${albumImg}`);
-
-    // Aqui você pode atualizar o HTML
-    document.getElementById('titulo').innerText = titulo;
-    document.getElementById('album-art').src = albumImg ? albumImg : 'default-image.jpg';
-    document.getElementById('artista').innerText = artista;
-};
-
-// Exemplo de chamada com um ID de música (você precisa de um ID válido de uma música)
-//getSongDetails(138740465);
+ 

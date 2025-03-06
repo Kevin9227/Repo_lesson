@@ -3,16 +3,28 @@
     padding: 0;
     font-family: Arial, sans-serif;
 }
-
-.grelha {
+body{
     background-color: rgb(50, 36, 45);
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(133, 39, 43)), to(rgb(50, 36, 45)));
     background-image: linear-gradient(to bottom, rgb(133, 39, 43), rgb(50, 36, 45));
-    height: 100vh;
     display: grid;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.grelha {
+    background-color: rgb(50, 36, 45);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(133, 39, 43)), to(rgb(50, 36, 45)));
+    background-image: linear-gradient(to bottom, rgb(133, 39, 43), rgb(50, 36, 45));
+   
+    display: grid;
+  
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .reprodutor {
@@ -22,9 +34,9 @@
     justify-content: center;
     -ms-flex-line-pack: center;
     align-content: center;
-      width: 650px;
+    width: 450px;
     height: 350px;
-   
+
 }
 
 .media {
@@ -99,35 +111,22 @@
 }
 
 .playlist {
-    height: 100%;
-    width: 250px;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    height: 0%;
+    width: 00px;
     display: flex;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
     justify-content: flex-end;
-
 }
 
 .lista {
-
     display: none;
     background: rgba(131, 42, 83, 0.5);
-    -webkit-transition: 0.5s;
     transition: 0.5s;
-
-
 }
 
 .lista1 {
     opacity: 100%;
     display: grid;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
+
     align-items: center;
     overflow-y: scroll;
     background: rgba(131, 42, 83, 0.5);

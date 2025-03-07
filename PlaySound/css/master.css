@@ -8,8 +8,6 @@ body{
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(133, 39, 43)), to(rgb(50, 36, 45)));
     background-image: linear-gradient(to bottom, rgb(133, 39, 43), rgb(50, 36, 45));
     display: grid;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -18,11 +16,7 @@ body{
     background-color: rgb(50, 36, 45);
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(133, 39, 43)), to(rgb(50, 36, 45)));
     background-image: linear-gradient(to bottom, rgb(133, 39, 43), rgb(50, 36, 45));
-   
     display: grid;
-  
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
     align-items: center;
 }
@@ -38,8 +32,7 @@ body{
     height: 350px;
 
 }
-
-.media {
+/* .media {
     background-color: rgb(227, 95, 28);
     background-image: radial-gradient(rgb(229, 105, 13), rgb(224, 71, 61));
     width: 100%;
@@ -49,25 +42,20 @@ body{
     justify-content: center;
     align-items: flex-start;
     flex-direction: row;
-   
 }
+ */
 
 .detalhes {
-    color: #fff;
     text-align: center;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    background: url('../rodagrif.gif') no-repeat  ;
     background-size: cover;
     background-position: center;
-     opacity: 100%;
-    mix-blend-mode: color-burn;
+    opacity: 100%;
     -webkit-transition: 0.5s;
     transition: 0.5s;
     aspect-ratio: 2/2; 
-    -o-object-fit:contain; 
-    
 }
 /*Continuar amanhã*/
 
@@ -82,26 +70,17 @@ body{
     position: relative;
     width: 100%;
     height: 350px;
-    opacity: 100%;
+   
     mix-blend-mode: color-burn;
-    -webkit-transition: 0.5s;
     transition: 0.5s;
     aspect-ratio: 2/2; 
-    -o-object-fit:contain; 
     object-fit:contain;
 }
 
 .somgif{
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-   -webkit-box-align: center;
-   -ms-flex-align: center;
-   align-items: center;;
-  
+    align-items: center;
 }
 .detalhes img {
     border-radius: 50%;
@@ -111,38 +90,34 @@ body{
 }
 
 .playlist {
-    height: 0%;
-    width: 00px;
     display: flex;
-    justify-content: flex-end;
+    justify-content:start;
+    background-color: red;
 }
-
+/* 
 .lista {
     display: none;
     background: rgba(131, 42, 83, 0.5);
     transition: 0.5s;
-}
+    
+} */
 
 .lista1 {
     opacity: 100%;
     display: grid;
-
     align-items: center;
     overflow-y: scroll;
     background: rgba(131, 42, 83, 0.5);
-    width: 30%;
-    height: 50%;
+    width: 200px;
+    height:350px;
     position: absolute;
-    -webkit-transition: 0.5s;
     transition: 0.5s;
-
-
 }
 
 .lista1 p {
     font-size: 9pt;
     color: #fff;
-    text-align: justify;
+    text-align: center;
     margin: 10px;
     padding: 2px;
     border-bottom: #29299921 solid 1px;
@@ -154,6 +129,11 @@ body{
     transition: 0.2s;
    
 }
+.texto {
+    color: #fff;
+    font-size: 9pt;
+    margin: 10px;
+}   
 
 .contador {
     margin: 10px;
@@ -258,3 +238,50 @@ body{
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
 }
+
+
+
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* Style the horizontal ruler */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+   
+  /* The Modal Close Button (x) */
+  .close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #f44336;
+    cursor: pointer;
+  }
+  
+  /* Clear floats */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Change styles for cancel button and delete button on extra small screens */
+  @media screen and (max-width: 300px) {
+    .cancelbtn, .deletebtn {
+       width: 100%;
+    }
+  }

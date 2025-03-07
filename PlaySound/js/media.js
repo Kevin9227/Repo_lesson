@@ -20,16 +20,19 @@ let currentIndex = 0;  // Índice da música atual
 
 // Função para carregar músicas
 function loadMusic(event) {
+    
     musicFiles = Array.from(event.target.files);
     if (musicFiles.length > 0) {
         playMusic(0); // Começar com a primeira música
+        togglePlayPause()
+        adicionarMusica() // Adicionar músicas à playlist
     }
 }
  // Função para adicionar músicas à playlist
  function adicionarMusica() {
     const files = document.getElementById("myFile").files;
 
-    for (let file of files) {
+    for (let file of ficheiros) {
         const reader = new FileReader();
 
         reader.onload = function(e) {
@@ -106,6 +109,9 @@ audio.ontimeupdate = function () {
         // Atualizar tempo
         document.getElementById("inicio").textContent = formatTime(currentTime);
         document.getElementById("final").textContent = formatTime(duration);
+    }
+    if( currentTime == duration){
+        nextAudio()
     }
 };
 

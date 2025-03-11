@@ -25,11 +25,11 @@ function loadMusic(event) {
     if (musicFiles.length > 0) {
         playMusic(0); // Começar com a primeira música
         togglePlayPause()
-        adicionarMusica() // Adicionar músicas à playlist
+        // Adicionar músicas à playlist
     }
 }
  // Função para adicionar músicas à playlist
- function adicionarMusica() {
+/*  function adicionarMusica() {
     const files = document.getElementById("myFile").files;
 
     for (let file of ficheiros) {
@@ -49,7 +49,7 @@ function loadMusic(event) {
 
         reader.readAsDataURL(file); // Lê o arquivo e converte em URL
     }
-}
+} */
 // Função para tocar música
 function playMusic(index) {
     const music = musicFiles[index];
@@ -160,7 +160,7 @@ var no = 0
 
 function myFunction(x) {
     x.classList.toggle("change");
-    lista.classList.toggle("lista1")
+    lista.classList.toggle("clearfix")
 }
 
 function listdereproducao() {

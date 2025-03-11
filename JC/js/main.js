@@ -41,6 +41,11 @@ var projecto = [{
         imagem: 'img/flyao.jpg',
         descri: 'O presente projeto foi desenvolvido para gerenciamento de VOO de uma companinha aeria de angola.',
         link: 'http://hendasoft.42web.io/Projecto_FlyAO'
+    },{
+        nome_proje: 'Reprodutor de Música',
+        imagem: 'img/reprodutor.jpg',
+        descri: 'O presente projeto foi desenvolvido para reproduzir músicas em formato MP3.',
+        link: 'https://kevin9227.github.io/Repo_lesson/PlaySound/'
     }
 ]
 var sobre = [{

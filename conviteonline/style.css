@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: #f8f7f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.fototop {
+    width: 100%;
+    /* Largura da imagem */
+    height: 400px;
+    /* Altura da imagem */
+    background-image: url('https://thumbs.dreamstime.com/b/ideia-natural-lindo-de-convite-da-paisagem-de-terras-do-hotel-de-caribe-das-mem%C3%B3rias-78647673.jpg');
+    /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 10, 0, 0) 80%);
+
+}
+
+.fototop img {
+    width: 100%;
+}
+.fotobottom{
+     width: 100%;
+    /* Largura da imagem */
+    height: 400px;
+    /* Altura da imagem */
+    background-image: url('https://thumbs.dreamstime.com/b/piscina-do-hotel-de-recurso-luxuoso-21669568.jpg');
+    /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 10, 0, 0) 80%);
+
+}
+.convite {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    color: #444;
+
+}
+
+.iniciais {
+    margin-top: -20px;
+    font-size: 45pt;
+    font-family:  serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    color: #c47c51;
+}
+
+.versiculo {
+    font-style: italic;
+    font-size: 0.95em;
+    padding: 20px;
+
+}
+
+.referencia {
+    display: block;
+    font-size: 0.85em;
+    color: #777;
+    margin-top: 5px;
+}
+
+.nomes {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5.5em;
+    color: #c47c51;
+    margin: 20px 0;
+}
+
+.nomes span {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.6em;
+    vertical-align: middle;
+    color: #555;
+}
+
+.texto {
+    margin-bottom: 30px;
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 20px;
+
+}
+
+.data p {
+    margin: 5px 0;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.data span {
+    font-size: 1.2em;
+    color: #c47c51;
+}
+
+.endereco {
+    margin-top: 30px;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.rsvp {
+    margin-top: 25px;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+strong {
+    color: rgb(208, 101, 143);
+    font-size: 20pt;
+    text-align: center;
+}

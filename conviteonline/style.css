@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&display=swap');
 body {
     margin: 0;
     padding: 0;
@@ -7,6 +8,17 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+}
+.icones{
+    margin: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+
+}
+.icones a{
+    text-decoration: none;
+    color: #000;
 }
 
 .fototop {
@@ -49,7 +61,7 @@ body {
     font-size: 45pt;
     font-family:  serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
+    font-weight: weight;
     font-style: normal;
     color: #c47c51;
 }
@@ -69,8 +81,8 @@ body {
 }
 
 .nomes {
-    font-family: 'Great Vibes', cursive;
-    font-size: 5.5em;
+    font-family: 'Playwrite RO', cursive;
+    font-size: 2.5em;
     color: #c47c51;
     margin: 20px 0;
 }
@@ -90,14 +102,18 @@ body {
 
 }
 
+
 .data p {
+    padding: 0;
     margin: 5px 0;
     font-weight: bold;
-    font-size: 1.1em;
+    text-transform: uppercase;
+    
+     
 }
 
 .data span {
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #c47c51;
 }
 

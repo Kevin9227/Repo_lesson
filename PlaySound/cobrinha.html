@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Cobrinha Multiplayer</title>
+    <style>
+        body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+            
+}
+
+canvas {
+    border: 1px solid black;
+    background: #0101;
+}
+
+#leaderboard {
+    margin-top: 20px;
+}
+    </style>
+    
+</head>
+<body>
+    <h1>Jogo da Cobrinha Multiplayer</h1>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <div id="leaderboard">
+        <h2>Leaderboard</h2>
+        <ul id="scoreList"></ul>
+    </div>
+    <script >
+        const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+
+const box = 20;
+let snake1 = [{ x: 5 * box, y: 5 * box }];
+let snake2 = [{ x: 10 * box, y: 10 * box }];
+let direction1 = { x: 0, y: 0 };
+let direction2 = { x: 0, y: 0 };
+let food = { x: Math.floor(Math.random() * 20) * box, y: Math.floor(Math.random() * 20) * box };
+let score1 = 0;
+let score2 = 0;
+
+document.addEventListener('keydown', (event) => {
+    switch (event.key) {
+        case 'ArrowUp':
+            direction1 = { x: 0, y: -1 };
+            break;
+        case 'ArrowDown':
+            direction1 = { x: 0, y: 1 };
+            break;
+        case 'ArrowLeft':
+            direction1 = { x: -1, y: 0 };
+            break;
+        case 'ArrowRight':
+            direction1 = { x: 1, y: 0 };
+            break;
+        case 'w':
+            direction2 = { x: 0, y: -1 };
+            break;
+        case 's':
+            direction2 = { x: 0, y: 1 };
+            break;
+        case 'a':
+            direction2 = { x: -1, y: 0 };
+            break;
+        case 'd':
+            direction2 = { x: 1, y: 0 };
+            break;
+    }
+});
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Desenhar comida
+    ctx.fillStyle = 'red';
+    ctx.fillRect(food.x, food.y, box, box);
+
+    // Desenhar cobra 1
+    ctx.fillStyle = 'green';
+    for (let segment of snake1) {
+        ctx.fillRect(segment.x, segment.y, box, box);
+    }
+
+    // Desenhar cobra 2
+    ctx.fillStyle = 'blue';
+    for (let segment of snake2) {
+        ctx.fillRect(segment.x, segment.y, box, box);
+    }
+
+    // Mover cobra 1
+    let head1 = { x: snake1[0].x + direction1.x * box, y: snake1[0].y + direction1.y * box };
+    snake1.unshift(head1);
+    if (head1.x === food.x && head1.y === food.y) {
+        score1++;
+        food = { x: Math.floor(Math.random() * 20) * box, y: Math.floor(Math.random() * 20) * box };
+    } else {
+        snake1.pop();
+    }
+
+    // Mover cobra 2
+    let head2 = { x: snake2[0].x + direction2.x * box, y: snake2[0].y + direction2.y * box };
+    snake2.unshift(head2);
+    if (head2.x === food.x && head2.y === food.y) {
+        score2++;
+        food = { x
+    </script>
+</body>
+</html>

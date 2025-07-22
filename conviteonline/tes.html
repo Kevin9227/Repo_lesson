@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Buscar Músicas no Dailymotion</title>
+  <style>
+    .video-result {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 10px;
+    }
+    .video-result img {
+      width: 120px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <h2>Digite o nome da música:</h2>
+  <input type="text" id="searchBox" placeholder="Ex: Ed Sheeran Perfect">
+  <button onclick="searchVideos()">Buscar</button>
+
+  <h3>Resultados:</h3>
+  <div id="results"></div>
+
+  <h3>Reproduzindo:</h3>
+  <div id="player" style="margin-top: 10px;"></div>
+
+  <script>
+    function searchVideos() {
+      const query = document.getElementById("searchBox").value;
+      const encodedQuery = encodeURIComponent(query);
+
+      fetch(`https://api.dailymotion.com/videos?search=${encodedQuery}&limit=5&fields=id,title,thumbnail_url`)
+        .then(response => response.json())
+        .then(data => {
+          const resultsDiv = document.getElementById("results");
+          resultsDiv.innerHTML = ""; // Limpa resultados anteriores
+
+          if (data.list && data.list.length > 0) {
+            data.list.forEach(video => {
+              const container = document.createElement("div");
+              container.className = "video-result";
+
+              const img = document.createElement("img");
+              img.src = video.thumbnail_url;
+
+              const title = document.createElement("span");
+              title.textContent = video.title;
+
+              const button = document.createElement("button");
+              button.textContent = "Tocar";
+              button.onclick = () => playVideo(video.id);
+
+              container.appendChild(img);
+              container.appendChild(title);
+              container.appendChild(button);
+              resultsDiv.appendChild(container);
+            });
+          } else {
+            resultsDiv.textContent = "Nenhum vídeo encontrado.";
+          }
+        })
+        .catch(error => {
+          console.error("Erro ao buscar no Dailymotion:", error);
+          alert("Ocorreu um erro ao buscar os vídeos.");
+        });
+    }
+
+    function playVideo(videoId) {
+      const playerDiv = document.getElementById("player");
+      playerDiv.innerHTML = `
+        <iframe width="560" height="315"
+          src="https://www.dailymotion.com/embed/video/${videoId}?autoplay=1"
+          frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+        </iframe>`;
+    }
+  </script>
+</body>
+</html>

@@ -1,9 +1,10 @@
 
 const express = require('express')
+const {validarToken} = require('../middleware/validarToken')
 const {buscarDados} = require('../models/mdconsulta')
 const rotas = express.Router()
 
-rotas.get('/ferramentasv1', async(req,res)=>{
+rotas.get('/ferramentasv1',validarToken, async(req,res)=>{
     try {
 const dados = await buscarDados(req.body.familia,req.body.codigo,req.body.descricao,'ferramentasv1');
 res.send(dados);

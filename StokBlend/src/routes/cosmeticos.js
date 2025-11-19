@@ -1,6 +1,7 @@
 
 const express = require('express')
 const {buscarDados} = require('../models/mdconsulta')
+const {validarToken} = require('../middleware/validarToken')
 const rotas = express.Router()
 
 
@@ -14,13 +15,17 @@ const u_stamp =(inicias)=>{
   return valor
 }
 
-rotas.get('/cosmeticos', async(req,res)=>{
+rotas.get('/cosmeticos',validarToken, async(req,res,next)=>{
     try {
-    const dados = await buscarDados(req.body.familia,req.body.codigo,req.body.descricao,'cosmeticos');
+      console.log('Requisição recebida em /cosmeticos com parâmetros:', req.body);
+      console.log('Corpo da requisição query:', req.query);
+
+    const dados = await buscarDados(req.query.familia,req.query.codigo,req.query.descricao,'cosmeticos');
     res.send(dados);
   } catch (error) {
     res.status(500).json({ message: 'Erro ao buscar dados no servidor..' });
   }
+
     })
 
 module.exports = rotas

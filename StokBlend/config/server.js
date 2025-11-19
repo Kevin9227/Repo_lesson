@@ -10,7 +10,7 @@ require('dotenv').config()
 const apk = process.env.TOKEN
 
 
-console.log(apk)
+ 
  
 
  /* app.use(app.static(path.join(__dirname,'../')) ) */
@@ -19,7 +19,7 @@ app.use(morgan("combined"))
 app.use(cors()) 
 app.use(helmet()); // Add security headers
 
-const services = [
+/* const services = [
     {
       route: "/auth",
       target: "https://teste/auth",
@@ -104,7 +104,7 @@ services.forEach(({ route, target }) => {
   // Apply rate limiting and timeout middleware before proxying
   app.use(route, rateLimitAndTimeout, createProxyMiddleware(proxyOptions));
 });
-
+ */
 
   
 /* consign()

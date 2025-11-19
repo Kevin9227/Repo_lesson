@@ -5,12 +5,13 @@ const rotas = express.Router()
 
 const PORTA = process.env.PORT || 3500
 
+
+
 app.use('/api/stokblend',require('./src/routes/cosmeticos.js'))
 app.use('/api/stokblend',require('./src/routes/farmav1.js'))
 app.use('/api/stokblend',require('./src/routes/farmav2.js'))
 app.use('/api/stokblend',require('./src/routes/ferrav1.js')) 
 app.use('/api/stokblend',require('./src/routes/oficina.js')) 
-
 dbconectar.Promisse = global.Promise
 
 app.use((_req,res)=>{
@@ -24,8 +25,9 @@ app.use((_req,res)=>{
 })
 
 
- app.listen (PORTA,
-        console.log(`Servidor rodando na porta ${PORTA}`)
+
+
+ app.listen (PORTA, console.log(`Servidor rodando na porta ${PORTA}`)
     )
 
 

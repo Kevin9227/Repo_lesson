@@ -49,6 +49,9 @@ section{
     height: 60rem
     
 }
+.container-fluid{
+      background: #f5f7fa;
+}
 .descritivo{
     position: relative;
     margin: 50px;
@@ -75,6 +78,7 @@ section{
     padding-top: 30px;
     text-align: justify;
     color: #696d75;
+    
 }
 article{
     display: grid;
@@ -83,15 +87,14 @@ article{
     
 
 }
+ 
 .setorcard{
     display: flex;
     justify-items: center;
-    flex-wrap: wrap;
+ 
 }
-.card{
+.card_old{
     position: relative;
-    width: 220px;
-    height: 450px;
     background: #ffff;
     padding: 30px;
     margin: 20px;
@@ -157,9 +160,11 @@ aside{
     margin: 20px;
     padding: 20px
 }
+ 
 .sobrenos{
     display: flex;
     justify-content: space-between;
+     
     align-items: center;
     margin: 20px;
     
@@ -270,3 +275,4 @@ footer{
         }
 
 
+@media (min-width: 768px) and (max-width: 991.98px) { ... }

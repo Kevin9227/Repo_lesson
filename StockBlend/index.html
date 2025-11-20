@@ -3,155 +3,178 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="assets/css/master.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
-
+    <link rel="stylesheet" href="assets/css/master.css">
     <script src="assets/js/main.js"></script>
     <title>StockBlend</title>
 </head>
 
+
 <body id="mybody" >
     <header id="red">
-        <nav>
-            <div class="logo">
-                <img src="https://www.moneysavingexpert.com/content/dam/mse/editorial-image-library/guide-images/in-guide-images/img-marketplace-logo.png.rendition.320.320.png" alt="" class="imglogo" width="60">
-                <h3>API StokBlend</h3>
-            </div>
-            <ul>
-                <li><a href="#vgeral">VISÃO GERAL</a></li>
-                 <li><a href="#cuso">CASOS DE USO</a></li>
-                <li><a href="">DOCUMENTAÇÃO</a></li>
-                <li><a href="#sobre">SOBRE</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section>
-        <div class="descritivo" id="vgeral">
-            <div class="titulo">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="https://scontent.flad1-1.fna.fbcdn.net/v/t1.6435-9/117277495_2740914829474764_3866303030068125023_n.png?stp=dst-jpg_tt6&_nc_cat=109&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=Tzo8CI08HSoQ7kNvwF5rCsQ&_nc_oc=Adkc5oE3jo-3JUabgpl8-g0DuSZLke3jiJ6y7a_boIo_5jPTNrWuvHFvN-_cYN5EL28&_nc_zt=23&_nc_ht=scontent.flad1-1.fna&_nc_gid=icT2Qrn6dULyIK5p3NUsNQ&oh=00_AfjOEpzPJtiW5AtyifV7RL8gl858kvqMbz7_6vLQRHwUXA&oe=69466EC2" alt="Logo" width="60">
+        <h3 class="d-inline">StockBlend</h3>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" >
+        <span class="navbar-toggler-icon" ></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#vgeral">VISÃO GERAL</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cuso">CASOS DE USO</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">DOCUMENTAÇÃO</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre">SOBRE</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+    <section  class="container h-50">
+       <div class="container-fluid ">
+    <div class="row align-items-center m-5 colmd-a6o" id="vgeral">
+      <div class="col-md-6" >
                 <h2>A API de produtos diversos que você procurava.</h2>
-                <div class="texto_descricao">
+                <div class="texto_descricao col">
                     <p>A nossa API de produtos diversos oferece uma ampla variedade de informações sobre remédios, ferramentas, alimentos , bebidas, materiais informáticos e acessorios. Com esta API, os desenvolvedores têm acesso a dados detalhados, como descrições, preços, ingredientes, instruções de uso e muito mais.
                         <br><br>
                         Essa API é perfeita para aplicativos de compras online, sistemas de gerenciamento de estoque ou qualquer plataforma que necessite de informações atualizadas e confiáveis sobre produtos diversos. Simplifique o processo de busca e exibição de produtos para os usuários com a nossa API de produtos diversos!"
                     </p>
                 </div>
             </div>
-            <div class="imgpage">
-                <img src="assets/img/marketplace.png" alt="" width="750">
+             <div class="col-sm-5 text-center">
+
+                <img src="assets/img/marketplace.png" alt="" width="550">
             </div>
+        </div>
         </div>
     </section>
-    <article>
-        <div class="setorcard">
-            <div class="card card1">
-                <div class="icone">
-                    <span class="material-symbols-outlined">
-                        emergency
-                    </span>
+    <article class="container my-5">
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card card1 h-100">
+                    <div class="card-body text-center">
+                        <div class="icone mb-3">
+                            <span class="material-symbols-outlined">emergency</span>
+                        </div>
+                        <h3 class="card-title">Farmaceuticos</h3>
+                        <p class="card-text">10K+</p>
+                        <ul class="list-unstyled small">
+                            <li>COSMÉTICA E DERMOCOSMÉTICA</li>
+                            <li>DISPOSITIVOS MÉDICOS</li>
+                            <li>dicas de culinária</li>
+                            <li>substituições</li>
+                            <li>conversões</li>
+                            <li>mapeamento para produtos</li>
+                        </ul>
+                    </div>
                 </div>
-                <h3>Farmaceuticos</h3>
-                <p>10K+</p>
-                <ul>
-                    <li>COSMÉTICA E DERMOCOSMÉTICA</li>
-                    <li>DISPOSITIVOS MÉDICOS</li>
-                    <li>dicas de culinária</li>
-                    <li>substituições</li>
-                    <li>conversões</li>
-                    <li>mapeamento para produtos</li>
-
-                </ul>
             </div>
-            <div class="card card2">
-                <div class="icone">
-                    <span class="material-symbols-outlined">
-                        lunch_dining
-                    </span>
-                    <span class="material-symbols-outlined">
-                        liquor
-                    </span>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card card2 h-100">
+                    <div class="card-body text-center">
+                        <div class="icone mb-3">
+                            <span class="material-symbols-outlined">lunch_dining</span>
+                            <span class="material-symbols-outlined">liquor</span>
+                        </div>
+                        <h3 class="card-title">Bebidas e Alimentos</h3>
+                        <p class="card-text">500+</p>
+                        <ul class="list-unstyled small">
+                            <li>Fasts Foods</li>
+                            <li>Bebidas</li>
+                            <li>Pratos</li>
+                            <li>Legumes</li>
+                            <li>Frutas</li>
+                            <li>Receitas</li>
+                        </ul>
+                    </div>
                 </div>
-                 
-                <h3>Bebidas e Alimentos</h3>
-                <p>500+</p>
-                <ul>
-                    <li>Fasts Foods</li>
-                    <li>Bebidas</li>
-                    <li>Pratos</li>
-                    <li>Legumes</li>
-                    <li>Frutas</li>
-                    <li>Receitas</li>
-
-                </ul>
             </div>
-            <div class="card card3">
-                <div class="icone">
-                    <span class="material-symbols-outlined">
-                        construction
-                    </span>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card card3 h-100">
+                    <div class="card-body text-center">
+                        <div class="icone mb-3">
+                            <span class="material-symbols-outlined">construction</span>
+                        </div>
+                        <h3 class="card-title">Ferramentas</h3>
+                        <p class="card-text">16K+</p>
+                        <ul class="list-unstyled small">
+                            <li>Materias de construção</li>
+                            <li>Maquinas de Construção</li>
+                            <li>Maquinas p/ Jardim</li>
+                            <li>Maquinas Pesadas</li>
+                            <li>Ferramentas Canalizador</li>
+                            <li>Iluminação Exterior</li>
+                            <li>E muitos outros produtos</li>
+                        </ul>
+                    </div>
                 </div>
-                <h3>Ferramentas</h3>
-                <p>16K+</p>
-                <ul>
-                    <li>Materias de construção</li>
-                    <li>Maquinas de Construção</li>
-                    <li>Maquinas p/ Jardim</li>
-                    <li>Maquinas Pesadas</li>
-                    <li>Ferramentas Canalizador</li>
-                    <li>Iluminação Exterior</li>
-                    <li>E muitos outros produtos</li>
-
-                </ul>
             </div>
-            <div class="card card4">
-                <div class="icone">
-                    <span class="material-symbols-outlined">
-computer
-</span>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card card4 h-100">
+                    <div class="card-body text-center">
+                        <div class="icone mb-3">
+                            <span class="material-symbols-outlined">computer</span>
+                        </div>
+                        <h3 class="card-title">Informática</h3>
+                        <p class="card-text">250k+</p>
+                        <ul class="list-unstyled small">
+                            <li>Hardwares</li>
+                            <li>Softwares</li>
+                            <li>Impressoras</li>
+                            <li>Cabos de redes</li>
+                            <li>Computadores</li>
+                            <li>Acessorios</li>
+                        </ul>
+                    </div>
                 </div>
-                <h3>Informática</h3>
-                <p>250k+</p>
-                <ul>
-                    <li>Hardwares</li>
-                    <li>Softwares</li>
-                    <li>Impressoras</li>
-                    <li>Cabos de redes</li>
-                    <li>Computadores</li>
-                    <li>Acessorios</li>
-
-                </ul>
             </div>
-
         </div>
     </article>
-    
-    <aside>
-        <div class="casodeuso" id="cuso">
-            <div class="titulo" >
+
+    <aside class="container my-5" id="cuso">
+        <div class="row">
+            <div class="col-12 titulo mb-4">
                 <h2>Casos de uso</h2>
             </div>
-
-            <div class="tab">
-                <button class="tablinks" onclick="openCity(event, 'Javascript')" onload="activo(event,'Javascript')">Javascript</button>
-                <button class="tablinks" onclick="openCity(event, 'dart')">Dart/Flutter</button>
-                <button class="tablinks" onclick="openCity(event, 'python')">Python</button>
-                 <button class="tablinks" onclick="openCity(event, 'Go')">Go</button>
-                 <button class="tablinks" onclick="openCity(event, 'C#')">C#</button>
-                 <button class="tablinks" onclick="openCity(event, 'php')">Php</button>
-                 <button class="tablinks" onclick="openCity(event, 'java')">Java</button>
-            </div>
-            <div class="texto_tab">
-                <div id="Javascript" class="tabcontent ac">
-                    <h3>London</h3>
-                  <pre><code class="language-javascript">
-// Importando o módulo 'axios' para fazer requisições HTTP
+           
+            <div class="col-12 ">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="javascript-tab" data-bs-toggle="tab" data-bs-target="#javascript" type="button" role="tab" aria-controls="home" aria-selected="true">Javascript</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="dart-tab" data-bs-toggle="tab" data-bs-target="#dart" type="button" role="tab" aria-controls="profile" aria-selected="false">Dart/Flutter</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="python-tab" data-bs-toggle="tab" data-bs-target="#python" type="button" role="tab" aria-controls="contact" aria-selected="false">Python</button>
+  </li>
+    <li class="nav-item" role="presentation">
+    <button class="nav-link" id="charp-tab" data-bs-toggle="tab" data-bs-target="#charp" type="button" role="tab" aria-controls="contact" aria-selected="false">Go</button>
+  </li> 
+    <li class="nav-item" role="presentation">
+    <button class="nav-link" id="go-tab" data-bs-toggle="tab" data-bs-target="#go" type="button" role="tab" aria-controls="contact" aria-selected="false">C#</button>
+  </li>
+    <li class="nav-item" role="presentation">
+    <button class="nav-link" id="php-tab" data-bs-toggle="tab" data-bs-target="#php" type="button" role="tab" aria-controls="contact" aria-selected="false">Php</button>
+  </li> 
+    <li class="nav-item" role="presentation">
+    <button class="nav-link" id="java-tab" data-bs-toggle="tab" data-bs-target="#java" type="button" role="tab" aria-controls="contact" aria-selected="false">Java</button>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active " id="javascript" role="tabpanel" aria-labelledby="javascript-tab">
+     <pre><code class="language-javascript">
 const axios = require('axios');
-
-// URL base da API
 const API_URL = 'https://api.stockbland.com';
 
-// Função para obter todos os produtos
 async function getAllProducts() {
     try {
         const response = await axios.get(`${API_URL}/products`);
@@ -161,198 +184,50 @@ async function getAllProducts() {
     }
 }
 
-// Exemplo de utilização da função
 getAllProducts().then(products => {
     console.log('Produtos:', products);
 });
-
-</code></pre>
-
- 
-                </div>
-                <div id="dart" class="tabcontent">
-                   <h3>Código Dart/Flutter:</h3>
-<pre><code class="lang-Dart">
+                    </code></pre>
+    </div>
+  <div class="tab-pane fade" id="dart" role="tabpanel" aria-labelledby="dart-tab">
+       <pre><code class="lang-Dart">
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 const apiUrl = 'https://api.stockbland.com';
 
 Future&lt;List&lt;dynamic&gt;&gt; getAllProducts() async {
-  try {
-    final response = await http.get(Uri.parse('$apiUrl/products'));
-    return json.decode(response.body);
-  } catch (e) {
-    print('Erro ao obter produtos: $e');
-    return [];
-  }
-}
-
-void main() async {
-  final products = await getAllProducts();
-  print('Produtos: $products');
-}
-
-
-
-</code></pre>
-                </div>
-
-               <div id="Go" class="tabcontent">
-                   <h3>Código Go:</h3>
-<pre><code class="lang-Go">
-package main
-
-import (
-	"fmt"
-	"io/ioutil"
-	"net/http"
-)
-
-const apiURL = "https://api.stockbland.com"
-
-func getAllProducts() ([]byte, error) {
-	response, err := http.Get(apiURL + "/products")
-	if err != nil {
-		return nil, err
-	}
-	defer response.Body.Close()
-
-	return ioutil.ReadAll(response.Body)
-}
-
-func main() {
-	products, err := getAllProducts()
-	if err != nil {
-		fmt.Println("Erro ao obter produtos:", err)
-		return
-	}
-	fmt.Println("Produtos:", string(products))
-}
-
-
-</code></pre>
-                </div>
-                <div id="python" class="tabcontent">
-                   <h3>Código PYTHON:</h3>
-                   <pre><code> 
- import requests
-
-# URL base da API
-API_URL = 'https://api.stockbland.com'
-
-# Função para obter todos os produtos
-def get_all_products():
-    try:
-        response = requests.get(f'{API_URL}/products')
-        return response.json()
-    except Exception as e:
-        print('Erro ao obter produtos:', e)
-
-# Exemplo de utilização da função
-products = get_all_products()
-print('Produtos:', products)
-</code></pre>
-                </div>
-
-                <div id="C#" class="tabcontent">
-<h3>Código C#:</h3>
-<pre><code class="lang-c#">
-using System;
-using System.Net.Http;
-using System.Threading.Tasks;
-
-namespace StockblandExample
-{
-    class Program
-    {
-        static async Task Main(string[] args)
-        {
-            string apiUrl = "https://api.stockbland.com";
-            HttpClient client = new HttpClient();
-
-            try
-            {
-                HttpResponseMessage response = await client.GetAsync($"{apiUrl}/products");
-                response.EnsureSuccessStatusCode();
-                string responseBody = await response.Content.ReadAsStringAsync();
-                Console.WriteLine("Produtos: " + responseBody);
-            }
-            catch (HttpRequestException e)
-            {
-                Console.WriteLine($"Erro ao obter produtos: {e.Message}");
-            }
-        }
+    try {
+        final response = await http.get(Uri.parse('$apiUrl/products'));
+        return json.decode(response.body);
+    } catch (e) {
+        print('Erro ao obter produtos: $e');
+        return [];
     }
 }
-
-
-</code></pre>
-                </div>
-                           <div id="php" class="tabcontent">
-<h3>Código Php:</h3>
-<pre><code class="lang-php">
-&lt;?php
-
-$apiUrl = 'https://api.stockbland.com/products';
-
-try {
-    $response = file_get_contents($apiUrl);
-    $products = json_decode($response, true);
-    echo 'Produtos: ';
-    print_r($products);
-} catch (Exception $e) {
-    echo 'Erro ao obter produtos: ' . $e->getMessage();
-}
-
-?&gt;
-
-
-</code></pre>
-                </div>
-                           <div id="java" class="tabcontent">
-<h3>Código Java:</h3>
-<pre><code class="lang-python">
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
-public class Main {
-    public static void main(String[] args) {
-        String apiUrl = "https://api.stockbland.com/products";
-        try {
-            URL url = new URL(apiUrl);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("GET");
-            BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            String line;
-            StringBuffer response = new StringBuffer();
-            while ((line = reader.readLine()) != null) {
-                response.append(line);
-            }
-            reader.close();
-            System.out.println("Produtos: " + response.toString());
-        } catch (IOException e) {
-            System.out.println("Erro ao obter produtos: " + e.getMessage());
-        }
-    }
-}
-
-
-</code></pre>
-                </div>
+                    </code></pre>
+</div>
+  <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python-tab">Python</div>
+    <div class="tab-pane fade" id="go" role="tabpanel" aria-labelledby="go-tab">Go</div>
+    <div class="tab-pane fade" id="charp" role="tabpanel" aria-labelledby="charp-tab">C#</div>
+    <div class="tab-pane fade" id="php" role="tabpanel" aria-labelledby="charp-tab">PHP</div>
+    <div class="tab-pane fade" id="java" role="tabpanel" aria-labelledby="charp-tab">Java</div>
+</div>
+            
+                <!-- Outros conteúdos dos tabs aqui -->
             </div>
         </div>
-        
-      
     </aside>
-  <div class="sobrenos" id="sobre">
-           <h2>About us</h2>
-           <div class="img_about"><img src="assets/img/about.png" alt="Sobre nós" width="550"> </div>
-            <div class="descrisobre">
-               
+
+    <div class="container my-5" id="sobre">
+        <div class="row">
+            <div class="col-12 mb-4">
+                <h2>About us</h2>
+            </div>
+            <div class="col-lg-6 col-md-12 mb-4 text-center">
+                <img src="assets/img/about.png" alt="Sobre nós" class="img-fluid">
+            </div>
+            <div class="col-lg-6 col-md-12 text-center lh-lg">
                 <p>Somos a Stockbland, uma empresa dedicada a fornecer soluções de gerenciamento de estoque para negócios de todos os tamanhos. Nossa missão é simplificar e otimizar o processo de controle de estoque, fornecendo ferramentas poderosas e fáceis de usar.<br><br>
 
 Fundada em [ano de fundação], nossa equipe é composta por especialistas em logística, desenvolvedores de software e profissionais de negócios, todos trabalhando juntos para oferecer a melhor experiência possível aos nossos clientes. <br><br>
@@ -360,16 +235,19 @@ Fundada em [ano de fundação], nossa equipe é composta por especialistas em lo
 Acreditamos que um controle eficaz de estoque é essencial para o sucesso de qualquer empresa, e é por isso que nos esforçamos para fornecer uma plataforma confiável e inovadora que atenda às necessidades específicas de cada cliente.
 
 Seja você um pequeno varejista local ou uma grande empresa internacional, a Stockbland está aqui para ajudar a simplificar suas operações de estoque e impulsionar o crescimento do seu negócio. Junte-se a nós e descubra como podemos ajudá-lo a alcançar seus objetivos.
-</p>
-               
+                </p>
             </div>
         </div>
-    <footer>
+    </div>
+
+    <footer class="text-center py-4 mt-5">
         <div class="autor">
-           <h3>copyright&#64; 2024</h3>
+            <h3>copyright&#64; 2024</h3>
             <p>Joaquim de Campos</p>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

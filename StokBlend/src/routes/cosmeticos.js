@@ -16,10 +16,8 @@ const u_stamp =(inicias)=>{
 }
 
 rotas.get('/cosmeticos',validarToken, async(req,res,next)=>{
+ 
     try {
-      console.log('Requisição recebida em /cosmeticos com parâmetros:', req.body);
-      console.log('Corpo da requisição query:', req.query);
-
     const dados = await buscarDados(req.query.familia,req.query.codigo,req.query.descricao,'cosmeticos');
     res.send(dados);
   } catch (error) {

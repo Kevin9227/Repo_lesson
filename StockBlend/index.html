@@ -30,7 +30,7 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#vgeral">VISÃO GERAL</a></li>
           <li class="nav-item"><a class="nav-link" href="#cuso">CASOS DE USO</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">DOCUMENTAÇÃO</a></li>
+          <li class="nav-item"><a class="nav-link" href="#docs">DOCUMENTAÇÃO</a></li>
           <li class="nav-item"><a class="nav-link" href="#sobre">SOBRE</a></li>
         </ul>
       </div>
@@ -49,9 +49,8 @@
                     </p>
                 </div>
             </div>
-             <div class="col-sm-5 text-center">
-
-                <img src="assets/img/marketplace.png" alt="" width="550">
+            <div class="col-sm-5 text-center">
+                <img src="assets/img/marketplace.png" alt="Marketplace" class="img-fluid">
             </div>
         </div>
         </div>
@@ -239,10 +238,74 @@ Seja você um pequeno varejista local ou uma grande empresa internacional, a Sto
             </div>
         </div>
     </div>
+    <section class="container my-5" id="docs">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <aside class="doc-sidebar p-4 bg-light rounded">
+                    <h4>Documentação</h4>
+                    <p class="small text-muted">Endpoints principais</p>
+                        <div class="mb-2">
+                            <select id="endpoint-select" class="form-select form-select-sm">
+                                <option value="/api/stokblend/farmaciav1">GET /api/stokblend/farmaciav1</option>
+                                <option value="/api/stokblend/farmaciav2">GET /api/stokblend/farmaciav2</option>
+                                <option value="/api/stokblend/cosmeticos">GET /api/stokblend/cosmeticos</option>
+                                <option value="/api/stokblend/ferramentasv1">GET /api/stokblend/ferramentasv1</option>
+                            </select>
+                        </div>
+                        <div class="small text-muted">Token usado no cabeçalho <code>Authorization</code> (enviado como <code>Bearer &lt;token&gt;</code>): <strong id="token-display">XYZ,12345678</strong></div>
+                </aside>
+            </div>
+            <div class="col-lg-8">
+                <div class="doc-content p-4">
+                    <h2 id="endpoint-products">GET /products</h2>
+                    <p>Retorna uma lista de produtos — nome, categoria, preço e descrição curta.</p>
+
+                    <div class="try-area mb-3">
+                        <div class="d-flex gap-2 align-items-center mb-2">
+                            <button id="try-endpoint" class="btn btn-primary" aria-label="Executar endpoint selecionado">Try it — executar endpoint</button>
+                            <button id="refresh-token" class="btn btn-outline-secondary btn-sm" aria-label="Alterar token de autorização">Alterar token</button>
+                        </div>
+                        <div id="try-results" class="mt-3" role="status" aria-live="polite"></div>
+                    </div>
+
+                    <h5>Exemplo de requisição</h5>
+                    <div class="code-toolbar position-relative mb-3">
+                        <button class="btn btn-sm btn-outline-secondary copy-btn" title="Copiar">Copiar</button>
+                        <pre><code class="language-javascript">fetch('https://api.stockbland.com/api/stokblend/cosmeticos')
+.then(r =&gt; r.json())
+.then(console.log)</code></pre>
+                    </div>
+
+                    <h5>Resposta de exemplo</h5>
+                    <pre><code class="language-json">{
+ "code": 200,
+    "status": "Success",
+    "message": "Consulta realizada com sucesso",
+    "data": [
+        {
+            "_id": "664c9b4a2b86d978f6064072",
+            "codigo": "010863",
+            "Descricao": "Dove Gel Corpo Reafir.Anti Celulite Creme Curvas 200 Ml",
+            "familia": "Dove",
+            "Descricao da familia": "Dove",
+            "PrecocomIVA": 1990,
+            "PrecosemIVA": 1711.4,
+            "ivaincluido": "False",
+            "Valoriva": 278.6,
+            "TaxaIVA": 14,
+            "img": "https: //raw.githubusercontent.com/Kevin9227/StockBlend/master/API/imgs/Pharma/mov1/010863.jpg",
+            "motivosisenssao": "",
+            "Unidade": "Un"
+        }
+                      }  </code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="text-center py-4 mt-5">
         <div class="autor">
-            <h3>copyright&#64; 2024</h3>
+            <h3>copyright&#64; 2025</h3>
             <p>Joaquim de Campos</p>
         </div>
     </footer>

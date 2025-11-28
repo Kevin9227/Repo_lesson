@@ -1,66 +1,94 @@
 const connectToDatabase = require('../../config/dbconnection.js');
+const { sanitizeQuery, MESSAGES } = require('../helpers/responseHelper');
 
+/**
+ * Constrói query segura com base nos parâmetros fornecidos
+ */
+const buildQuery = (familia, codigo, descricao) => {
+  const query = {};
+
+  // Valida e adiciona familia
+  if (familia !== undefined && familia !== '' && familia !== null) {
+    query.familia = sanitizeQuery(familia);
+  }
+
+  // Valida e adiciona codigo
+  if (codigo !== undefined && codigo !== '' && codigo !== null) {
+    query.codigo = sanitizeQuery(String(codigo));
+  }
+
+  // Valida e adiciona descricao com regex seguro
+  if (descricao !== undefined && descricao !== '' && descricao !== null) {
+    const sanitized = sanitizeQuery(descricao);
+    query.Descricao = { $regex: sanitized, $options: 'i' }; // Case-insensitive
+  }
+
+  return query;
+};
+
+/**
+ * Busca dados no banco com tratamento de erros robusto
+ */
 async function buscarDados(familia, codigo, descricao, dbcollection) {
-  const db = await connectToDatabase();
-  const collection = db.collection(dbcollection);
+  let db = null;
 
   try {
-    // Aqui você constrói sua consulta com base nos requisitos
-    //console.log(codigo,'/', familia)
-    const queryCodigo = (familia, codigo, descricao) => {
-      console.log('Parâmetros recebidos na consulta:', { familia, codigo, descricao });
-
-      switch (true) {
-        case codigo !== undefined && familia !== undefined || codigo === '' && familia !== undefined:
-          return { codigo: codigo, familia: familia };
-        case codigo !== undefined && descricao !== undefined:
-          return { codigo: codigo, Descricao: { $regex: descricao } };
-        case familia !== undefined && descricao !== undefined:
-          return { familia: familia, Descricao: { $regex: descricao } };
-        case codigo !== undefined:
-          return { codigo: codigo };  
-        case familia !== undefined:
-          return { familia: familia };  
-        case descricao !== undefined:
-          return { Descricao: { $regex: descricao } };
-        default:
-          return {};
-
-      }
-    /*   
-      if (codigo !== undefined || codigo) {
-
-        const query = { [`codigo`]: codigo }
-        
-        return query;
-      }
-      if (familia !== undefined || familia) {
-        const query = { [`familia`]: familia }
-        return query;
-      }
-      if (descricao !== undefined || descricao) {
-        const query = { Descricao:{ $regex: descricao} }
-        return query;
-      }
-      if (familia == undefined || codigo == undefined || descricao == undefined) {
-        const query = {}
-        return { msg: "Sem resultado para mostrar." };
-      } */
+    // Valida parâmetros de entrada
+    if (!dbcollection || typeof dbcollection !== 'string') {
+      throw new Error('Collection inválida');
     }
-    /* const resultado = await collection.find(
-      queryCodigo(familia,codigo)
-      ).toArray(); */
-    
-    const resultado = await collection.find(
-       
-      queryCodigo(familia, codigo, descricao)
-    ).toArray();
 
-    return await resultado.length == 0 || null ? { msg: "A consulta não retornou nenhum resultado, por favor tente novamente.." } : resultado;
+    // Conecta ao banco
+    db = await connectToDatabase();
+
+    if (!db) {
+      throw new Error('Falha ao conectar ao banco de dados');
+    }
+
+    const collection = db.collection(dbcollection);
+
+    // Constrói query segura
+    const query = buildQuery(familia, codigo, descricao);
+
+    console.log(`📊 Consultando ${dbcollection}:`, JSON.stringify(query));
+
+    // Executa consulta com timeout e limite de resultados
+    const resultado = await collection
+      .find(query)
+      .limit(1000) // Proteção contra queries grandes
+      .toArray();
+
+    // Retorna resultados ou mensagem de vazio
+    if (!resultado || resultado.length === 0) {
+      console.log(`⚠ Nenhum resultado encontrado para a consulta:`, query);
+      return {
+        code: 200,
+        status: 'Success',
+        message: MESSAGES.NO_RESULTS,
+        data: [],
+      };
+    }
+
+    console.log(`✓ ${resultado.length} resultado(s) encontrado(s)`);
+
+    return {
+      code: 200,
+      status: 'Success',
+      message: 'Consulta realizada com sucesso',
+      data: resultado,
+    };
   } catch (error) {
-    console.error('Erro ao buscar dados:', error);
-    throw error;
+    console.error('✗ Erro ao buscar dados:', error.message);
+
+    // Retorna erro estruturado
+    return {
+      code: 500,
+      status: 'Error',
+      message: MESSAGES.DATABASE_ERROR,
+      data: null,
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined,
+    };
   }
 }
 
-module.exports = { buscarDados };
+module.exports = { buscarDados, buildQuery };

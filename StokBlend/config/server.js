@@ -1,118 +1,143 @@
-const express = require('express')
-const app = express()
-const consign = require('consign')
-const bodyparser = require('body-parser')
-const cors = require("cors")
-const morgan  = require('morgan')
-const helmet = require("helmet")
-const { createProxyMiddleware } = require("http-proxy-middleware");
-require('dotenv').config()
-const apk = process.env.TOKEN
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const morgan = require('morgan');
+const helmet = require('helmet');
+require('dotenv').config();
 
+const app = express();
+const { rateLimitMiddleware } = require('../src/middleware/rateLimiter');
+const { validarToken } = require('../src/middleware/validarToken');
+const constants = require('./constants');
 
- 
- 
-
- /* app.use(app.static(path.join(__dirname,'../')) ) */
-app.use(bodyparser.json())
-app.use(morgan("combined"))
-app.use(cors()) 
-app.use(helmet()); // Add security headers
-
-/* const services = [
-    {
-      route: "/auth",
-      target: "https://teste/auth",
-    },
-    {
-      route: "/users",
-      target: "https://your-deployed-service.herokuapp.com/users/",
-    },
-    {
-      route: "/chats",
-      target: "https://your-deployed-service.herokuapp.com/chats/",
-    },
-    {
-      route: "/payment",
-      target: "https://your-deployed-service.herokuapp.com/payment/",
-    },
-    // Add more services as needed
-  ];
-
-
-// Define rate limit constants
-const rateLimit = 20; // Max requests per minute
-const interval = 60 * 1000; // Time window in milliseconds (1 minute)
-
-// Object to store request counts for each IP address
-const requestCounts = {};
-
-// Reset request count for each IP address every 'interval' milliseconds
-setInterval(() => {
-  Object.keys(requestCounts).forEach((ip) => {
-    requestCounts[ip] = 0; // Reset request count for each IP address
-  });
-}, interval);
-
-// Middleware function for rate limiting and timeout handling
-function rateLimitAndTimeout(req, res, next) {
-  const ip = req.ip; // Get client IP address
-
-  // Update request count for the current IP
-  requestCounts[ip] = (requestCounts[ip] || 0) + 1;
-
-  // Check if request count exceeds the rate limit
-  if (requestCounts[ip] > rateLimit) {
-    // Respond with a 429 Too Many Requests status code
-    return res.status(429).json({
-      code: 429,
-      status: "Error",
-      message: "Rate limit exceeded.",
-      data: null,
-    });
-  }
-
-  // Set timeout for each request (example: 10 seconds)
-  req.setTimeout(15000, () => {
-    // Handle timeout error
-    res.status(504).json({
-      code: 504,
-      status: "Error",
-      message: "Gateway timeout.",
-      data: null,
-    });
-    req.abort(); // Abort the request
-  });
-
-  next(); // Continue to the next middleware
-}
-
-// Apply the rate limit and timeout middleware to the proxy
-app.use(rateLimitAndTimeout);
-
-// Set up proxy middleware for each microservice
-services.forEach(({ route, target }) => {
-  // Proxy options
-  const proxyOptions = {
-    target,
-    changeOrigin: true,
-    pathRewrite: {
-      [`^${route}`]: "",
-    },
-  };
-
-  // Apply rate limiting and timeout middleware before proxying
-  app.use(route, rateLimitAndTimeout, createProxyMiddleware(proxyOptions));
-});
+/**
+ * ============================================
+ * MIDDLEWARES DE SEGURANÇA
+ * ============================================
  */
 
-  
-/* consign()
-.include('../src/models/')
-.then('../src/routes')
-.into(app) */
+// Helmet: Headers de segurança HTTP
+app.use(helmet());
 
+// CORS: Controla acesso entre origens
+app.use(
+  cors({
+    origin: constants.CORS_ORIGIN,
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  })
+);
 
+/**
+ * ============================================
+ * MIDDLEWARES DE PARSING
+ * ============================================
+ */
 
-module.exports = app
+// Parse JSON bodies
+app.use(bodyParser.json({ limit: constants.MAX_JSON_SIZE }));
+
+// Parse URL-encoded bodies
+app.use(bodyParser.urlencoded({ limit: constants.MAX_URL_ENCODED_SIZE, extended: true }));
+
+/**
+ * ============================================
+ * MIDDLEWARES DE LOGGING
+ * ============================================
+ */
+
+// Morgan: Log de requisições HTTP
+app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent" - :response-time ms'));
+
+/**
+ * ============================================
+ * MIDDLEWARES DE PROTEÇÃO
+ * ============================================
+ */
+
+// Rate Limiting: Aplica limite de requisições
+app.use(rateLimitMiddleware);
+
+// Timeout para requisições
+app.use((req, res, next) => {
+  req.setTimeout(constants.REQUEST_TIMEOUT, () => {
+    res.status(504).json({
+      code: 504,
+      status: 'Error',
+      message: 'Requisição expirou (timeout).',
+      data: null,
+    });
+  });
+  next();
+});
+
+/**
+ * ============================================
+ * ROTAS PÚBLICAS (sem autenticação)
+ * ============================================
+ */
+
+app.get('/health', (req, res) => {
+  res.json({
+    code: 200,
+    status: 'Success',
+    message: 'API está operacional',
+    data: { timestamp: new Date().toISOString() },
+  });
+});
+
+/**
+ * ============================================
+ * APLICAR AUTENTICAÇÃO EM TODAS AS ROTAS
+ * ============================================
+ */
+
+// Middleware de autenticação (aplica antes das rotas protegidas)
+app.use(constants.API_PREFIX, validarToken);
+
+/**
+ * ============================================
+ * ROTAS PROTEGIDAS (com autenticação)
+ * ============================================
+ */
+
+app.use(constants.API_PREFIX, require('../src/routes/cosmeticos.js'));
+app.use(constants.API_PREFIX, require('../src/routes/farmav1.js'));
+app.use(constants.API_PREFIX, require('../src/routes/farmav2.js'));
+app.use(constants.API_PREFIX, require('../src/routes/ferrav1.js'));
+app.use(constants.API_PREFIX, require('../src/routes/oficina.js'));
+
+/**
+ * ============================================
+ * TRATAMENTO DE ERROS GLOBAIS
+ * ============================================
+ */
+
+// 404 - Rota não encontrada
+app.use((req, res) => {
+  res.status(404).json({
+    code: 404,
+    status: 'Error',
+    message: 'Rota não encontrada.',
+    data: null,
+  });
+});
+
+// Erro genérico (middleware com 4 parâmetros)
+app.use((err, req, res, next) => {
+  console.error('✗ Erro não tratado:', err);
+
+  const statusCode = err.statusCode || 500;
+  const message = err.message || 'Erro interno do servidor.';
+
+  res.status(statusCode).json({
+    code: statusCode,
+    status: 'Error',
+    message,
+    data: process.env.NODE_ENV === 'development' ? { error: err.stack } : null,
+  });
+});
+
+module.exports = app;
 

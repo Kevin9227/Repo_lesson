@@ -1,29 +1,36 @@
+const express = require('express');
+const { buscarDados } = require('../models/mdconsulta');
+const { responses } = require('../helpers/responseHelper');
 
-const express = require('express')
-const {buscarDados} = require('../models/mdconsulta')
-const {validarToken} = require('../middleware/validarToken')
-const rotas = express.Router()
+const rotas = express.Router();
 
+/**
+ * GET /cosmeticos
+ * Busca produtos de cosméticos por família, código ou descrição
+ * Query params: familia, codigo, descricao
+ */
+rotas.get('/cosmeticos', async (req, res, next) => {
+  try {
+    const { familia, codigo, descricao } = req.query;
 
-const u_stamp =(inicias)=>{
-  let dataactual = new Date()
-  let dia = dataactual.getDay() <=9 ? '0'+ dataactual.getDay() :dataactual.getDay() ;
-  let mes = dataactual.getMonth()
-  let ano = dataactual.getYear()
-  let dataFormatada = `${dia}${mes}${ano}`
-  let valor = inicias+ dataFormatada + Math.floor(Math.random() * 10000000)
-  return valor
-}
+    // Log da requisição
+    console.log('📥 Requisição GET /cosmeticos', {
+      ip: req.ipCliente,
+      token: req.token?.substring(0, 10) + '...',
+      params: { familia, codigo, descricao },
+    });
 
-rotas.get('/cosmeticos',validarToken, async(req,res,next)=>{
- 
-    try {
-    const dados = await buscarDados(req.query.familia,req.query.codigo,req.query.descricao,'cosmeticos');
-    res.send(dados);
+    // Busca dados com tratamento integrado
+    const resultado = await buscarDados(familia, codigo, descricao, 'cosmeticos');
+
+    // Retorna resultado (já está estruturado no modelo)
+    res.status(resultado.code).json(resultado);
   } catch (error) {
-    res.status(500).json({ message: 'Erro ao buscar dados no servidor..' });
+    console.error('✗ Erro na rota /cosmeticos:', error.message);
+
+    // Passa para middleware de erro global
+    next(error);
   }
+});
 
-    })
-
-module.exports = rotas
+module.exports = rotas;

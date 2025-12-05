@@ -3,3 +3,4 @@
 
 #ENVE
 /.env
+/.env.example

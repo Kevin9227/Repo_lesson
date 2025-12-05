@@ -25,7 +25,7 @@
                 </div>
                 <div class="contador">
                     <p id="inicio">00:00</p>
-                    <input type="range" id="audio-range" value="0" step="1" max="100" onchange="seekAudio()">
+                    <input type="range" id="audio-range" value="0" step="1" max="100" oninput="seekAudio()">
                     <p id="final">00:00</p>
                 </div>
                 <div class="btns">
@@ -35,6 +35,19 @@
                             style="font-size:36px">play_arrow</i></button>
                     <button onclick="nextAudio()" class="btn"><i class="material-icons"
                             style="font-size:24px">skip_next</i></button>
+                </div>
+                <div class="controles">
+                    <button onclick="toggleShuffle()" id="shuffle-btn" class="btn" style="opacity: 0.5;" title="Shuffle">
+                        <i class="material-icons" style="font-size:20px">shuffle</i>
+                    </button>
+                    <button onclick="toggleLoop()" id="loop-btn" class="btn" style="opacity: 0.5;" title="Loop">
+                        <i class="material-icons" style="font-size:20px">repeat</i>
+                    </button>
+                    <button onclick="toggleMute()" id="mute-btn" class="btn" title="Mute">
+                        <i class="material-icons" style="font-size:20px">volume_up</i>
+                    </button>
+                    <input type="range" id="volume-slider" min="0" max="100" value="70" 
+                           onchange="setVolume(this.value)" style="width: 100px; vertical-align: middle;">
                 </div>
             </div>
             <div class="playlist">
@@ -62,6 +75,7 @@
     </div>
     </div>
     <script src="js/media.js"></script>
+    <script src="js/player.js"></script>
     <script >
 
  

@@ -5,63 +5,252 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Joaquim de Campos - Desenvolvedor Web, Técnico PHC, Freelancer e Desenvolvedor Back-End em Luanda, Angola">
+    <meta name="keywords" content="desenvolvedor web, web developer, portfolio, Joaquim Campos, Angola, Luanda">
+    <meta name="author" content="Joaquim de Campos">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="css/master.css">
-    <title>Protifolio JCampos</title>
+
+    <title>Joaquim Campos - Portfolio | Web Developer</title>
 </head>
 
-<body onload="escrever()">
-    <header>
-        <nav>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
             <div class="logo">
-                <h3>JCampos</h3>
+                <h2>JCampos</h2>
             </div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#Projecto" onclick="xprojecto(this)">Projecto</a></li>
-                <li><a href="#" onclick="about()">About</a></li>
-                <li><a  href="#" onclick="contacto()">Contacto</a></li>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">Sobre</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projetos</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contato</a></li>
             </ul>
 
-            <div id="painelLateral" class="painelLateral">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-                <a href="#">Home</a>
-                <a href="#Projecto" onclick="xprojecto(this)">Projecto</a>
-                <a href="#" onclick="about()">About</a>
-                <a href="#" onclick="contacto()">Contact</a>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
+        </div>
+    </nav>
 
-            <div class="container" onclick="mFuncao(this)">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="greeting">Olá, eu sou</p>
+                    <h1 class="hero-title" id="typing-text"></h1>
+                    <p class="hero-subtitle">Desenvolvedor Web, Técnico PHC, Freelancer, Help Desk e Desenvolvedor
+                        Back-End</p>
+
+                    <div class="hero-buttons">
+                        <a href="JC_cv.pdf" class="btn btn-primary" download>
+                            <i class="fas fa-download"></i>
+                            Download CV
+                        </a>
+                        <a href="#projects" class="btn btn-secondary">
+                            <i class="fas fa-briefcase"></i>
+                            Ver Projetos
+                        </a>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/kevinkafala/" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/joaquim_kafala/?hl=pt" target="_blank"
+                            aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/joaquim-kafala-2321a116b/" target="_blank"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/Kevin9227" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://wa.me/+244924112838" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <img src="img/JC_m2.png" alt="Joaquim de Campos - Web Developer">
+                    </div>
+                </div>
             </div>
-        </nav>
-        <div class="modal" onscroll="mostraBtn()">
-            <span class="close" onclick="closeModal()">&times;</span>
         </div>
-    </header>
-    <section>
-        <div class="bolha1">
 
+        <div class="scroll-indicator">
+            <a href="#about">
+                <i class="fas fa-chevron-down"></i>
+            </a>
         </div>
-        <div class="bolha2">
+    </section>
 
-        </div>
-        <div class="contente">
-            <div class="texto">
-                <h3 id="Nome"> <br></h3>
-                <p>Desenvolvedor Web, Técnico PHC, Freelancer, Help Desk e Desenvolvedor Back-End.</p>
-                <button ><a  href="JC_cv.pdf">Download CV</a> </button>
-                
-            </div>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
 
-            <div class="ima">
-                <img src="img/JC_m2.png" alt="Foto de Perfil" width="550">
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-frame">
+                        <img src="img/foto.jpg" alt="Joaquim de Campos">
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <p class="about-description">
+                        Sou Web Developer baseado em Luanda, Angola. Eu me esforço para aprender novas tecnologias
+                        para expandir meu conhecimento e construir aplicativos da Web imersivos e bonitos por meio de
+                        código cuidadosamente elaborado, design centrado no usuário e também trabalho completo com APIs.
+                    </p>
+
+                    <div class="skills">
+                        <h3>Tecnologias & Ferramentas</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fab fa-html5"></i>
+                                <span>HTML5</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-css3-alt"></i>
+                                <span>CSS3</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-js"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-react"></i>
+                                <span>React</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-node"></i>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-git-alt"></i>
+                                <span>Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Meus Projetos</h2>
+            <p class="section-subtitle">Alguns dos projetos que desenvolvi recentemente</p>
+
+            <div class="projects-grid" id="projects-grid">
+                <!-- Projects will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p class="section-subtitle">Vamos trabalhar juntos!</p>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Conecte-se Comigo</h3>
+                    <p>Siga-me nas redes sociais ou envie uma mensagem diretamente.</p>
+
+                    <div class="contact-social">
+                        <a href="https://www.facebook.com/kevinkafala/" target="_blank" class="social-card">
+                            <i class="fab fa-facebook"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://www.instagram.com/joaquim_kafala/?hl=pt" target="_blank" class="social-card">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/joaquim-kafala-2321a116b/" target="_blank"
+                            class="social-card">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/Kevin9227" target="_blank" class="social-card">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://wa.me/+244924112838" target="_blank" class="social-card">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Seu Nome</label>
+                            <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Seu Email</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Escreva sua mensagem aqui..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Joaquim de Campos. Todos os direitos reservados.</p>
+            <p>Desenvolvido com <i class="fas fa-heart"></i> em Angola</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
     <script src="js/main.js"></script>
 </body>
 

@@ -1,209 +1,266 @@
-// DADOS DO PROJECTO
-var div = document.createElement('div')
-var btn = document.createElement('button')
-var btnenviar = document.getElementById('enviar')
-var teste = document.querySelector('.painelLateral')
-let xnome =''
-let msg =''
-var projecto = [{
+// ========================================
+// MODERN PORTFOLIO - JAVASCRIPT
+// ========================================
+
+// Project Data
+const projects = [
+    {
         nome_proje: 'Pesquisador de Perfil do GitHub',
         imagem: 'img/perfilGitHub.PNG',
-        descri: 'O projeto feito em HTML,CSS e JAVASCRIPT que visa buscar perfis existentes no GitHub.   Projeto feito com objetivo de praticar API do GitHub.',
+        descri: 'Projeto feito em HTML, CSS e JavaScript que visa buscar perfis existentes no GitHub. Desenvolvido para praticar API do GitHub.',
         link: 'https://kevin9227.github.io/Repo_lesson/perfilGitHub/'
-    }
-
-, {
-        nome_proje: 'Bloco de anotações',
+    },
+    {
+        nome_proje: 'Bloco de Anotações',
         imagem: 'img/Notas.PNG',
-        descri: 'O projeto feito em HTML,CSS e JAVASCRIPT, que visou o estudo da função "localStorage" com fins de praticar. ',
+        descri: 'Projeto feito em HTML, CSS e JavaScript, que visou o estudo da função "localStorage" com fins de praticar.',
         link: 'https://kevin9227.github.io/Repo_lesson/Notas/'
-    }
-
-, {
+    },
+    {
         nome_proje: 'Pokémon Web',
         imagem: 'img/pokemon.PNG',
-        descri: 'O presente projeto visa a criação de um Web Site que na qual lista os Pokémon disponível na API. O site esta a ser desenvolvido com as tec HTML,CSS e JAVASCRIPT. ',
+        descri: 'Website que lista os Pokémon disponíveis na API. Desenvolvido com HTML, CSS e JavaScript.',
         link: 'https://kevin9227.github.io/Repo_lesson/pokemon/'
-    }
-, {
+    },
+    {
         nome_proje: 'Desaparecidos S.O.S',
         imagem: 'img/desaparecidos.PNG',
-        descri: 'O presente projeto visa a criação de um Web Site que na qual irá constar todos os desaparecidos relatados a nível nacional, todos os familiares que pretenderem relatar o desaparecimento de um membro da sua família poderá faze-lo na plataforma.  O site esta a ser desenvolvido com as tec HTML,CSS e JAVASCRIPT de inicio.',
+        descri: 'Plataforma web para relatar desaparecimentos a nível nacional. Desenvolvido com HTML, CSS e JavaScript.',
         link: 'https://kevin9227.github.io/Repo_lesson/desaparecidos/'
-    }
-    , {
+    },
+    {
         nome_proje: 'Posto de Venda POS',
         imagem: 'img/POS.JPG',
-        descri: 'O presente projeto foi desenvolvido e deixado disponivel de forma open source, o sitema de venda foi feito para atender pequanas empresas que desejam organizar e controlar as suas vendas. O Sitema foi desenvolvido em FOXPRO9.',
+        descri: 'Sistema de venda open source desenvolvido para pequenas empresas. Desenvolvido em FOXPRO9.',
         link: 'https://github.com/Kevin9227/M_FOXPRO/tree/main/Sistem_POS'
-    }, {
+    },
+    {
         nome_proje: 'Gerenciador de VOOS - FLYAO',
         imagem: 'img/flyao.jpg',
-        descri: 'O presente projeto foi desenvolvido para gerenciamento de VOO de uma companinha aeria de angola.',
+        descri: 'Sistema desenvolvido para gerenciamento de voos de uma companhia aérea de Angola.',
         link: 'http://hendasoft.42web.io/Projecto_FlyAO'
-    },{
+    },
+    {
         nome_proje: 'Reprodutor de Música',
         imagem: 'img/reprodutor.jpg',
-        descri: 'O presente projeto foi desenvolvido para reproduzir músicas em formato MP3.',
+        descri: 'Reprodutor de música desenvolvido para reproduzir arquivos em formato MP3.',
         link: 'https://kevin9227.github.io/Repo_lesson/PlaySound/'
     }
-]
-var sobre = [{
-    Titulo: 'Sobre Mim',
-    Descri: 'Sou  Web Developer baseado em Luanda, Angola. Eu me esforço para aprender novas tecnologia para o meu conhecimentoconstruir aplicativos da Web imersivos e bonitos por meio de código cuidadosamente elaborado, design centrado no usuário e também trabalho completo com APIs.'
-}]
+];
 
-// FUNCIONALIDADES DA PAGINA //
+// ========================================
+// DOM ELEMENTS
+// ========================================
+const navbar = document.getElementById('navbar');
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+const navLinks = document.querySelectorAll('.nav-link');
+const typingText = document.getElementById('typing-text');
+const projectsGrid = document.getElementById('projects-grid');
+const contactForm = document.getElementById('contact-form');
 
-function mFuncao(x) {
-    openNav()
+// ========================================
+// TYPING ANIMATION
+// ========================================
+function typeWriter() {
+    const text = 'Joaquim de Campos';
+    let i = 0;
+    
+    function type() {
+        if (i < text.length) {
+            typingText.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, 100);
+        }
+    }
+    
+    type();
 }
 
-function openNav() {
-    document.getElementById("painelLateral").style.width = "250px";
-}
-
-function closeNav() {
-    document.getElementById("painelLateral").style.width = "0";
-
-}
-
-// FUNCÇÕES PARA MOSTRAR BOTÃO DO TOPO //
-function mostraBtn() {
-    const modal = document.querySelector('.modal')
-    var xbarra = modal.scrollTop
-    if (xbarra > 1000) {
-        btn.style.display = "block"
+// ========================================
+// NAVIGATION
+// ========================================
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
     } else {
-        btn.style.display = "none"
+        navbar.classList.remove('scrolled');
     }
-};
+});
 
+// Mobile menu toggle
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
 
-function gotop() {
-    const modal = document.querySelector('.modal')
-    var xbarra = modal.scrollTop
-    modal.scrollBy(0, -xbarra)
-};
-// FIM //
+// Close mobile menu when clicking on a link
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
+});
 
+// Active link on scroll
+function setActiveLink() {
+    const sections = document.querySelectorAll('section[id]');
+    const scrollY = window.pageYOffset;
 
-function xprojecto() {
-    // ADICIONAR ELEMENTO AO MODAL
-    const modal = document.querySelector('.modal')
+    sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 100;
+        const sectionId = section.getAttribute('id');
+        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
 
-    modal.appendChild(div)
-    modal.append(btn)
-    btn.classList.add('botao')
-    btn.innerHTML = 'Top'
-    btn.setAttribute('onclick', 'gotop()')
-
-
-    div.classList.add('teste')
-    modal.style.height = "100%";
-    modal.style.display = "grid"
-    modal.style.justifyContent = "center"
-    div.innerHTML = ""
-    for (i = 0; i < projecto.length; ++i) {
-
-        div.innerHTML += ` 
-    <div class="xcontainer">
-  <div class="ycontent ">
- <a href="${projecto[i].link}"> <img src="${projecto[i].imagem}" alt="Projectos" style="width:100%;"></a>
-    <h1>${projecto[i].nome_proje}</h1>
-    <p>${projecto[i].descri}</p>
-  </div>
-</div>
-
-      `
-    }
-
-};
-
-
-function about() {
-    const modal = document.querySelector('.modal')
-    modal.appendChild(div)
-    div.classList.add('teste')
-    modal.style.height = "100%";
-    modal.style.display = "grid"
-    modal.style.justifyContent = "center"
-    div.innerHTML = ""
-    div.innerHTML += ` 
-    <div class="xcontainer">
-  <div class="ycontent ">
-  <img src="img/foto.jpg" alt="Joaquim de Campos" style="width:100%;  transition: 0.5s;">
-    <h1>${sobre[0].Titulo}</h1>
-    <p>${sobre[0].Descri}</p>
-  </div>
-</div>
-
-      `
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            if (navLink) {
+                navLink.classList.add('active');
+            }
+        }
+    });
 }
 
+window.addEventListener('scroll', setActiveLink);
 
-function contacto() {
-    const modal = document.querySelector('.modal')
-    modal.appendChild(div)
-    div.classList.add('teste')
-    modal.style.height = "100%";
-    modal.style.display = "grid"
-    modal.style.justifyContent = "center"
-    div.innerHTML = ""
-    div.innerHTML += ` 
-    <div class="xcontainer">
-  <div class="ycontent ">
+// ========================================
+// PROJECTS
+// ========================================
+function loadProjects() {
+    projectsGrid.innerHTML = '';
     
-    <h1>Deixe a sua mensagem</h1>
-    <p>Siga-me </p>
-    <ul>
-        <li><a href="https://www.facebook.com/kevinkafala/"><i class="fa fa-facebook-square" style="font-size:32px;color:blue"></i></a></li>
-        <li><a href="https://www.instagram.com/joaquim_kafala/?hl=pt"><i class="fa fa-instagram" style="font-size:32px;color:#db3012"></i></a></li>
-        <li><a href="https://www.linkedin.com/in/joaquim-kafala-2321a116b/"><i class="fa fa-linkedin-square" style="font-size:32px;color:blue"></i></a></li>
-        <li><a href="https://wa.me/+244924112838"><i class="fa fa-whatsapp" style="font-size:32px;color:green"></i></a></li>
-        <li><a href="https://github.com/Kevin9227"><i class="fa fa-github-square" style="font-size:32px;color:#696969"></i></a></li>
-
-</ul>
-    <div class="outro" >
-    <label for="seunome">Seu Nome</label>
-    <input type="text" id="seunome" name="seunome" placeholder="Seu Nome..">
-
-    <label for="menssagem">Menssagem</label>
-    <textarea id="menssagem" name="menssagem" placeholder="Escreve aqui a sua mensagem..." style="height:200px"></textarea>
-    <button onclick="enviamsg() " id="enviar"><a href="mailto:joaquimdecampos@outlook.com?subject=Visualizei o teu Portefólio">Enviar e-mail</a></button>
-   
-    </div>
-  </div>
-</div>
-      `
-}
-var i = 0,
-    nome = 'Hello I´M Joaquim de Campos',
-    velocidade = 150
-
-function escrever() {
-    if (i < nome.length) {
-        document.getElementById('Nome').innerHTML += `${nome.charAt(i)}`;
-        i++;
-        setTimeout(escrever, velocidade)
-    }
-
+    projects.forEach((project, index) => {
+        const projectCard = document.createElement('div');
+        projectCard.className = 'project-card';
+        projectCard.style.animationDelay = `${index * 0.1}s`;
+        
+        projectCard.innerHTML = `
+            <div class="project-image">
+                <img src="${project.imagem}" alt="${project.nome_proje}" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">${project.nome_proje}</h3>
+                <p class="project-description">${project.descri}</p>
+                <a href="${project.link}" target="_blank" class="project-link">
+                    Ver Projeto
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        `;
+        
+        projectsGrid.appendChild(projectCard);
+    });
 }
 
-function enviamsg(){
-    nome =document.getElementById("seunome")
-    msg = document.getElementById("menssagem")
-   
+// ========================================
+// CONTACT FORM
+// ========================================
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
     
-}
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    // Create mailto link
+    const subject = encodeURIComponent('Contato do Portfolio');
+    const body = encodeURIComponent(
+        `Nome: ${name}\nEmail: ${email}\n\nMensagem:\n${message}`
+    );
+    
+    window.location.href = `mailto:joaquimdecampos@outlook.com?subject=${subject}&body=${body}`;
+    
+    // Reset form
+    contactForm.reset();
+});
 
-function closeModal() {
-    const modal = document.querySelector('.modal')
-    //modal.style.display = "none"
-    modal.style.height = "0";
+// ========================================
+// INTERSECTION OBSERVER (Scroll Animations)
+// ========================================
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
 };
 
-function ver(){
-    const xver ='';
-    n
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observe sections
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+
+// ========================================
+// SMOOTH SCROLL
+// ========================================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// ========================================
+// INITIALIZE
+// ========================================
+window.addEventListener('DOMContentLoaded', () => {
+    typeWriter();
+    loadProjects();
+    setActiveLink();
+});
+
+// ========================================
+// PERFORMANCE OPTIMIZATION
+// ========================================
+// Lazy load images
+if ('loading' in HTMLImageElement.prototype) {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    images.forEach(img => {
+        img.src = img.src;
+    });
+} else {
+    // Fallback for browsers that don't support lazy loading
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+    document.body.appendChild(script);
 }
+
+// Debounce scroll events
+function debounce(func, wait = 10, immediate = true) {
+    let timeout;
+    return function() {
+        const context = this;
+        const args = arguments;
+        const later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+}
+
+// Apply debounce to scroll events
+window.addEventListener('scroll', debounce(() => {
+    setActiveLink();
+}));
